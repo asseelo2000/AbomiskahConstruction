@@ -1,0 +1,140 @@
+
+
+
+
+:root {
+  --radius: 0.625rem;
+  /* Abomiskah Color Scheme - Blue, Red, White */
+  --Abomiskah-blue: #1e40af;
+  --Abomiskah-blue-light: #3b82f6;
+  --Abomiskah-blue-dark: #1e3a8a;
+  --Abomiskah-red: #dc2626;
+  --Abomiskah-red-light: #ef4444;
+  --Abomiskah-red-dark: #b91c1c;
+  --Abomiskah-white: #ffffff;
+  --Abomiskah-gray-light: #f8fafc;
+  --Abomiskah-gray: #64748b;
+  --Abomiskah-gray-dark: #334155;
+  
+  --background: var(--Abomiskah-white);
+  --foreground: var(--Abomiskah-gray-dark);
+  --card: var(--Abomiskah-white);
+  --card-foreground: var(--Abomiskah-gray-dark);
+  --popover: var(--Abomiskah-white);
+  --popover-foreground: var(--Abomiskah-gray-dark);
+  --primary: var(--Abomiskah-blue);
+  --primary-foreground: var(--Abomiskah-white);
+  --secondary: var(--Abomiskah-gray-light);
+  --secondary-foreground: var(--Abomiskah-gray-dark);
+  --muted: var(--Abomiskah-gray-light);
+  --muted-foreground: var(--Abomiskah-gray);
+  --accent: var(--Abomiskah-red);
+  --accent-foreground: var(--Abomiskah-white);
+  --destructive: var(--Abomiskah-red);
+  --border: #e2e8f0;
+  --input: #e2e8f0;
+  --ring: var(--Abomiskah-blue);
+  --chart-1: var(--Abomiskah-blue);
+  --chart-2: var(--Abomiskah-red);
+  --chart-3: var(--Abomiskah-gray);
+  --chart-4: var(--Abomiskah-blue-light);
+  --chart-5: var(--Abomiskah-red-light);
+  --sidebar: var(--Abomiskah-white);
+  --sidebar-foreground: var(--Abomiskah-gray-dark);
+  --sidebar-primary: var(--Abomiskah-blue);
+  --sidebar-primary-foreground: var(--Abomiskah-white);
+  --sidebar-accent: var(--Abomiskah-gray-light);
+  --sidebar-accent-foreground: var(--Abomiskah-gray-dark);
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: var(--Abomiskah-blue);
+}
+
+.dark {
+  --background: var(--Abomiskah-gray-dark);
+  --foreground: var(--Abomiskah-white);
+  --card: var(--Abomiskah-gray-dark);
+  --card-foreground: var(--Abomiskah-white);
+  --popover: var(--Abomiskah-gray-dark);
+  --popover-foreground: var(--Abomiskah-white);
+  --primary: var(--Abomiskah-blue-light);
+  --primary-foreground: var(--Abomiskah-white);
+  --secondary: var(--Abomiskah-gray);
+  --secondary-foreground: var(--Abomiskah-white);
+  --muted: var(--Abomiskah-gray);
+  --muted-foreground: var(--Abomiskah-gray-light);
+  --accent: var(--Abomiskah-red-light);
+  --accent-foreground: var(--Abomiskah-white);
+  --destructive: var(--Abomiskah-red-light);
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: var(--Abomiskah-blue-light);
+  --chart-1: var(--Abomiskah-blue-light);
+  --chart-2: var(--Abomiskah-red-light);
+  --chart-3: var(--Abomiskah-gray-light);
+  --chart-4: var(--Abomiskah-blue);
+  --chart-5: var(--Abomiskah-red);
+  --sidebar: var(--Abomiskah-gray-dark);
+  --sidebar-foreground: var(--Abomiskah-white);
+  --sidebar-primary: var(--Abomiskah-blue-light);
+  --sidebar-primary-foreground: var(--Abomiskah-white);
+  --sidebar-accent: var(--Abomiskah-gray);
+  --sidebar-accent-foreground: var(--Abomiskah-white);
+  --sidebar-border: rgba(255, 255, 255, 0.1);
+  --sidebar-ring: var(--Abomiskah-blue-light);
+}
+
+
+
+/* Custom Abomiskah Styles */
+.Abomiskah-gradient {
+  background: linear-gradient(135deg, var(--Abomiskah-blue) 0%, var(--Abomiskah-red) 100%);
+}
+
+.Abomiskah-text-gradient {
+  background: linear-gradient(135deg, var(--Abomiskah-blue) 0%, var(--Abomiskah-red) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.Abomiskah-shadow {
+  box-shadow: 0 10px 25px rgba(30, 64, 175, 0.1), 0 4px 6px rgba(220, 38, 38, 0.05);
+}
+
+.Abomiskah-hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.Abomiskah-hover-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(30, 64, 175, 0.15), 0 8px 12px rgba(220, 38, 38, 0.1);
+}
+
+/* Animation classes */
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.fade-in-left {
+  animation: fadeInLeft 0.8s ease-out;
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+
+
+
+/* RTL Support for Arabic */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .fade-in-left {
+  animation: fadeInRight 0.8s ease-out;
+}
+
+[dir="rtl"] .fade-in-right {
+  animation: fadeInLeft 0.8s ease-out;
+}
