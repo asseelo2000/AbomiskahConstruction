@@ -18,6 +18,8 @@ const Header = ({ currentLanguage, onLanguageChange }) => {
     { key: 'home', en: 'Home', ar: 'الرئيسية' },
     { key: 'about', en: 'About Us', ar: 'من نحن' },
     { key: 'services', en: 'Services', ar: 'خدماتنا' },
+    { key: 'history', en: 'History', ar: 'تاريخنا' },
+    { key: 'equipments', en: 'Equipments', ar: 'معداتنا' },
     { key: 'projects', en: 'Projects', ar: 'مشاريعنا' },
     { key: 'clients', en: 'Clients', ar: 'عملاؤنا' },
     { key: 'contact', en: 'Contact', ar: 'اتصل بنا' }

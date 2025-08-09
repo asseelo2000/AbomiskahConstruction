@@ -10,6 +10,8 @@ import HeaderFixed from './components/HeaderFixed';
 import HeroFinal from './components/HeroFinal';
 import Projects from './components/Projects';
 import Services from './components/Services';
+import History from './components/History';
+import Equipments from './components/Equipments';
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState('en');
@@ -30,6 +32,8 @@ function App() {
       <About currentLanguage={currentLanguage} />
       <Projects currentLanguage={currentLanguage} />
       <Services currentLanguage={currentLanguage} />
+      <History currentLanguage={currentLanguage} />
+      <Equipments currentLanguage={currentLanguage}/>
       <Clients currentLanguage={currentLanguage} />
        <Contact currentLanguage={currentLanguage} />
        <Footer currentLanguage={currentLanguage} />

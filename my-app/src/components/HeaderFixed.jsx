@@ -17,6 +17,8 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
     { key: 'home', en: 'Home', ar: 'الرئيسية' },
     { key: 'about', en: 'About Us', ar: 'من نحن' },
     { key: 'services', en: 'Services', ar: 'خدماتنا' },
+    { key: 'history', en: 'History', ar: 'تاريخنا' },
+    { key: 'equipments', en: 'Equipments', ar: 'معداتنا' },
     { key: 'projects', en: 'Projects', ar: 'مشاريعنا' },
     { key: 'clients', en: 'Clients', ar: 'عملاؤنا' },
     { key: 'contact', en: 'Contact', ar: 'اتصل بنا' }
@@ -80,7 +82,7 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
               onClick={() => onLanguageChange(currentLanguage === 'en' ? 'ar' : 'en')}
               className="flex items-center space-x-2 px-3 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-colors duration-200"
             >
-              <Globe className="w-4 h-4" />
+              <Globe className="w-6 h-4" />
               <span>{currentLanguage === 'en' ? 'العربية' : 'English'}</span>
             </button>
 

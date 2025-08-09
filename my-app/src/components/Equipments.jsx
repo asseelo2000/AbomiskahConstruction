@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { motion } from 'framer-motion';
 import {
   Building,
@@ -18,15 +20,15 @@ const Button = ({ children, className = '', ...props }) => (
   </button>
 );
 
-const Services = ({ currentLanguage }) => {
+const Equipments = ({ currentLanguage }) => {
   const content = {
     en: {
-      title: "Our Services",
+      title: "Equipments",
       subtitle: "Comprehensive Construction Solutions",
       description:
-        "From residential homes to large-scale commercial and industrial projects, we provide end-to-end construction services with unmatched quality and expertise.",
+        "From residential homes to large commercial and industrial projects, we provide comprehensive construction Equipments with unmatched quality and expertise.",
       cta: "Get Quote",
-      services: [
+      Equipments: [
         {
           icon: Home,
           title: "Residential Construction",
@@ -59,7 +61,7 @@ const Services = ({ currentLanguage }) => {
           icon: Hammer,
           title: "Renovation & Remodeling",
           description:
-            "Transform existing spaces with our comprehensive renovation and remodeling services.",
+            "Transform existing spaces with our comprehensive renovation and remodeling Equipments.",
           features: ["Kitchen Remodeling", "Bathroom Renovation", "Office Upgrades", "Structural Modifications"],
         },
         {
@@ -77,7 +79,7 @@ const Services = ({ currentLanguage }) => {
       description:
         "من المنازل السكنية إلى المشاريع التجارية والصناعية الكبيرة، نقدم خدمات البناء الشاملة بجودة وخبرة لا مثيل لها.",
       cta: "احصل على عرض سعر",
-      services: [
+      Equipments: [
         {
           icon: Home,
           title: "البناء السكني",
@@ -128,7 +130,7 @@ const Services = ({ currentLanguage }) => {
 
   return (
     <section
-      id="services"
+      id="equipments"
       className="py-20 bg-gradient-to-br from-blue-600 via-white to-red-600"
       dir={currentLanguage === 'ar' ? 'rtl' : 'ltr'}
     >
@@ -142,7 +144,7 @@ const Services = ({ currentLanguage }) => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentContent.services.map((service, index) => {
+          {currentContent.Equipments.map((service, index) => {
             const Icon = service.icon;
             return (
               <motion.div
@@ -178,4 +180,4 @@ const Services = ({ currentLanguage }) => {
   );
 };
 
-export default Services;
+export default Equipments;
