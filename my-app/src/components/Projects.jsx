@@ -44,7 +44,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
           client: 'Private Developer',
           description:
             'A premium residential development featuring 120 luxury apartments with modern amenities and sustainable design.',
-          image: '/api/placeholder/600/400',
+          image: '/images/LuxuryResidentialComplex.jpg',
           stats: {
             units: '120 Units',
             area: '15,000 m²',
@@ -60,7 +60,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
           client: 'Tech Corporation',
           description:
             'Modern 15-story office building with state-of-the-art facilities and energy-efficient systems.',
-          image: '/api/placeholder/600/400',
+          image: '/images/CorporateHeadquarters.jpg',
           stats: {
             floors: '15 Floors',
             area: '25,000 m²',
@@ -76,12 +76,11 @@ const Projects = ({ currentLanguage = 'en' }) => {
           client: 'Manufacturing Corp',
           description:
             'Large-scale manufacturing plant with advanced automation systems and safety features.',
-          image: '/api/placeholder/600/400',
+          image: '/images/ManufacturingFacility.jpg',
           stats: {
-            capacity: '50,000 Units/Month',
+            capacity: '50,000 Units/Month', 
             area: '40,000 m²',
-            duration: '30 Months'
-          }
+            duration: '30 Months'          }
         }
       ]
     },
@@ -107,7 +106,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
           client: 'مطور خاص',
           description:
             'مشروع سكني متميز يضم 120 شقة فاخرة مع وسائل الراحة الحديثة والتصميم المستدام.',
-          image: '/api/placeholder/600/400',
+          image: '/images/ManufacturingFacility.jpg',
           stats: {
             units: '120 وحدة',
             area: '15,000 م²',
@@ -163,9 +162,14 @@ const Projects = ({ currentLanguage = 'en' }) => {
               viewport={{ once: true, amount: 0.3 }}
               className="rounded-xl shadow-lg bg-white overflow-hidden hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300"
             >
-              <div className="h-48 bg-gradient-to-br from-blue-500 to-red-500 flex items-center justify-center text-white text-6xl">
+              {/* <div className="h-48 bg-gradient-to-br from-blue-500 to-red-500 flex items-center justify-center text-white text-6xl">
                 🏗️
-              </div>
+              </div> */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="h-48 w-full object-cover"
+              />
               <div className="p-6">
                 <div className="flex items-center gap-4 text-sm text-gray-400 mb-2">
                   <MapPin className="w-4 h-4" />

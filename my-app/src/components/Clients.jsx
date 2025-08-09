@@ -1,109 +1,108 @@
-import React from 'react';
-
+import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import {
-  Quote,
-  Star,
-} from 'lucide-react';
+import { Quote, Star } from 'lucide-react';
 
-const Clients = ({ currentLanguage = "en" }) => {
-  const isArabic = currentLanguage === "ar";
+const Clients = ({ currentLanguage = 'en' }) => {
+  const isArabic = currentLanguage === 'ar';
+  const [isHovered, setIsHovered] = useState(false);
+  const [animationX, setAnimationX] = useState(0);
+  const animationRef = useRef();
 
   const content = {
     en: {
-      title: "Our Clients",
-      subtitle: "Trusted by Leading Organizations",
+      title: 'Our Clients',
+      subtitle: 'Trusted by Leading Organizations',
       description:
         "We're proud to have worked with some of the most respected companies and organizations in the region.",
       testimonials: [
         {
           id: 1,
-          name: "Ahmed Al-Rashid",
-          position: "CEO, Al-Rashid Development",
-          company: "Al-Rashid Development",
+          name: 'Ahmed Al-Rashid',
+          position: 'CEO, Al-Rashid Development',
+          company: 'Al-Rashid Development',
           rating: 5,
           text:
-            "Abomiskah delivered our residential project on time and within budget. Their attention to detail and quality craftsmanship exceeded our expectations.",
-          avatar: "AR",
+            'Abomiskah delivered our residential project on time and within budget. Their attention to detail and quality craftsmanship exceeded our expectations.',
+          avatar: 'AR',
         },
         {
           id: 2,
-          name: "Sarah Johnson",
-          position: "Project Manager, TechCorp",
-          company: "TechCorp International",
+          name: 'Sarah Johnson',
+          position: 'Project Manager, TechCorp',
+          company: 'TechCorp International',
           rating: 5,
           text:
-            "Working with Abomiskah on our corporate headquarters was a seamless experience. They understood our vision and brought it to life perfectly.",
-          avatar: "SJ",
+            'Working with Abomiskah on our corporate headquarters was a seamless experience. They understood our vision and brought it to life perfectly.',
+          avatar: 'SJ',
         },
         {
           id: 3,
-          name: "Mohammed Hassan",
-          position: "Operations Director, Industrial Solutions",
-          company: "Industrial Solutions Ltd",
+          name: 'Mohammed Hassan',
+          position: 'Operations Director, Industrial Solutions',
+          company: 'Industrial Solutions Ltd',
           rating: 5,
           text:
-            "The manufacturing facility Abomiskah built for us is state-of-the-art. Their expertise in industrial construction is unmatched.",
-          avatar: "MH",
+            'The manufacturing facility Abomiskah built for us is state-of-the-art. Their expertise in industrial construction is unmatched.',
+          avatar: 'MH',
         },
       ],
       clients: [
-        { name: "Al-Rashid Development", logo: "🏢" },
-        { name: "TechCorp International", logo: "💻" },
-        { name: "Industrial Solutions", logo: "🏭" },
-        { name: "Green Energy Corp", logo: "🌱" },
-        { name: "Metro Construction", logo: "🚇" },
-        { name: "Royal Hotels Group", logo: "🏨" },
-        { name: "Smart City Initiative", logo: "🌆" },
-        { name: "Healthcare Partners", logo: "🏥" },
+        { name: 'Al-Rashid Development', logo: '🏢' },
+        { name: 'TechCorp International', logo: '💻' },
+        { name: 'Industrial Solutions', logo: '🏭' },
+        { name: 'Green Energy Corp', logo: '🌱' },
+        { name: 'Metro Construction', logo: '🚇' },
+        { name: 'Royal Hotels Group', logo: '🏨' },
+        { name: 'Smart City Initiative', logo: '🌆' },
+        { name: 'Healthcare Partners', logo: '🏥' },
       ],
     },
     ar: {
-      title: "عملاؤنا",
-      subtitle: "موثوق من قبل المؤسسات الرائدة",
+      title: 'عملاؤنا',
+      subtitle: 'موثوق من قبل المؤسسات الرائدة',
       description:
-        "نحن فخورون بالعمل مع بعض أكثر الشركات والمؤسسات احتراماً في المنطقة.",
+        'نحن فخورون بالعمل مع بعض أكثر الشركات والمؤسسات احتراماً في المنطقة.',
       testimonials: [
         {
           id: 1,
-          name: "أحمد الراشد",
-          position: "الرئيس التنفيذي، تطوير الراشد",
-          company: "تطوير الراشد",
+          name: 'أحمد الراشد',
+          position: 'الرئيس التنفيذي، تطوير الراشد',
+          company: 'تطوير الراشد',
           rating: 5,
           text:
-            "أبو مسكة سلمت مشروعنا السكني في الوقت المحدد وضمن الميزانية. اهتمامهم بالتفاصيل وجودة الصنعة فاق توقعاتنا.",
-          avatar: "أر",
+            'أبو مسكة سلمت مشروعنا السكني في الوقت المحدد وضمن الميزانية. اهتمامهم بالتفاصيل وجودة الصنعة فاق توقعاتنا.',
+          avatar: 'أر',
         },
         {
           id: 2,
-          name: "سارة جونسون",
-          position: "مدير المشروع، تك كورب",
-          company: "تك كورب الدولية",
+          name: 'سارة جونسون',
+          position: 'مدير المشروع، تك كورب',
+          company: 'تك كورب الدولية',
           rating: 5,
           text:
-            "العمل مع أبو مسكة على مقرنا الرئيسي كان تجربة سلسة. فهموا رؤيتنا وحققوها بشكل مثالي.",
-          avatar: "سج",
+            'العمل مع أبو مسكة على مقرنا الرئيسي كان تجربة سلسة. فهموا رؤيتنا وحققوها بشكل مثالي.',
+          avatar: 'سج',
         },
         {
           id: 3,
-          name: "محمد حسن",
-          position: "مدير العمليات، الحلول الصناعية",
-          company: "الحلول الصناعية المحدودة",
+          name: 'محمد حسن',
+          position: 'مدير العمليات، الحلول الصناعية',
+          company: 'الحلول الصناعية المحدودة',
           rating: 5,
           text:
-            "منشأة التصنيع التي بناها أبو مسكة لنا متطورة جداً. خبرتهم في البناء الصناعي لا مثيل لها.",
-          avatar: "مح",
+            'منشأة التصنيع التي بناها أبو مسكة لنا متطورة جداً. خبرتهم في البناء الصناعي لا مثيل لها.',
+          avatar: 'مح',
         },
       ],
       clients: [
-        { name: "تطوير الراشد", logo: "🏢" },
-        { name: "تك كورب الدولية", logo: "💻" },
-        { name: "الحلول الصناعية", logo: "🏭" },
-        { name: "شركة الطاقة الخضراء", logo: "🌱" },
-        { name: "مترو للإنشاءات", logo: "🚇" },
-        { name: "مجموعة الفنادق الملكية", logo: "🏨" },
-        { name: "مبادرة المدينة الذكية", logo: "🌆" },
-        { name: "شركاء الرعاية الصحية", logo: "🏥" },
+        { name: 'تطوير الراشد', logo: '🏢' },
+        { name: 'تك كورب الدولية', logo: '💻' },
+        { name: 'الحلول الصناعية', logo: '🏭' },
+        { name: 'شركة الطاقة الخضراء', logo: '🌱' },
+        { name: 'مترو للإنشاءات', logo: '🚇' },
+        { name: 'مجموعة الفنادق الملكية', logo: '🏨' },
+        { name: 'مبادرة المدينة الذكية', logo: '🌆' },
+        { name: 'شركاء الرعاية الصحية', logo: '🏥' },
       ],
     },
   };
@@ -115,14 +114,31 @@ const Clients = ({ currentLanguage = "en" }) => {
     visible: (i = 1) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
+      transition: { delay: i * 0.15, duration: 0.6, ease: 'easeOut' },
     }),
   };
+
+  useEffect(() => {
+    const animate = () => {
+      if (!isHovered) {
+        setAnimationX((prev) => {
+          const newX = prev - 0.05; // Smaller increment for smooth movement
+          return newX <= -100 ? 0 : newX; // Reset to 0 when reaching -100%
+        });
+      }
+      animationRef.current = requestAnimationFrame(animate);
+    };
+    animationRef.current = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationRef.current);
+  }, [isHovered]);
+
+  // Determine animation direction based on language
+  const animationDirection = isArabic ? '100%' : '-100%';
 
   return (
     <section
       id="clients"
-      dir={isArabic ? "rtl" : "ltr"}
+      dir={isArabic ? 'rtl' : 'ltr'}
       className="py-24 bg-gradient-to-br from-blue-50 via-white to-red-50"
     >
       <div className="container mx-auto max-w-7xl px-6">
@@ -194,25 +210,39 @@ const Clients = ({ currentLanguage = "en" }) => {
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="bg-white rounded-xl shadow-lg py-12 px-10"
+          className="bg-white rounded-xl shadow-lg py-12 px-10 overflow-hidden"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
           <h3 className="text-2xl font-bold text-center text-red-600 mb-12 tracking-wide">
-            {isArabic ? "شركاؤنا الموثوقون" : "Our Trusted Partners"}
+            {isArabic ? 'شركاؤنا الموثوقون' : 'Our Trusted Partners'}
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-12">
-            {currentContent.clients.map(({ name, logo }, idx) => (
-              <motion.div
-                key={idx}
-                whileHover={{ scale: 1.1 }}
-                className="flex flex-col items-center justify-center cursor-pointer select-none transition-transform duration-300 ease-in-out"
-              >
-                <div className="text-5xl mb-2">{logo}</div>
-                <p className="text-xs font-semibold text-gray-900 text-center">
-                  {name}
-                </p>
-              </motion.div>
-            ))}
-          </div>
+          <motion.div
+            className="flex items-center gap-12 whitespace-nowrap"
+            animate={{ x: isArabic ? animationX + '%' : animationX + '%' }}
+            transition={{
+              duration: 0,
+              ease: 'linear',
+            }}
+            style={{
+              direction: isArabic ? 'rtl' : 'ltr',
+            }}
+          >
+            {[...currentContent.clients, ...currentContent.clients].map(
+              ({ name, logo }, idx) => (
+                <motion.div
+                  key={idx}
+                  className="flex flex-col items-center justify-center cursor-pointer select-none transition-transform duration-300 ease-in-out"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <div className="text-5xl mb-2">{logo}</div>
+                  <p className="text-xs font-semibold text-gray-900 text-center">
+                    {name}
+                  </p>
+                </motion.div>
+              )
+            )}
+          </motion.div>
         </motion.div>
 
         {/* Stats Section */}
@@ -225,17 +255,17 @@ const Clients = ({ currentLanguage = "en" }) => {
         >
           {[
             {
-              number: "500+",
-              label: isArabic ? "مشروع مكتمل" : "Projects Completed",
+              number: '500+',
+              label: isArabic ? 'مشروع مكتمل' : 'Projects Completed',
             },
             {
-              number: "100+",
-              label: isArabic ? "عميل راضي" : "Happy Clients",
+              number: '100+',
+              label: isArabic ? 'عميل راضي' : 'Happy Clients',
             },
-            { number: "15+", label: isArabic ? "سنة خبرة" : "Years Experience" },
+            { number: '15+', label: isArabic ? 'سنة خبرة' : 'Years Experience' },
             {
-              number: "99%",
-              label: isArabic ? "معدل الرضا" : "Satisfaction Rate",
+              number: '99%',
+              label: isArabic ? 'معدل الرضا' : 'Satisfaction Rate',
             },
           ].map(({ number, label }, i) => (
             <div key={i}>
