@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Quote, Star } from 'lucide-react';
+import { useInView } from 'react-intersection-observer';
 
 const Clients = ({ currentLanguage = 'en' }) => {
   const isArabic = currentLanguage === 'ar';
@@ -122,8 +123,8 @@ const Clients = ({ currentLanguage = 'en' }) => {
     const animate = () => {
       if (!isHovered) {
         setAnimationX((prev) => {
-          const newX = prev - 0.05; // Smaller increment for smooth movement
-          return newX <= -100 ? 0 : newX; // Reset to 0 when reaching -100%
+          const newX = prev - 0.05;
+          return newX <= -100 ? 0 : newX;
         });
       }
       animationRef.current = requestAnimationFrame(animate);
@@ -132,8 +133,46 @@ const Clients = ({ currentLanguage = 'en' }) => {
     return () => cancelAnimationFrame(animationRef.current);
   }, [isHovered]);
 
-  // Determine animation direction based on language
   const animationDirection = isArabic ? '100%' : '-100%';
+
+  // Stats counting logic
+  const stats = [
+    { number: 500, suffix: '+', label: isArabic ? 'مشروع مكتمل' : 'Projects Completed' },
+    { number: 100, suffix: '+', label: isArabic ? 'عميل راضي' : 'Happy Clients' },
+    { number: 15, suffix: '+', label: isArabic ? 'سنة خبرة' : 'Years Experience' },
+    { number: 99, suffix: '%', label: isArabic ? 'معدل الرضا' : 'Satisfaction Rate' },
+  ];
+
+  const [refStats, inViewStats] = useInView({ triggerOnce: true });
+  const [counts, setCounts] = useState(stats.map(() => 0));
+
+  useEffect(() => {
+    if (inViewStats) {
+      stats.forEach((stat, i) => {
+        let start = 0;
+        const duration = 1500;
+        const increment = stat.number / (duration / 16);
+        const counter = () => {
+          start += increment;
+          if (start < stat.number) {
+            setCounts((prev) => {
+              const updated = [...prev];
+              updated[i] = Math.floor(start);
+              return updated;
+            });
+            requestAnimationFrame(counter);
+          } else {
+            setCounts((prev) => {
+              const updated = [...prev];
+              updated[i] = stat.number;
+              return updated;
+            });
+          }
+        };
+        counter();
+      });
+    }
+  }, [inViewStats]);
 
   return (
     <section
@@ -245,31 +284,20 @@ const Clients = ({ currentLanguage = 'en' }) => {
           </motion.div>
         </motion.div>
 
-        {/* Stats Section */}
+        {/* Stats Section with animation */}
         <motion.div
+          ref={refStats}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
           className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center mt-24 max-w-5xl mx-auto text-gray-900"
         >
-          {[
-            {
-              number: '500+',
-              label: isArabic ? 'مشروع مكتمل' : 'Projects Completed',
-            },
-            {
-              number: '100+',
-              label: isArabic ? 'عميل راضي' : 'Happy Clients',
-            },
-            { number: '15+', label: isArabic ? 'سنة خبرة' : 'Years Experience' },
-            {
-              number: '99%',
-              label: isArabic ? 'معدل الرضا' : 'Satisfaction Rate',
-            },
-          ].map(({ number, label }, i) => (
+          {stats.map(({ suffix, label }, i) => (
             <div key={i}>
-              <p className="text-4xl font-extrabold tracking-tight">{number}</p>
+              <p className="text-4xl font-extrabold tracking-tight">
+                {counts[i]}{suffix}
+              </p>
               <p className="mt-2 font-semibold text-lg">{label}</p>
             </div>
           ))}
