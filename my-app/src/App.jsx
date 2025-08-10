@@ -2,16 +2,16 @@ import './App.css';
 
 import React, { useState } from 'react';
 
-import About from './components/About';
-import Clients from './components/Clients';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
 import HeaderFixed from './components/HeaderFixed';
 import HeroFinal from './components/HeroFinal';
-import Projects from './components/Projects';
-import Services from './components/Services';
+import About from './components/About';
 import History from './components/History';
+import Services from './components/Services';
 import Equipments from './components/Equipments';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+// import Clients from './components/Clients';
+import Footer from './components/Footer';
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState('en');
@@ -34,9 +34,9 @@ function App() {
       <Services currentLanguage={currentLanguage} />
       <History currentLanguage={currentLanguage} />
       <Equipments currentLanguage={currentLanguage}/>
-      <Clients currentLanguage={currentLanguage} />
-       <Contact currentLanguage={currentLanguage} />
-       <Footer currentLanguage={currentLanguage} />
+      {/* <Clients currentLanguage={currentLanguage} /> */}
+      <Contact currentLanguage={currentLanguage} />
+      <Footer currentLanguage={currentLanguage} />
       
       
       
