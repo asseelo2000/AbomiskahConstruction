@@ -1,4 +1,8 @@
-import React from 'react';
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 
 import { motion } from 'framer-motion';
 import {
@@ -10,172 +14,203 @@ import {
   Wrench,
 } from 'lucide-react';
 
-// Local Button Component
-const Button = ({ children, className = '', ...props }) => (
-  <button
-    {...props}
-    className={`inline-flex items-center justify-center rounded-md border border-primary px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-600 hover:text-white transition duration-300 ${className}`}
-  >
-    {children}
-  </button>
-);
-
 const Equipments = ({ currentLanguage }) => {
   const content = {
     en: {
       title: "Equipments",
       subtitle: "Comprehensive Construction Solutions",
-      description:
-        "From residential homes to large commercial and industrial projects, we provide comprehensive construction Equipments with unmatched quality and expertise.",
-      cta: "Get Quote",
       Equipments: [
         {
           icon: Home,
           title: "Residential Construction",
           description:
             "Custom homes, renovations, and residential developments built to the highest standards of quality and comfort.",
-          features: ["Custom Home Design", "Renovations & Extensions", "Interior Finishing", "Landscaping"],
+          features: [
+            "Custom Home Design",
+            "Renovations & Extensions",
+            "Interior Finishing",
+            "Landscaping",
+          ],
         },
         {
           icon: Building,
           title: "Commercial Construction",
           description:
             "Office buildings, retail spaces, and commercial complexes designed for functionality and aesthetic appeal.",
-          features: ["Office Buildings", "Retail Spaces", "Restaurants & Hotels", "Shopping Centers"],
+          features: [
+            "Office Buildings",
+            "Retail Spaces",
+            "Restaurants & Hotels",
+            "Shopping Centers",
+          ],
         },
         {
           icon: Factory,
           title: "Industrial Construction",
           description:
             "Warehouses, factories, and industrial facilities built for efficiency, safety, and long-term durability.",
-          features: ["Warehouses", "Manufacturing Plants", "Storage Facilities", "Industrial Complexes"],
+          features: [
+            "Warehouses",
+            "Manufacturing Plants",
+            "Storage Facilities",
+            "Industrial Complexes",
+          ],
         },
         {
           icon: Wrench,
           title: "Infrastructure Development",
           description:
             "Roads, bridges, and public infrastructure projects that connect communities and drive economic growth.",
-          features: ["Road Construction", "Bridge Building", "Utilities Installation", "Site Development"],
+          features: [
+            "Road Construction",
+            "Bridge Building",
+            "Utilities Installation",
+            "Site Development",
+          ],
         },
         {
           icon: Hammer,
           title: "Renovation & Remodeling",
           description:
             "Transform existing spaces with our comprehensive renovation and remodeling Equipments.",
-          features: ["Kitchen Remodeling", "Bathroom Renovation", "Office Upgrades", "Structural Modifications"],
+          features: [
+            "Kitchen Remodeling",
+            "Bathroom Renovation",
+            "Office Upgrades",
+            "Structural Modifications",
+          ],
         },
         {
           icon: Shield,
           title: "Project Management",
           description:
             "Complete project oversight from planning to completion, ensuring timely delivery and quality results.",
-          features: ["Project Planning", "Quality Control", "Timeline Management", "Budget Oversight"],
+          features: [
+            "Project Planning",
+            "Quality Control",
+            "Timeline Management",
+            "Budget Oversight",
+          ],
         },
       ],
-    },
-    ar: {
-      title: "خدماتنا",
-      subtitle: "حلول إنشائية شاملة",
-      description:
-        "من المنازل السكنية إلى المشاريع التجارية والصناعية الكبيرة، نقدم خدمات البناء الشاملة بجودة وخبرة لا مثيل لها.",
-      cta: "احصل على عرض سعر",
-      Equipments: [
-        {
-          icon: Home,
-          title: "البناء السكني",
-          description:
-            "منازل مخصصة وتجديدات ومشاريع سكنية مبنية بأعلى معايير الجودة والراحة.",
-          features: ["تصميم المنازل", "التجديدات", "تشطيبات داخلية", "تنسيق الحدائق"],
-        },
-        {
-          icon: Building,
-          title: "البناء التجاري",
-          description:
-            "المباني المكتبية والمساحات التجارية والمجمعات التجارية المصممة للجمال والوظيفة.",
-          features: ["مكاتب", "محلات", "مطاعم وفنادق", "مراكز تسوق"],
-        },
-        {
-          icon: Factory,
-          title: "البناء الصناعي",
-          description:
-            "مستودعات، مصانع، ومرافق صناعية مبنية بالكفاءة والسلامة.",
-          features: ["مستودعات", "مصانع", "مرافق تخزين", "مجمعات صناعية"],
-        },
-        {
-          icon: Wrench,
-          title: "تطوير البنية التحتية",
-          description:
-            "طرق وجسور ومشاريع بنية تحتية عامة تربط المجتمعات.",
-          features: ["بناء الطرق", "بناء الجسور", "التركيبات", "تطوير المواقع"],
-        },
-        {
-          icon: Hammer,
-          title: "تجديد وإعادة التصميم",
-          description:
-            "تحويل المساحات الحالية بخدمات التجديد.",
-          features: ["تجديد المطابخ", "تجديد الحمامات", "تحديث المكاتب", "تعديلات هيكلية"],
-        },
-        {
-          icon: Shield,
-          title: "إدارة المشاريع",
-          description:
-            "إشراف كامل من البداية للنهاية مع ضمان الجودة.",
-          features: ["تخطيط المشروع", "مراقبة الجودة", "إدارة الجدول الزمني", "إدارة الميزانية"],
-        },
-      ],
+      cta: "Get Quote",
     },
   };
 
-  const currentContent = content[currentLanguage];
+  const currentContent = content[currentLanguage] || content.en;
+
+  const containerRef = useRef(null);
+  const [isPaused, setIsPaused] = useState(false);
+
+  useEffect(() => {
+    if (isPaused) return;
+
+    const container = containerRef.current;
+    if (!container) return;
+
+    let scrollAmount = container.scrollLeft;
+    const speed = 0.5; // px per frame
+
+    let animationFrameId;
+
+    const scrollStep = () => {
+      if (!container) return;
+
+      scrollAmount += speed;
+      if (scrollAmount >= container.scrollWidth / 2) {
+        scrollAmount = 0;
+        container.scrollLeft = 0;
+      } else {
+        container.scrollLeft = scrollAmount;
+      }
+
+      animationFrameId = requestAnimationFrame(scrollStep);
+    };
+
+    animationFrameId = requestAnimationFrame(scrollStep);
+
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isPaused]);
+
+  const equipmentItems = [...currentContent.Equipments, ...currentContent.Equipments];
+
+  const handlePressStart = () => setIsPaused(true);
+  const handlePressEnd = () => setIsPaused(false);
 
   return (
-    <section
-      id="equipments"
-      className="py-20 bg-gradient-to-br from-blue-600 via-white to-red-600"
-      dir={currentLanguage === 'ar' ? 'rtl' : 'ltr'}
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-white">{currentContent.title}</h2>
-          <p className="text-xl text-white/80 mt-2">{currentContent.subtitle}</p>
-          <p className="text-lg text-white/70 mt-4 max-w-3xl mx-auto">
-            {currentContent.description}
-          </p>
+    <section className="py-16 bg-gradient-to-tr from-blue-700 to-red-600 text-white">
+      <div className="container mx-auto px-6 max-w-7xl">
+        <div className="text-center mb-12">
+          <h2 className="text-5xl font-bold">{currentContent.title}</h2>
+          <p className="mt-2 text-xl">{currentContent.subtitle}</p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {currentContent.Equipments.map((service, index) => {
-            const Icon = service.icon;
+        <div
+          ref={containerRef}
+          className="flex space-x-8 overflow-x-auto whitespace-nowrap scrollbar-hide cursor-pointer"
+          onMouseDown={handlePressStart}
+          onMouseUp={handlePressEnd}
+          onMouseLeave={handlePressEnd}
+          onTouchStart={handlePressStart}
+          onTouchEnd={handlePressEnd}
+          style={{
+            scrollBehavior: "auto",
+            scrollSnapType: "none",
+          }}
+        >
+          {equipmentItems.map((item, idx) => {
+            const originalIndex = idx % currentContent.Equipments.length;
+            const originalItem = currentContent.Equipments[originalIndex];
+            const OriginalIcon = originalItem.icon;
+
             return (
               <motion.div
-                key={index}
+                key={idx}
+                className="inline-block snap-none bg-white/10 backdrop-blur-md rounded-3xl p-8 w-80 flex flex-col items-center text-center shadow-lg"
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
+                transition={{ duration: 0.6, delay: originalIndex * 0.15 }}
+                viewport={{ once: true }}
               >
-                <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-red-500 rounded-xl flex items-center justify-center mb-4">
-                  <Icon className="text-white w-7 h-7" />
+                <div className="bg-gradient-to-br from-blue-600 to-red-500 rounded-full p-6 mb-6 shadow-md">
+                  <OriginalIcon className="w-14 h-14 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
-                <ul className="text-sm text-gray-500 space-y-2 mb-4">
-                  {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-blue-500 rounded-full"></span>
-                      {feature}
-                    </li>
+                <h3 className="text-2xl font-semibold mb-3">{originalItem.title}</h3>
+                {/* Description removed */}
+                <ul className="list-disc list-inside text-white/80 space-y-1">
+                  {originalItem.features.map((f, i) => (
+                    <li key={i}>{f}</li>
                   ))}
                 </ul>
-                <Button onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>
-                  {currentContent.cta}
-                </Button>
               </motion.div>
             );
           })}
         </div>
+
+        <div className="mt-12 text-center">
+          <button
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+            className="bg-white text-blue-700 font-semibold px-8 py-3 rounded-xl shadow-lg hover:bg-blue-600 hover:text-white transition"
+          >
+            {currentContent.cta}
+          </button>
+        </div>
       </div>
+
+      {/* Hide scrollbar globally */}
+      <style>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none;  /* Firefox */
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;  /* Chrome, Safari, Opera */
+        }
+      `}</style>
     </section>
   );
 };
