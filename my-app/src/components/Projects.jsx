@@ -44,7 +44,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
           client: 'Private Developer',
           description:
             'A premium residential development featuring 120 luxury apartments with modern amenities and sustainable design.',
-          image: '/images/LuxuryResidentialComplex.jpg',
+          image: '/images/projects/LuxuryResidentialComplex.jpg',
           stats: {
             units: '120 Units',
             area: '15,000 m²',
@@ -60,7 +60,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
           client: 'Tech Corporation',
           description:
             'Modern 15-story office building with state-of-the-art facilities and energy-efficient systems.',
-          image: '/images/CorporateHeadquarters.jpg',
+          image: '/images/projects/CorporateHeadquarters.jpg',
           stats: {
             floors: '15 Floors',
             area: '25,000 m²',
@@ -76,7 +76,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
           client: 'Manufacturing Corp',
           description:
             'Large-scale manufacturing plant with advanced automation systems and safety features.',
-          image: '/images/ManufacturingFacility.jpg',
+          image: '/images/projects/ManufacturingFacility.jpg',
           stats: {
             capacity: '50,000 Units/Month', 
             area: '40,000 m²',

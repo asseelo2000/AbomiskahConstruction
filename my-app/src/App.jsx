@@ -30,11 +30,11 @@ function App() {
       />
       <HeroFinal currentLanguage={currentLanguage} />
       <About currentLanguage={currentLanguage} />
-      <Projects currentLanguage={currentLanguage} />
-      <Services currentLanguage={currentLanguage} />
       <History currentLanguage={currentLanguage} />
-      <Equipments currentLanguage={currentLanguage}/>
+      <Services currentLanguage={currentLanguage} />
       <Clients currentLanguage={currentLanguage} />
+      <Equipments currentLanguage={currentLanguage}/>
+      <Projects currentLanguage={currentLanguage} />
       <Contact currentLanguage={currentLanguage} />
       <Footer currentLanguage={currentLanguage} />
       
