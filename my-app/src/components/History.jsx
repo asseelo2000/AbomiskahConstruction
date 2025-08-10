@@ -23,115 +23,181 @@ const History = ({ currentLanguage }) => {
   const content = {
     en: {
       title: "Our History",
-      subtitle: "A Legacy of Excellence Spanning Decades",
+      subtitle: "A Legacy of Excellence Since the 1960s",
       description:
-        "From humble beginnings in a small workshop to becoming a cornerstone of the construction industry, our journey is marked by innovation, resilience, and unwavering commitment to quality. Explore the milestones that have shaped us into the trusted leader we are today.",
+        "Abu Miska Enterprise has been a key player in Yemen's economy, starting from supplying essential goods in the early 1960s through adventurous journeys, to becoming a leading force in trading, construction, drilling, and infrastructure development across Yemen and beyond.",
       cta: "Get in Touch",
       milestones: [
         {
-          year: "2000",
+          year: "1960s-1968",
           icon: Calendar,
-          title: "Foundation and First Steps",
+          title: "Founding and Early Innovations",
           description:
-            "Founded by visionary engineer Ahmed Al-Mansour in a modest garage in Riyadh, starting with local residential repairs and small builds. This marked the birth of our passion for crafting spaces that last.",
-          highlights: ["Initial team of 5 dedicated builders", "First project: A family home renovation", "Focus on sustainable materials from day one"],
+            "Abu Miska Enterprise began supplying the Northern Region of Yemen with Food and Fabric via adventurous travels from Aden and Hodeida to Sadaa, taking up to three weeks using horses and carriages. In 1968, Sheikh Ahmed Abu Miska, the President to this day, employed the first car in Sadaa for service between Aden, Sanaa, and Sadaa.",
+          highlights: [
+            "Supplies from main ports Aden and Hodeida",
+            "Journeys up to three weeks with horses and carriages",
+            "Introduction of the first car in Sadaa for transportation",
+          ],
         },
         {
-          year: "2005",
-          icon: Award,
-          title: "Breakthrough Recognition",
-          description:
-            "Completed our first major commercial project—a state-of-the-art office complex—that earned us the National Construction Excellence Award. This milestone propelled us into larger-scale ventures.",
-          highlights: ["Expanded team to 50 experts", "Introduced eco-friendly building techniques", "Partnerships with leading architects"],
-        },
-        {
-          year: "2010",
+          year: "1975-1979",
           icon: Users,
-          title: "Team Growth and Diversification",
+          title: "Expansion of Facilities and Trade",
           description:
-            "Grew our workforce to over 200 professionals and diversified into industrial construction, tackling warehouses and factories with cutting-edge safety standards.",
-          highlights: ["Opened branches in Jeddah and Dammam", "Launched apprenticeship programs", "Adopted digital project management tools"],
+            "Built the first Central Warehouse in Sadaa (1975) and another in Reidah (1976). Expanded business into import of Tobacco and export of Coffee to Saudi Arabia (1975-1978). Took over sole distribution of Hayel Saeed Anam Products for North Yemen and built the first Showroom in Sanaa (1979).",
+          highlights: [
+            "Central Warehouse in Sadaa (1975)",
+            "Central Warehouse in Reidah (1976)",
+            "Tobacco import and Coffee export to Saudi Arabia (1975-1978)",
+            "Sole distribution of Hayel Saeed Anam Products (1979)",
+            "First Showroom in Sanaa (1979)",
+          ],
         },
         {
-          year: "2015",
-          icon: Globe,
-          title: "International Expansion",
+          year: "1980-1985",
+          icon: Award,
+          title: "Entry into Construction",
           description:
-            "Ventured beyond borders with our first overseas project in the UAE, building luxury hotels and establishing a global footprint while maintaining our core values of integrity and innovation.",
-          highlights: ["Collaborations with international firms", "Certification in green building standards", "Community outreach initiatives launched"],
+            "Founded the Abu Miska Construction Division and received the first contract for the Central School Building in Sadaa (1980). Built Schools and Health Centers all over the North of Yemen (1980-1985).",
+          highlights: [
+            "Founding of Construction Division (1980)",
+            "First contract: Central School in Sadaa",
+            "Schools and Health Centers across North Yemen (1980-1985)",
+          ],
         },
         {
-          year: "2020",
-          icon: Star,
-          title: "Innovation Amid Challenges",
-          description:
-            "Navigated the global pandemic by pivoting to smart construction technologies, including AI-driven planning and remote monitoring, ensuring project continuity and employee safety.",
-          highlights: ["Implemented contactless site management", "Won Innovation Award for Tech Integration", "Expanded into renewable energy infrastructure"],
-        },
-        {
-          year: "2025",
+          year: "1983-1990",
           icon: Rocket,
-          title: "Looking to the Future",
+          title: "Drilling Division and Major Infrastructure",
           description:
-            "Celebrating 25 years with ambitious goals: Sustainable mega-projects, AI-optimized designs, and a commitment to carbon-neutral builds. Our history fuels our drive for tomorrow's horizons.",
-          highlights: ["R&D center established", "Partnerships with tech startups", "Vision 2030 alignment for national development"],
+            "Founded the Abu Miska Drilling Division and purchased the first Drilling Rig operated in Sadaa (1983). Purchased 10 Drilling Rigs and operated on a national level (1983-1990). Awarded Sadaa Dam (1986), completed Sana’a Dam (1988), and started import and distribution of Spare Parts for Machinery, Down hole Equipment, and Drilling Fluids (1989).",
+          highlights: [
+            "Drilling Division founded with first rig (1983)",
+            "Expansion to 10 rigs and national operations (1983-1990)",
+            "Sadaa Dam awarded (1986)",
+            "Sana’a Dam completed (1988)",
+            "Import of spare parts and equipment (1989)",
+          ],
+        },
+        {
+          year: "1994-2000",
+          icon: Globe,
+          title: "New Management and Road Construction",
+          description:
+            "Hisham Abu Miska joined as General Manager (1994). Started Jebel Ali Operations (1994). Began Road Construction Business (1995). Awarded and completed an 80 km highway project in Abyan (1999-2000).",
+          highlights: [
+            "Hisham Abu Miska as General Manager (1994)",
+            "Jebel Ali Operations launched (1994)",
+            "Road Construction Business started (1995)",
+            "80 km highway in Abyan awarded (1999)",
+            "Abyan Project completed (2000)",
+          ],
+        },
+        {
+          year: "2001-2015",
+          icon: Star,
+          title: "Major Growth and International Expansion",
+          description:
+            "Awarded wells for the Grand Mosque in Sanaa (2001). Became the largest contracting company in North Yemen (2002). Awarded 435 km highway construction in Hadramout, the largest infrastructure project there (2003). Restructured the company by major strategic business units (2004). Employees exceeded 500 for the first time (2006). Opened a branch in Djibouti for water well drilling and construction services (2015).",
+          highlights: [
+            "Wells for Grand Mosque in Sanaa (2001)",
+            "Largest contracting company in North Yemen (2002)",
+            "435 km highway in Hadramout (2003)",
+            "Company restructuring (2004)",
+            "Over 500 employees (2006)",
+            "Djibouti branch opened (2015)",
+          ],
         },
       ],
     },
     ar: {
       title: "تاريخنا",
-      subtitle: "إرث من التميز عبر العقود",
+      subtitle: "إرث من التميز منذ الستينيات",
       description:
-        "من بدايات متواضعة في ورشة صغيرة إلى أن أصبحنا عماد صناعة البناء، رحلتنا مليئة بالابتكار والصمود والالتزام غير المحدود بالجودة. استكشف المعالم التي شكلتنا إلى القائد الموثوق الذي نحن عليه اليوم.",
+        "كانت شركة أبو مسكة لاعباً رئيسياً في اقتصاد اليمن، بدءاً من توريد السلع الأساسية في أوائل الستينيات من خلال رحلات مغامرة، إلى أن أصبحت قوة رائدة في التجارة والبناء والحفر وتطوير البنية التحتية عبر اليمن وخارجها.",
       cta: "تواصل معنا",
       milestones: [
         {
-          year: "2000",
+          year: "1960s-1968",
           icon: Calendar,
-          title: "التأسيس والخطوات الأولى",
+          title: "التأسيس والابتكارات المبكرة",
           description:
-            "تأسست على يد المهندس الرؤيوي أحمد المنصور في مرآب صغير في الرياض، بدءًا بإصلاحات سكنية محلية وبناءات صغيرة. هذا كان ميلاد شغفنا بصنع مساحات تدوم.",
-          highlights: ["فريق أولي من 5 بنائين مخلصين", "أول مشروع: تجديد منزل عائلي", "التركيز على المواد المستدامة من اليوم الأول"],
+            "بدأت شركة أبو مسكة في توريد الطعام والنسيج إلى المنطقة الشمالية من اليمن عبر رحلات مغامرة من عدن والحديدة إلى سادة، تستغرق حتى ثلاثة أسابيع باستخدام الخيول والعربات. في عام 1968، استخدم الشيخ أحمد أبو مسكة، الرئيس حتى اليوم، السيارة الأولى في سادة للخدمة بين عدن وصنعاء وسادة.",
+          highlights: [
+            "توريدات من الموانئ الرئيسية عدن والحديدة",
+            "رحلات تصل إلى ثلاثة أسابيع باستخدام الخيول والعربات",
+            "إدخال السيارة الأولى في سادة للنقل",
+          ],
         },
         {
-          year: "2005",
-          icon: Award,
-          title: "التعرف الرائد",
-          description:
-            "أكملنا أول مشروع تجاري كبير—مجمع مكاتب حديث—الذي منحنا جائزة التميز الوطني في البناء. هذا المعلم دفعنا نحو مشاريع أكبر حجمًا.",
-          highlights: ["توسيع الفريق إلى 50 خبيرًا", "إدخال تقنيات بناء صديقة للبيئة", "شراكات مع مهندسين معماريين رائدين"],
-        },
-        {
-          year: "2010",
+          year: "1975-1979",
           icon: Users,
-          title: "نمو الفريق والتنويع",
+          title: "توسع المنشآت والتجارة",
           description:
-            "نما قوتنا العاملة إلى أكثر من 200 متخصص وتنويعنا في البناء الصناعي، متعاملين مع المستودعات والمصانع بمعايير سلامة متطورة.",
-          highlights: ["فتح فروع في جدة والدمام", "إطلاق برامج التدريب المهني", "تبني أدوات إدارة المشاريع الرقمية"],
+            "بناء أول مستودع مركزي في سادة (1975) وآخر في ريدة (1976). توسع الأعمال في استيراد التبغ وتصدير القهوة إلى السعودية (1975-1978). تولي التوزيع الحصري لمنتجات هائل سعيد أنم لشمال اليمن وبناء أول صالة عرض في صنعاء (1979).",
+          highlights: [
+            "مستودع مركزي في سادة (1975)",
+            "مستودع مركزي في ريدة (1976)",
+            "استيراد التبغ وتصدير القهوة إلى السعودية (1975-1978)",
+            "التوزيع الحصري لمنتجات هائل سعيد أنم (1979)",
+            "أول صالة عرض في صنعاء (1979)",
+          ],
         },
         {
-          year: "2015",
-          icon: Globe,
-          title: "التوسع الدولي",
+          year: "1980-1985",
+          icon: Award,
+          title: "الدخول في مجال البناء",
           description:
-            "غامرنا خارج الحدود بأول مشروع خارجي في الإمارات، بناء فنادق فاخرة وإنشاء بصمة عالمية مع الحفاظ على قيمنا الأساسية من النزاهة والابتكار.",
-          highlights: ["تعاونات مع شركات دولية", "شهادة في معايير البناء الأخضر", "إطلاق مبادرات مجتمعية"],
+            "تأسيس قسم البناء في أبو مسكة وحصول على أول عقد لبناء المدرسة المركزية في سادة (1980). بناء مدارس ومراكز صحية في جميع أنحاء شمال اليمن (1980-1985).",
+          highlights: [
+            "تأسيس قسم البناء (1980)",
+            "أول عقد: المدرسة المركزية في سادة",
+            "مدارس ومراكز صحية عبر شمال اليمن (1980-1985)",
+          ],
         },
         {
-          year: "2020",
-          icon: Star,
-          title: "الابتكار وسط التحديات",
-          description:
-            "تنقلنا خلال الجائحة العالمية بالتحول إلى تقنيات البناء الذكية، بما في ذلك التخطيط المدعوم بالذكاء الاصطناعي والمراقبة عن بعد، مضمونين استمرارية المشاريع وسلامة الموظفين.",
-          highlights: ["تنفيذ إدارة مواقع بدون تماس", "فوز بجائزة الابتكار للتكامل التكنولوجي", "التوسع في بنية تحتية الطاقة المتجددة"],
-        },
-        {
-          year: "2025",
+          year: "1983-1990",
           icon: Rocket,
-          title: "النظر إلى المستقبل",
+          title: "قسم الحفر ومشاريع البنية التحتية الكبرى",
           description:
-            "نحتفل بـ25 عامًا بأهداف طموحة: مشاريع عملاقة مستدامة، تصاميم محسنة بالذكاء الاصطناعي، والتزام بالبناء الكربوني المحايد. تاريخنا يغذي دافعنا نحو آفاق الغد.",
-          highlights: ["إنشاء مركز بحث وتطوير", "شراكات مع شركات ناشئة تكنولوجية", "التوافق مع رؤية 2030 للتطوير الوطني"],
+            "تأسيس قسم الحفر في أبو مسكة وشراء أول جهاز حفر يعمل في سادة (1983). شراء 10 أجهزة حفر وعمل على المستوى الوطني (1983-1990). منح سد سادة (1986)، إكمال سد صنعاء (1988)، وبدء استيراد وتوزيع قطع غيار الآلات والمعدات السفلية وسوائل الحفر (1989).",
+          highlights: [
+            "تأسيس قسم الحفر مع أول جهاز (1983)",
+            "توسع إلى 10 أجهزة وعمليات وطنية (1983-1990)",
+            "منح سد سادة (1986)",
+            "إكمال سد صنعاء (1988)",
+            "استيراد قطع الغيار والمعدات (1989)",
+          ],
+        },
+        {
+          year: "1994-2000",
+          icon: Globe,
+          title: "إدارة جديدة وبناء الطرق",
+          description:
+            "انضم هشام أبو مسكة كمدير عام (1994). بدء عمليات جبل علي (1994). بدء أعمال بناء الطرق (1995). منح وإكمال مشروع طريق سريع 80 كم في أبين (1999-2000).",
+          highlights: [
+            "هشام أبو مسكة مديراً عاماً (1994)",
+            "إطلاق عمليات جبل علي (1994)",
+            "بدء أعمال بناء الطرق (1995)",
+            "طريق سريع 80 كم في أبين منح (1999)",
+            "إكمال مشروع أبين (2000)",
+          ],
+        },
+        {
+          year: "2001-2015",
+          icon: Star,
+          title: "نمو كبير وتوسع دولي",
+          description:
+            "منح آبار المسجد الكبير في صنعاء (2001). أصبحت أكبر شركة مقاولات في شمال اليمن (2002). منح بناء طريق سريع 435 كم في حضرموت، أكبر مشروع بنية تحتية هناك (2003). إعادة هيكلة الشركة حسب الوحدات الاستراتيجية الرئيسية (2004). تجاوز عدد الموظفين 500 لأول مرة (2006). فتح فرع في جيبوتي لحفر آبار المياه وخدمات البناء الأخرى (2015).",
+          highlights: [
+            "آبار المسجد الكبير في صنعاء (2001)",
+            "أكبر شركة مقاولات في شمال اليمن (2002)",
+            "طريق سريع 435 كم في حضرموت (2003)",
+            "إعادة هيكلة الشركة (2004)",
+            "أكثر من 500 موظف (2006)",
+            "فتح فرع في جيبوتي (2015)",
+          ],
         },
       ],
     },
@@ -214,9 +280,11 @@ const History = ({ currentLanguage }) => {
                 viewport={{ once: false, amount: 0.3 }}
               >
                 {/* Milestone Node */}
-                <div className="w-16 h-16 bg-white rounded-full flex flex-col items-center justify-center border-4 border-red-600 shadow-md z-10 transform hover:scale-110 transition-transform duration-300">
-                  <Icon className="text-blue-600 w-6 h-6" />
-                  <span className="text-xs font-bold text-gray-800 mt-1">{milestone.year}</span>
+                <div className="w-20 h-20 bg-white rounded-full border-4 border-red-600 shadow-md z-10 transform hover:scale-110 transition-transform duration-300 flex items-center justify-center">
+                  <div className="flex flex-col items-center leading-tight">
+                    <Icon className="text-blue-600 w-6 h-6 mb-0.5" />
+                    <span className="text-[10px] font-bold text-gray-800">{milestone.year}</span>
+                  </div>
                 </div>
 
                 {/* Card */}
