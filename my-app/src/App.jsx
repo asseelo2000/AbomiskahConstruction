@@ -10,7 +10,7 @@ import Services from './components/Services';
 import Equipments from './components/Equipments';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-// import Clients from './components/Clients';
+import Clients from './components/Clients';
 import Footer from './components/Footer';
 
 function App() {
@@ -34,7 +34,7 @@ function App() {
       <Services currentLanguage={currentLanguage} />
       <History currentLanguage={currentLanguage} />
       <Equipments currentLanguage={currentLanguage}/>
-      {/* <Clients currentLanguage={currentLanguage} /> */}
+      <Clients currentLanguage={currentLanguage} />
       <Contact currentLanguage={currentLanguage} />
       <Footer currentLanguage={currentLanguage} />
       

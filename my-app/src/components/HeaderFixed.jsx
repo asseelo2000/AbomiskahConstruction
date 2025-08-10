@@ -18,10 +18,10 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
     { key: 'about', en: 'About Us', ar: 'من نحن' },
     { key: 'history', en: 'History', ar: 'تاريخنا' },
     { key: 'services', en: 'Services', ar: 'خدماتنا' },
+    { key: 'clients', en: 'Clients', ar: 'عملاؤنا' },
     { key: 'equipments', en: 'Equipments', ar: 'معداتنا' },
     { key: 'projects', en: 'Projects', ar: 'مشاريعنا' },
     { key: 'contact', en: 'Contact', ar: 'اتصل بنا' }
-    // { key: 'clients', en: 'Clients', ar: 'عملاؤنا' },
   ];
 
   const scrollToSection = (sectionId) => {

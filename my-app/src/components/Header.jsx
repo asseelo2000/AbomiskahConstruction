@@ -21,8 +21,8 @@ const Header = ({ currentLanguage, onLanguageChange }) => {
     { key: 'history', en: 'History', ar: 'تاريخنا' },
     { key: 'equipments', en: 'Equipments', ar: 'معداتنا' },
     { key: 'projects', en: 'Projects', ar: 'مشاريعنا' },
+    { key: 'clients', en: 'Clients', ar: 'عملاؤنا' },
     { key: 'contact', en: 'Contact', ar: 'اتصل بنا' }
-    // { key: 'clients', en: 'Clients', ar: 'عملاؤنا' },
   ];
 
   const scrollToSection = (sectionId) => {

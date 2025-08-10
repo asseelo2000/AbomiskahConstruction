@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import {
   CheckCircle,
   Clock,
@@ -8,6 +7,8 @@ import {
   Phone,
   Send,
 } from 'lucide-react';
+// New imports for Google Maps
+import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
 
 const Contact = ({ currentLanguage }) => {
   const [formData, setFormData] = useState({
@@ -126,6 +127,25 @@ const Contact = ({ currentLanguage }) => {
         message: ''
       });
     }, 3000);
+  };
+
+  // Load Google Maps API script
+  const { isLoaded } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: 'AIzaSyCI1s4gfgAJhKJQA19Ff2Uv4NBwsdXBFpQ' // Replace with your actual API key
+  });
+  // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI1s4gfgAJhKJQA19Ff2Uv4NBwsdXBFpQ&amp;libraries=places&amp;callback=initMap" async="" defer=""></script>
+
+  // Define the center coordinates (replace with your actual lat/lng)
+  const center = {
+    lat: 40.7128, // Example: New York City latitude
+    lng: -74.0060 // Example: New York City longitude
+  };
+
+  // Map container style (make it responsive)
+  const mapContainerStyle = {
+    width: '100%',
+    height: '400px' // Adjust height as needed
   };
 
   return (
@@ -304,19 +324,27 @@ const Contact = ({ currentLanguage }) => {
           </div>
         </div>
 
-        {/* Map Placeholder */}
+        {/* Google Map Integration (replaces placeholder) */}
         <div className="mt-16">
-          <div className="bg-gradient-to-br from-blue-100 to-red-100 h-64 rounded-2xl flex items-center justify-center">
-            <div className="text-center">
-              <MapPin className="w-16 h-16 text-blue-700 mx-auto mb-4" />
-              <p className="text-lg text-gray-600">
-                {currentLanguage === 'ar' ? 'خريطة الموقع' : 'Interactive Map'}
-              </p>
-              <p className="text-sm text-gray-500">
-                {currentLanguage === 'ar' ? 'سيتم إضافة الخريطة التفاعلية هنا' : 'Interactive map will be integrated here'}
-              </p>
+          {isLoaded ? (
+            <GoogleMap
+              mapContainerStyle={mapContainerStyle}
+              center={center}
+              zoom={15} // Adjust zoom level as needed (higher = more zoomed in)
+            >
+              {/* Marker for the exact address */}
+              <Marker position={center} />
+            </GoogleMap>
+          ) : (
+            <div className="bg-gradient-to-br from-blue-100 to-red-100 h-64 rounded-2xl flex items-center justify-center">
+              <div className="text-center">
+                <MapPin className="w-16 h-16 text-blue-700 mx-auto mb-4" />
+                <p className="text-lg text-gray-600">
+                  {currentLanguage === 'ar' ? 'جاري تحميل الخريطة...' : 'Loading Map...'}
+                </p>
+              </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
     </section>
