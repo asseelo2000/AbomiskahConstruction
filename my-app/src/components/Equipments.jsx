@@ -1,12 +1,17 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion } from "framer-motion";
+import React, {
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
+
+import { motion } from 'framer-motion';
 import {
   Factory,
-  Hammer,
   Globe,
+  Hammer,
   Shield,
   Wrench,
-} from "lucide-react";
+} from 'lucide-react';
 
 const Equipments = ({ currentLanguage }) => {
   const content = {
@@ -19,7 +24,7 @@ const Equipments = ({ currentLanguage }) => {
           icon: Shield,
           title: "Equipment Capabilities",
           description: "Overview of our equipment capabilities and features.",
-          pdf: "equipment-capabilities.pdf",
+          pdf: "pdfs/Template.pdf",
           images: ["/images/projects/LuxuryResidentialComplex.jpg", "/images/projects/LuxuryResidentialComplex.jpg"],
           features: [],
         },
@@ -27,7 +32,7 @@ const Equipments = ({ currentLanguage }) => {
           icon: Factory,
           title: "Machinery Park",
           description: "Our extensive machinery park for various operations.",
-          pdf: "machinery-park.pdf",
+          pdf: "pdfs/Template.pdf",
           images: ["/images/projects/LuxuryResidentialComplex.jpg", "/images/projects/LuxuryResidentialComplex.jpg"],
           features: [],
         },
@@ -35,7 +40,7 @@ const Equipments = ({ currentLanguage }) => {
           icon: Wrench,
           title: "List of Equipment Owned",
           description: "Detailed list of all equipment owned by the company.",
-          pdf: "list-of-equipment-owned.pdf",
+          pdf: "pdfs/Template.pdf",
           images: ["/images/projects/LuxuryResidentialComplex.jpg", "/images/projects/LuxuryResidentialComplex.jpg"],
           features: [],
         },
@@ -43,7 +48,7 @@ const Equipments = ({ currentLanguage }) => {
           icon: Hammer,
           title: "List of Drilling Equipment",
           description: "Specialized drilling equipment in our inventory.",
-          pdf: "list-of-drilling-equipment.pdf",
+          pdf: "pdfs/Template.pdf",
           images: ["/images/projects/LuxuryResidentialComplex.jpg", "/images/projects/LuxuryResidentialComplex.jpg"],
           features: [],
         },
@@ -52,7 +57,7 @@ const Equipments = ({ currentLanguage }) => {
           title:
             "Equipment in the Republic of Djibouti owned by Abu Miska",
           description: "Equipment assets in Djibouti.",
-          pdf: "djibouti-equipment.pdf",
+          pdf: "pdfs/Template.pdf",
           images: ["/images/projects/LuxuryResidentialComplex.jpg", "/images/projects/LuxuryResidentialComplex.jpg"],
           features: [],
         },
@@ -67,7 +72,7 @@ const Equipments = ({ currentLanguage }) => {
           icon: Shield,
           title: "قدرات المعدات",
           description: "نظرة عامة على قدرات معداتنا وميزاتها.",
-          pdf: "equipment-capabilities.pdf",
+          pdf: "pdfs/Template.pdf",
           images: ["/images/projects/LuxuryResidentialComplex.jpg", "/images/projects/LuxuryResidentialComplex.jpg"],
           features: [],
         },
@@ -83,7 +88,7 @@ const Equipments = ({ currentLanguage }) => {
           icon: Wrench,
           title: "قائمة المعدات المملوكة",
           description: "قائمة مفصلة بجميع المعدات المملوكة للشركة.",
-          pdf: "list-of-equipment-owned.pdf",
+          pdf: "pdfs/Template.pdf",
           images: ["/images/projects/LuxuryResidentialComplex.jpg", "/images/projects/LuxuryResidentialComplex.jpg"],
           features: [],
         },
@@ -100,7 +105,7 @@ const Equipments = ({ currentLanguage }) => {
           title:
             "المعدات في جمهورية جيبوتي المملوكة لأبو مسكة",
           description: "أصول المعدات في جيبوتي.",
-          pdf: "djibouti-equipment.pdf",
+          pdf: "pdfs/Template.pdf",
           images: ["/images/projects/LuxuryResidentialComplex.jpg", "/images/projects/LuxuryResidentialComplex.jpg"],
           features: [],
         },
@@ -114,41 +119,41 @@ const Equipments = ({ currentLanguage }) => {
   const [selectedEquipment, setSelectedEquipment] = useState(null);
 
   useEffect(() => {
-  if (selectedEquipment) {
-    setIsPaused(true);
-  } else {
-    setIsPaused(false);
-  }
-}, [selectedEquipment]);
+    if (selectedEquipment) {
+      setIsPaused(true);
+    } else {
+      setIsPaused(false);
+    }
+  }, [selectedEquipment]);
 
-useEffect(() => {
-  if (isPaused) return;
+  useEffect(() => {
+    if (isPaused) return;
 
-  const container = containerRef.current;
-  if (!container) return;
-
-  let scrollAmount = container.scrollLeft;
-  const speed = 0.5;
-  let animationFrameId;
-
-  const scrollStep = () => {
+    const container = containerRef.current;
     if (!container) return;
 
-    scrollAmount += speed;
-    if (scrollAmount >= container.scrollWidth / 2) {
-      scrollAmount = 0;
-      container.scrollLeft = 0;
-    } else {
-      container.scrollLeft = scrollAmount;
-    }
+    let scrollAmount = container.scrollLeft;
+    const speed = 0.5;
+    let animationFrameId;
+
+    const scrollStep = () => {
+      if (!container) return;
+
+      scrollAmount += speed;
+      if (scrollAmount >= container.scrollWidth / 2) {
+        scrollAmount = 0;
+        container.scrollLeft = 0;
+      } else {
+        container.scrollLeft = scrollAmount;
+      }
+
+      animationFrameId = requestAnimationFrame(scrollStep);
+    };
 
     animationFrameId = requestAnimationFrame(scrollStep);
-  };
 
-  animationFrameId = requestAnimationFrame(scrollStep);
-
-  return () => cancelAnimationFrame(animationFrameId);
-}, [isPaused]);
+    return () => cancelAnimationFrame(animationFrameId);
+  }, [isPaused]);
 
   const equipmentItems = [
     ...currentContent.equipments,
@@ -157,6 +162,7 @@ useEffect(() => {
 
   return (
     <section
+      id="equipments"
       className="py-16 bg-gradient-to-tr from-blue-700 to-red-600 text-white"
       dir={currentLanguage === "ar" ? "rtl" : "ltr"}
     >
@@ -169,8 +175,8 @@ useEffect(() => {
         <div
           ref={containerRef}
           className="flex space-x-8 overflow-x-auto scrollbar-hide cursor-pointer py-6"
-          onMouseEnter={() => !selectedEquipment && setIsPaused(true)} // don't override modal pause
-          onMouseLeave={() => !selectedEquipment && setIsPaused(false)} // resume only if modal closed
+          onMouseEnter={() => !selectedEquipment && setIsPaused(true)}
+          onMouseLeave={() => !selectedEquipment && setIsPaused(false)}
           style={{
             scrollBehavior: "auto",
             scrollSnapType: "none",
