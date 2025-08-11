@@ -151,7 +151,7 @@ const Services = ({ currentLanguage }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300"
+                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2"
               >
                 <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-red-500 rounded-xl flex items-center justify-center mb-4">
                   <Icon className="text-white w-7 h-7" />
