@@ -40,7 +40,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
           description:
             'A premium residential development featuring 120 luxury apartments with modern amenities and sustainable design.',
           image: '/images/projects/LuxuryResidentialComplex.jpg',
-          pdf: 'pdfs/LuxuryResidentialComplex.pdf',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
           images: [
             '/images/projects/LuxuryResidentialComplex.jpg',
             '/images/projects/LuxuryResidentialComplex2.jpg'
@@ -61,7 +61,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
           description:
             'Modern 15-story office building with state-of-the-art facilities and energy-efficient systems.',
           image: '/images/projects/CorporateHeadquarters.jpg',
-          pdf: 'pdfs/CorporateHeadquarters.pdf',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
           images: [
             '/images/projects/CorporateHeadquarters.jpg',
             '/images/projects/CorporateHeadquarters2.jpg'
@@ -82,7 +82,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
           description:
             'Large-scale manufacturing plant with advanced automation systems and safety features.',
           image: '/images/projects/ManufacturingFacility.jpg',
-          pdf: 'pdfs/ManufacturingFacility.pdf',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
           images: [
             '/images/projects/ManufacturingFacility.jpg',
             '/images/projects/ManufacturingFacility2.jpg'
@@ -118,7 +118,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
           description:
             'مشروع سكني متميز يضم 120 شقة فاخرة مع وسائل الراحة الحديثة والتصميم المستدام.',
           image: '/images/projects/LuxuryResidentialComplex.jpg',
-          pdf: 'pdfs/LuxuryResidentialComplex.pdf',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
           images: [
             '/images/projects/LuxuryResidentialComplex.jpg',
             '/images/projects/LuxuryResidentialComplex2.jpg'

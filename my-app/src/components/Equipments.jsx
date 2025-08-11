@@ -117,43 +117,60 @@ const Equipments = ({ currentLanguage }) => {
   const containerRef = useRef(null);
   const [isPaused, setIsPaused] = useState(false);
   const [selectedEquipment, setSelectedEquipment] = useState(null);
+  const lastTranslateRef = useRef(0); // stores last translate position
+  const lastTimestampRef = useRef(0);
 
   useEffect(() => {
-    if (selectedEquipment) {
-      setIsPaused(true);
-    } else {
-      setIsPaused(false);
+  if (isPaused) return;
+
+  const container = containerRef.current;
+  if (!container) return;
+
+  const innerContent = container.querySelector(".inner-scroll-content");
+  if (!innerContent) return;
+
+  let animationFrameId;
+  let startTime = null;
+
+  const totalWidth = innerContent.scrollWidth / 2; // duplicated content
+  const duration = 20000; // ms for full scroll
+
+  const scrollStep = (timestamp) => {
+    if (!startTime) {
+      startTime = timestamp;
     }
-  }, [selectedEquipment]);
 
-  useEffect(() => {
-    if (isPaused) return;
+    const elapsed = timestamp - startTime;
+    let translateXValue =
+      lastTranslateRef.current + (elapsed / duration) * totalWidth;
 
-    const container = containerRef.current;
-    if (!container) return;
+    if (translateXValue >= totalWidth) {
+      translateXValue %= totalWidth; // loop without reset jump
+    }
 
-    let scrollAmount = container.scrollLeft;
-    const speed = 0.5;
-    let animationFrameId;
+    if (currentLanguage === "ar") {
+      innerContent.style.transform = `translateX(${totalWidth - translateXValue}px)`;
+    } else {
+      innerContent.style.transform = `translateX(${-translateXValue}px)`;
+    }
 
-    const scrollStep = () => {
-      if (!container) return;
-
-      scrollAmount += speed;
-      if (scrollAmount >= container.scrollWidth / 2) {
-        scrollAmount = 0;
-        container.scrollLeft = 0;
-      } else {
-        container.scrollLeft = scrollAmount;
-      }
-
-      animationFrameId = requestAnimationFrame(scrollStep);
-    };
-
+    lastTimestampRef.current = timestamp;
     animationFrameId = requestAnimationFrame(scrollStep);
+  };
 
-    return () => cancelAnimationFrame(animationFrameId);
-  }, [isPaused]);
+  animationFrameId = requestAnimationFrame(scrollStep);
+
+  return () => {
+    cancelAnimationFrame(animationFrameId);
+    // Save last position when paused or component unmounts
+    if (lastTimestampRef.current && startTime) {
+      const elapsed = lastTimestampRef.current - startTime;
+      lastTranslateRef.current =
+        (lastTranslateRef.current + (elapsed / duration) * totalWidth) %
+        totalWidth;
+    }
+  };
+}, [isPaused, currentLanguage]);
 
   const equipmentItems = [
     ...currentContent.equipments,
@@ -174,52 +191,50 @@ const Equipments = ({ currentLanguage }) => {
 
         <div
           ref={containerRef}
-          className="flex space-x-8 overflow-x-auto scrollbar-hide cursor-pointer py-6"
+          className="flex space-x-8 overflow-x-hidden scrollbar-hide cursor-pointer py-6 relative"
           onMouseEnter={() => !selectedEquipment && setIsPaused(true)}
           onMouseLeave={() => !selectedEquipment && setIsPaused(false)}
-          style={{
-            scrollBehavior: "auto",
-            scrollSnapType: "none",
-          }}
         >
-          {equipmentItems.map((item, idx) => {
-            const originalIndex = idx % currentContent.equipments.length;
-            const originalItem = currentContent.equipments[originalIndex];
-            const OriginalIcon = originalItem.icon;
+          <div className="inner-scroll-content flex space-x-8">
+            {equipmentItems.map((item, idx) => {
+              const originalIndex = idx % currentContent.equipments.length;
+              const originalItem = currentContent.equipments[originalIndex];
+              const OriginalIcon = originalItem.icon;
 
-            return (
-              <motion.div
-                key={idx}
-                className="flex-shrink-0 bg-white/10 backdrop-blur-md rounded-3xl p-8 w-80 flex flex-col items-center text-center shadow-lg cursor-pointer overflow-hidden"
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={{
-                  scale: 1.05,
-                  transition: { type: "spring", stiffness: 300 },
-                }}
-                transition={{ duration: 0.6, delay: originalIndex * 0.15 }}
-                viewport={{ once: true }}
-                onClick={() => setSelectedEquipment(originalItem)}
-              >
-                <div className="bg-gradient-to-br from-blue-600 to-red-500 rounded-full p-6 mb-6 shadow-md">
-                  <OriginalIcon className="w-14 h-14 text-white" />
-                </div>
-                <h3 className="text-2xl font-semibold mb-3 break-words">
-                  {originalItem.title}
-                </h3>
-                <p className="text-white/80 mb-4 break-words">
-                  {originalItem.description}
-                </p>
-                {originalItem.features.length > 0 && (
-                  <ul className="list-disc list-inside text-white/80 space-y-1">
-                    {originalItem.features.map((f, i) => (
-                      <li key={i}>{f}</li>
-                    ))}
-                  </ul>
-                )}
-              </motion.div>
-            );
-          })}
+              return (
+                <motion.div
+                  key={idx}
+                  className="flex-shrink-0 bg-white/10 backdrop-blur-md rounded-3xl p-8 w-80 flex flex-col items-center text-center shadow-lg cursor-pointer overflow-hidden"
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{
+                    scale: 1.05,
+                    transition: { type: "spring", stiffness: 300 },
+                  }}
+                  transition={{ duration: 0.6, delay: originalIndex * 0.15 }}
+                  viewport={{ once: true }}
+                  onClick={() => setSelectedEquipment(originalItem)}
+                >
+                  <div className="bg-gradient-to-br from-blue-600 to-red-500 rounded-full p-6 mb-6 shadow-md">
+                    <OriginalIcon className="w-14 h-14 text-white" />
+                  </div>
+                  <h3 className="text-2xl font-semibold mb-3 break-words">
+                    {originalItem.title}
+                  </h3>
+                  <p className="text-white/80 mb-4 break-words">
+                    {originalItem.description}
+                  </p>
+                  {originalItem.features.length > 0 && (
+                    <ul className="list-disc list-inside text-white/80 space-y-1">
+                      {originalItem.features.map((f, i) => (
+                        <li key={i}>{f}</li>
+                      ))}
+                    </ul>
+                  )}
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="mt-12 text-center">
