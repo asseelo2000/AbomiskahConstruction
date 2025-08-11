@@ -18,8 +18,12 @@ function App() {
 
   const handleLanguageChange = (newLanguage) => {
     setCurrentLanguage(newLanguage);
-    document.documentElement.dir = newLanguage === 'ar' ? 'rtl' : 'ltr';
+
     document.documentElement.lang = newLanguage;
+    document.documentElement.dir = newLanguage === 'ar' ? 'rtl' : 'ltr';
+
+    document.body.classList.remove('en', 'ar');
+    document.body.classList.add(newLanguage);
   };
 
   return (

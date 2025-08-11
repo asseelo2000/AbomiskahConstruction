@@ -6,9 +6,20 @@
   * {
     @apply border-border outline-ring/50;
   }
-  body {
+  body,
+  body.en {
     @apply bg-background text-foreground;
+    font-family: 'Roboto', sans-serif;
   }
+
+  /* arabic mode */
+  body.ar {
+    @apply bg-background text-foreground;
+    font-family: 'Zain', sans-serif;
+    direction: rtl;
+    text-align: right;
+  }
+
 }
 
 @custom-variant dark (&:is(.dark *));
