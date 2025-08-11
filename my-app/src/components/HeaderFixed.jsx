@@ -55,8 +55,8 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
               <div className="absolute -bottom-1 -right-1 w-8 h-8 border-r-2 border-b-2 border-red-500"></div>
             </div>
             <div className="ml-3 mr-3">
-              <div className="text-lg font-semibold text-gray-800">Abomiskah</div>
-              <div className="text-xs text-gray-600">
+              <div className={`text-lg font-semibold ${isScrolled ? 'text-gray-800' : 'text-white'}`}>Abomiskah</div>
+              <div className={`text-xs ${isScrolled ? 'text-gray-600' : 'text-gray-300'}`}>
                 {currentLanguage === 'ar' ? 'شركة المقاولات' : 'Construction Company'}
               </div>
             </div>
@@ -68,7 +68,11 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
               <button
                 key={item.key}
                 onClick={() => scrollToSection(item.key)}
-                className="text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium"
+                className={`relative text-base font-medium transition-all duration-300 ${
+                  isScrolled 
+                    ? 'text-gray-700 hover:text-blue-600' 
+                    : 'text-white hover:text-red-400'
+                } after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[2px] after:bg-gradient-to-r after:from-blue-400 after:to-red-400 after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100`}
               >
                 {currentLanguage === 'ar' ? item.ar : item.en}
               </button>
@@ -80,7 +84,11 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
             {/* Language Switcher */}
             <button
               onClick={() => onLanguageChange(currentLanguage === 'en' ? 'ar' : 'en')}
-              className="flex items-center space-x-2 px-3 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-600 hover:text-white transition-colors duration-200"
+              className={`flex items-center space-x-2 px-3 py-2 rounded-lg transition-all duration-300 transform hover:scale-105 ${
+                isScrolled
+                  ? 'border border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white'
+                  : 'border border-white text-white hover:bg-white hover:text-blue-600'
+              }`}
             >
               <Globe className="w-6 h-4" />
               <span>{currentLanguage === 'en' ? 'العربية' : 'English'}</span>
@@ -91,7 +99,7 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
               className="lg:hidden p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
-              {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              {isMenuOpen ? <X className={`w-6 h-6 ${isScrolled ? 'text-gray-700' : 'text-white'}`} /> : <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-700' : 'text-white'}`} />}
             </button>
           </div>
         </div>
@@ -99,12 +107,20 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="lg:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md rounded-lg mt-2 shadow-lg">
+            <div className={`px-2 pt-2 pb-3 space-y-1 rounded-lg mt-2 shadow-lg ${
+              isScrolled 
+                ? 'bg-white/95 backdrop-blur-md' 
+                : 'bg-black/50 backdrop-blur-md'
+            }`}>
               {navItems.map((item) => (
                 <button
                   key={item.key}
                   onClick={() => scrollToSection(item.key)}
-                  className="block w-full text-left px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors duration-200"
+                  className={`block w-full text-left px-3 py-2 rounded-md transition-all duration-300 transform hover:scale-105 ${
+                    isScrolled
+                      ? 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
+                      : 'text-white hover:text-red-400 hover:bg-black/30'
+                  }`}
                 >
                   {currentLanguage === 'ar' ? item.ar : item.en}
                 </button>
@@ -118,4 +134,3 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
 };
 
 export default HeaderFixed;
-
