@@ -1,47 +1,38 @@
-import React, {
-  useEffect,
-  useState,
-} from 'react';
+import React, { useEffect, useState } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
-import {
-  motion,
-  useAnimation,
-} from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-
-const Clients = ({ currentLanguage = 'en' }) => {
-  const isArabic = currentLanguage === 'ar';
+const Clients = ({ currentLanguage = "en" }) => {
+  const isArabic = currentLanguage === "ar";
 
   const content = {
     en: {
-      title: 'Our Clients',
-      subtitle: 'Trusted by Leading Organizations',
+      title: "Our Clients",
+      subtitle: "Trusted by Leading Organizations",
       description:
         "We're proud to have worked with some of the most respected companies and organizations in the region.",
       clients: [
-        { name: 'Al-Rashid Development', logo: '🏢' },
-        { name: 'TechCorp International', logo: '💻' },
-        { name: 'Industrial Solutions', logo: '🏭' },
-       
-        { name: 'Metro Construction', logo: '🚇' },
-        { name: 'Royal Hotels Group', logo: '🏨' },
-        { name: 'Smart City Initiative', logo: '🌆' },
-        { name: 'Healthcare Partners', logo: '🏥' },
+        { name: "Al-Rashid Development", logo: "🏢" },
+        { name: "TechCorp International", logo: "💻" },
+        { name: "Industrial Solutions", logo: "🏭" },
+        { name: "Metro Construction", logo: "🚇" },
+        { name: "Royal Hotels Group", logo: "🏨" },
+        { name: "Smart City Initiative", logo: "🌆" },
+        { name: "Healthcare Partners", logo: "🏥" },
       ],
     },
     ar: {
-      title: 'عملاؤنا',
-      subtitle: 'موثوق من قبل المؤسسات الرائدة',
+      title: "عملاؤنا",
+      subtitle: "موثوق من قبل المؤسسات الرائدة",
       description:
-        'نحن فخورون بالعمل مع بعض أكثر الشركات والمؤسسات احتراماً في المنطقة.',
+        "نحن فخورون بالعمل مع بعض أكثر الشركات والمؤسسات احتراماً في المنطقة.",
       clients: [
-        { name: 'تطوير الراشد', logo: '🏢' },
-        { name: 'تك كورب الدولية', logo: '💻' },
-        { name: 'الحلول الصناعية', logo: '🏭' },
-       
-        { name: 'مجموعة الفنادق الملكية', logo: '🏨' },
-        { name: 'مبادرة المدينة الذكية', logo: '🌆' },
-        { name: 'شركاء الرعاية الصحية', logo: '🏥' },
+        { name: "تطوير الراشد", logo: "🏢" },
+        { name: "تك كورب الدولية", logo: "💻" },
+        { name: "الحلول الصناعية", logo: "🏭" },
+        { name: "مجموعة الفنادق الملكية", logo: "🏨" },
+        { name: "مبادرة المدينة الذكية", logo: "🌆" },
+        { name: "شركاء الرعاية الصحية", logo: "🏥" },
       ],
     },
   };
@@ -53,15 +44,31 @@ const Clients = ({ currentLanguage = 'en' }) => {
     visible: (i = 1) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.15, duration: 0.6, ease: 'easeOut' },
+      transition: { delay: i * 0.15, duration: 0.6, ease: "easeOut" },
     }),
   };
 
   const stats = [
-    { number: 500, suffix: '+', label: isArabic ? 'مشروع مكتمل' : 'Projects Completed' },
-    { number: 100, suffix: '+', label: isArabic ? 'عميل راضي' : 'Happy Clients' },
-    { number: 15, suffix: '+', label: isArabic ? 'سنة خبرة' : 'Years Experience' },
-    { number: 99, suffix: '%', label: isArabic ? 'معدل الرضا' : 'Satisfaction Rate' },
+    {
+      number: 500,
+      suffix: "+",
+      label: isArabic ? "مشروع مكتمل" : "Projects Completed",
+    },
+    {
+      number: 100,
+      suffix: "+",
+      label: isArabic ? "عميل راضي" : "Happy Clients",
+    },
+    {
+      number: 15,
+      suffix: "+",
+      label: isArabic ? "سنة خبرة" : "Years Experience",
+    },
+    {
+      number: 99,
+      suffix: "%",
+      label: isArabic ? "معدل الرضا" : "Satisfaction Rate",
+    },
   ];
 
   const [refStats, inViewStats] = useInView({ triggerOnce: true });
@@ -96,85 +103,94 @@ const Clients = ({ currentLanguage = 'en' }) => {
   }, [inViewStats]);
 
   const LogoRow = ({ clients, reverse }) => {
-    const totalClients = clients.length;
-    const logoWidth = 120; // smaller width
-    const gapWidth = 32;   // smaller gap
-    const totalWidth = totalClients * (logoWidth + gapWidth);
+  const totalClients = clients.length;
+  const logoWidth = 120;
+  const gapWidth = 32;
+  const totalWidth = totalClients * (logoWidth + gapWidth);
 
-    const controls = useAnimation();
+  const controls = useAnimation();
+  const duration = 30; // seconds for full scroll
 
-    const duration = 30; // seconds for full scroll
+  const [isPaused, setIsPaused] = useState(false);
+  const [currentX, setCurrentX] = useState(null);
 
-    const [isPaused, setIsPaused] = useState(false);
+  // Animate continuously
+  const animateScroll = (startX = null) => {
+    let from, to;
 
-    const animateScroll = () => {
-      let from, to;
-      if (!reverse) {
-        // left to right scroll: from -totalWidth to 0
-        from = -totalWidth;
-        to = 0;
-      } else {
-        // right to left scroll: from 0 to -totalWidth
-        from = 0;
-        to = -totalWidth;
-      }
+    if (!reverse) {
+      from = startX !== null ? startX : -totalWidth;
+      to = 0;
+    } else {
+      from = startX !== null ? startX : 0;
+      to = -totalWidth;
+    }
 
-      controls.set({ x: from });
+    const distance = Math.abs(to - from);
+    const remainingDuration = (distance / totalWidth) * duration;
 
-      controls
-        .start({
-          x: to,
-          transition: { duration: duration, ease: 'linear' },
-        })
-        .then(() => {
-          if (!isPaused) {
-            animateScroll();
-          }
-        });
-    };
+    controls.set({ x: from });
 
-    useEffect(() => {
-      if (!isPaused) {
-        animateScroll();
-      } else {
-        controls.stop();
-      }
-      return () => controls.stop();
-    }, [isPaused]);
-
-    return (
-      <div
-        className="relative overflow-hidden mb-10"
-        style={{ height: '140px', direction: 'ltr' }}
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-      >
-        <motion.div
-          className="flex flex-nowrap items-center"
-          style={{ width: totalWidth * 2 }}
-          animate={controls}
-          initial={{ x: 0 }}
-        >
-          {[...clients, ...clients].map(({ name, logo }, idx) => (
-            <div
-              key={idx}
-              className="flex flex-col items-center justify-center min-w-[120px] select-none text-center cursor-pointer"
-              style={{ marginRight: gapWidth }}
-              title={name}
-            >
-              <div className="text-5xl">{logo}</div>
-              <p className="text-base font-medium text-gray-900 mt-2">{name}</p>
-            </div>
-          ))}
-        </motion.div>
-      </div>
-    );
+    controls
+      .start({
+        x: to,
+        transition: { duration: remainingDuration, ease: "linear" },
+      })
+      .then(() => {
+        if (!isPaused) {
+          animateScroll(); // loop again
+        }
+      });
   };
+
+  useEffect(() => {
+    if (!isPaused) {
+      animateScroll(currentX);
+    } else {
+      controls.stop();
+    }
+    return () => controls.stop();
+  }, [isPaused]);
+
+  return (
+    <div
+      className="relative overflow-hidden mb-10"
+      style={{ height: "140px", direction: "ltr" }}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <motion.div
+        className="flex flex-nowrap items-center"
+        style={{ width: totalWidth * 2 }}
+        animate={controls}
+        initial={{ x: 0 }}
+        onUpdate={(latest) => {
+          // latest is the current animated style object
+          if (latest.x !== undefined) {
+            setCurrentX(latest.x);
+          }
+        }}
+      >
+        {[...clients, ...clients].map(({ name, logo }, idx) => (
+          <div
+            key={idx}
+            className="flex flex-col items-center justify-center min-w-[120px] select-none text-center cursor-pointer"
+            style={{ marginRight: gapWidth }}
+            title={name}
+          >
+            <div className="text-5xl">{logo}</div>
+            <p className="text-base font-medium text-gray-900 mt-2">{name}</p>
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+};
 
   return (
     <section
       id="clients"
-      dir={isArabic ? 'rtl' : 'ltr'}
+      dir={isArabic ? "rtl" : "ltr"}
       className="py-20 bg-gradient-to-r from-indigo-50 via-white to-pink-50 relative overflow-hidden"
       style={{
         backgroundImage: `radial-gradient(circle at top left, #a3bffa55, transparent 60%), 
@@ -199,8 +215,8 @@ const Clients = ({ currentLanguage = 'en' }) => {
           <p
             className={
               isArabic
-                ? 'text-base max-w-xl mx-auto text-gray-700 leading-relaxed text-right'
-                : 'text-base max-w-xl mx-auto text-gray-700 leading-relaxed text-left'
+                ? "text-base max-w-xl mx-auto text-gray-700 leading-relaxed text-right"
+                : "text-base max-w-xl mx-auto text-gray-700 leading-relaxed text-left"
             }
           >
             {currentContent.description}
@@ -221,7 +237,10 @@ const Clients = ({ currentLanguage = 'en' }) => {
           className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center mt-28 max-w-4xl mx-auto text-gray-900"
         >
           {stats.map(({ suffix, label }, i) => (
-            <div key={i} className="flex flex-col items-center group cursor-pointer relative">
+            <div
+              key={i}
+              className="flex flex-col items-center group cursor-pointer relative"
+            >
               <p
                 className="relative flex items-center justify-center
                            w-20 h-20 rounded-full
@@ -229,27 +248,33 @@ const Clients = ({ currentLanguage = 'en' }) => {
                            text-white font-extrabold text-4xl shadow-md
                            transition-all duration-500
                            group-hover:shadow-xl group-hover:scale-110"
-                style={{ willChange: 'transform' }}
+                style={{ willChange: "transform" }}
               >
                 <motion.span
                   animate={{ scale: counts[i] > 0 ? [1, 1.1, 1] : 1 }}
                   transition={{ delay: 1.6, duration: 0.4 }}
                   className="flex items-baseline"
-                  style={{ position: 'relative', zIndex: 2 }}
+                  style={{ position: "relative", zIndex: 2 }}
                 >
                   {counts[i]}
-                  <span className="text-xl font-semibold ml-1 align-super">{suffix}</span>
+                  <span className="text-xl font-semibold ml-1 align-super">
+                    {suffix}
+                  </span>
                 </motion.span>
 
                 <motion.span
                   className="absolute inset-0 rounded-full"
                   initial={{ opacity: 0, scale: 1 }}
                   whileHover={{ opacity: 0.4, scale: 1.2 }}
-                  transition={{ duration: 0.5, repeat: Infinity, repeatType: 'mirror' }}
+                  transition={{
+                    duration: 0.5,
+                    repeat: Infinity,
+                    repeatType: "mirror",
+                  }}
                   style={{
                     background:
-                      'radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%)',
-                    pointerEvents: 'none',
+                      "radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%)",
+                    pointerEvents: "none",
                     zIndex: 1,
                   }}
                 />
