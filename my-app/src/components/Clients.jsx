@@ -1,13 +1,16 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { Quote, Star } from 'lucide-react';
+import React, {
+  useEffect,
+  useState,
+} from 'react';
+
+import {
+  motion,
+  useAnimation,
+} from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const Clients = ({ currentLanguage = 'en' }) => {
   const isArabic = currentLanguage === 'ar';
-  const [isHovered, setIsHovered] = useState(false);
-  const [animationX, setAnimationX] = useState(0);
-  const animationRef = useRef();
 
   const content = {
     en: {
@@ -15,43 +18,11 @@ const Clients = ({ currentLanguage = 'en' }) => {
       subtitle: 'Trusted by Leading Organizations',
       description:
         "We're proud to have worked with some of the most respected companies and organizations in the region.",
-      testimonials: [
-        {
-          id: 1,
-          name: 'Ahmed Al-Rashid',
-          position: 'CEO, Al-Rashid Development',
-          company: 'Al-Rashid Development',
-          rating: 5,
-          text:
-            'Abomiskah delivered our residential project on time and within budget. Their attention to detail and quality craftsmanship exceeded our expectations.',
-          avatar: 'AR',
-        },
-        {
-          id: 2,
-          name: 'Sarah Johnson',
-          position: 'Project Manager, TechCorp',
-          company: 'TechCorp International',
-          rating: 5,
-          text:
-            'Working with Abomiskah on our corporate headquarters was a seamless experience. They understood our vision and brought it to life perfectly.',
-          avatar: 'SJ',
-        },
-        {
-          id: 3,
-          name: 'Mohammed Hassan',
-          position: 'Operations Director, Industrial Solutions',
-          company: 'Industrial Solutions Ltd',
-          rating: 5,
-          text:
-            'The manufacturing facility Abomiskah built for us is state-of-the-art. Their expertise in industrial construction is unmatched.',
-          avatar: 'MH',
-        },
-      ],
       clients: [
         { name: 'Al-Rashid Development', logo: '🏢' },
         { name: 'TechCorp International', logo: '💻' },
         { name: 'Industrial Solutions', logo: '🏭' },
-        { name: 'Green Energy Corp', logo: '🌱' },
+       
         { name: 'Metro Construction', logo: '🚇' },
         { name: 'Royal Hotels Group', logo: '🏨' },
         { name: 'Smart City Initiative', logo: '🌆' },
@@ -63,44 +34,11 @@ const Clients = ({ currentLanguage = 'en' }) => {
       subtitle: 'موثوق من قبل المؤسسات الرائدة',
       description:
         'نحن فخورون بالعمل مع بعض أكثر الشركات والمؤسسات احتراماً في المنطقة.',
-      testimonials: [
-        {
-          id: 1,
-          name: 'أحمد الراشد',
-          position: 'الرئيس التنفيذي، تطوير الراشد',
-          company: 'تطوير الراشد',
-          rating: 5,
-          text:
-            'أبو مسكة سلمت مشروعنا السكني في الوقت المحدد وضمن الميزانية. اهتمامهم بالتفاصيل وجودة الصنعة فاق توقعاتنا.',
-          avatar: 'أر',
-        },
-        {
-          id: 2,
-          name: 'سارة جونسون',
-          position: 'مدير المشروع، تك كورب',
-          company: 'تك كورب الدولية',
-          rating: 5,
-          text:
-            'العمل مع أبو مسكة على مقرنا الرئيسي كان تجربة سلسة. فهموا رؤيتنا وحققوها بشكل مثالي.',
-          avatar: 'سج',
-        },
-        {
-          id: 3,
-          name: 'محمد حسن',
-          position: 'مدير العمليات، الحلول الصناعية',
-          company: 'الحلول الصناعية المحدودة',
-          rating: 5,
-          text:
-            'منشأة التصنيع التي بناها أبو مسكة لنا متطورة جداً. خبرتهم في البناء الصناعي لا مثيل لها.',
-          avatar: 'مح',
-        },
-      ],
       clients: [
         { name: 'تطوير الراشد', logo: '🏢' },
         { name: 'تك كورب الدولية', logo: '💻' },
         { name: 'الحلول الصناعية', logo: '🏭' },
-        { name: 'شركة الطاقة الخضراء', logo: '🌱' },
-        { name: 'مترو للإنشاءات', logo: '🚇' },
+       
         { name: 'مجموعة الفنادق الملكية', logo: '🏨' },
         { name: 'مبادرة المدينة الذكية', logo: '🌆' },
         { name: 'شركاء الرعاية الصحية', logo: '🏥' },
@@ -119,23 +57,6 @@ const Clients = ({ currentLanguage = 'en' }) => {
     }),
   };
 
-  useEffect(() => {
-    const animate = () => {
-      if (!isHovered) {
-        setAnimationX((prev) => {
-          const newX = prev - 0.05;
-          return newX <= -100 ? 0 : newX;
-        });
-      }
-      animationRef.current = requestAnimationFrame(animate);
-    };
-    animationRef.current = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationRef.current);
-  }, [isHovered]);
-
-  const animationDirection = isArabic ? '100%' : '-100%';
-
-  // Stats counting logic
   const stats = [
     { number: 500, suffix: '+', label: isArabic ? 'مشروع مكتمل' : 'Projects Completed' },
     { number: 100, suffix: '+', label: isArabic ? 'عميل راضي' : 'Happy Clients' },
@@ -174,131 +95,168 @@ const Clients = ({ currentLanguage = 'en' }) => {
     }
   }, [inViewStats]);
 
+  const LogoRow = ({ clients, reverse }) => {
+    const totalClients = clients.length;
+    const logoWidth = 120; // smaller width
+    const gapWidth = 32;   // smaller gap
+    const totalWidth = totalClients * (logoWidth + gapWidth);
+
+    const controls = useAnimation();
+
+    const duration = 30; // seconds for full scroll
+
+    const [isPaused, setIsPaused] = useState(false);
+
+    const animateScroll = () => {
+      let from, to;
+      if (!reverse) {
+        // left to right scroll: from -totalWidth to 0
+        from = -totalWidth;
+        to = 0;
+      } else {
+        // right to left scroll: from 0 to -totalWidth
+        from = 0;
+        to = -totalWidth;
+      }
+
+      controls.set({ x: from });
+
+      controls
+        .start({
+          x: to,
+          transition: { duration: duration, ease: 'linear' },
+        })
+        .then(() => {
+          if (!isPaused) {
+            animateScroll();
+          }
+        });
+    };
+
+    useEffect(() => {
+      if (!isPaused) {
+        animateScroll();
+      } else {
+        controls.stop();
+      }
+      return () => controls.stop();
+    }, [isPaused]);
+
+    return (
+      <div
+        className="relative overflow-hidden mb-10"
+        style={{ height: '140px', direction: 'ltr' }}
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
+        <motion.div
+          className="flex flex-nowrap items-center"
+          style={{ width: totalWidth * 2 }}
+          animate={controls}
+          initial={{ x: 0 }}
+        >
+          {[...clients, ...clients].map(({ name, logo }, idx) => (
+            <div
+              key={idx}
+              className="flex flex-col items-center justify-center min-w-[120px] select-none text-center cursor-pointer"
+              style={{ marginRight: gapWidth }}
+              title={name}
+            >
+              <div className="text-5xl">{logo}</div>
+              <p className="text-base font-medium text-gray-900 mt-2">{name}</p>
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    );
+  };
+
   return (
     <section
       id="clients"
       dir={isArabic ? 'rtl' : 'ltr'}
-      className="py-24 bg-gradient-to-br from-blue-50 via-white to-red-50"
+      className="py-20 bg-gradient-to-r from-indigo-50 via-white to-pink-50 relative overflow-hidden"
+      style={{
+        backgroundImage: `radial-gradient(circle at top left, #a3bffa55, transparent 60%), 
+                          radial-gradient(circle at bottom right, #fbc7c755, transparent 60%)`,
+      }}
     >
-      <div className="container mx-auto max-w-7xl px-6">
+      <div className="container mx-auto max-w-6xl px-8">
         {/* Header */}
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="max-w-3xl mx-auto mb-20 text-center"
+          className="max-w-3xl mx-auto mb-16 text-center"
         >
-          <h2 className="text-4xl sm:text-5xl font-extrabold mb-4 text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-semibold mb-3 text-gray-900">
             {currentContent.title}
           </h2>
-          <p className="text-xl font-semibold mb-6 text-red-600">
+          <p className="text-lg font-semibold mb-6 text-pink-600">
             {currentContent.subtitle}
           </p>
-          <p className="text-lg max-w-xl mx-auto text-gray-700 leading-relaxed">
+          <p
+            className={
+              isArabic
+                ? 'text-base max-w-xl mx-auto text-gray-700 leading-relaxed text-right'
+                : 'text-base max-w-xl mx-auto text-gray-700 leading-relaxed text-left'
+            }
+          >
             {currentContent.description}
           </p>
         </motion.div>
 
-        {/* Testimonials */}
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 mb-20">
-          {currentContent.testimonials.map((t, i) => (
-            <motion.div
-              key={t.id}
-              custom={i}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true }}
-              variants={fadeUp}
-              className="bg-white rounded-xl shadow-lg border border-gray-200 p-8 flex flex-col justify-between hover:shadow-xl hover:-translate-y-1 transition-transform duration-300"
-            >
-              <div className="relative mb-6">
-                <Quote className="absolute top-0 right-0 w-8 h-8 text-red-200 opacity-30" />
-                <div className="flex mb-4">
-                  {[...Array(t.rating)].map((_, idx) => (
-                    <Star
-                      key={idx}
-                      className="w-5 h-5 text-yellow-400 fill-current"
-                    />
-                  ))}
-                </div>
-                <p className="italic text-gray-800 text-base leading-relaxed tracking-wide">
-                  "{t.text}"
-                </p>
-              </div>
+        {/* Two-Row Moving Logos */}
+        <LogoRow clients={currentContent.clients} reverse={false} />
+        <LogoRow clients={currentContent.clients} reverse={true} />
 
-              <div className="flex items-center gap-4 mt-auto">
-                <div className="w-14 h-14 rounded-full bg-gradient-to-tr from-blue-400 to-red-400 text-white flex items-center justify-center font-bold text-lg select-none shadow-md">
-                  {t.avatar}
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">{t.name}</p>
-                  <p className="text-sm text-red-600 font-medium">{t.position}</p>
-                  <p className="text-sm text-gray-900 font-semibold mt-1">
-                    {t.company}
-                  </p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Client Logos */}
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          variants={fadeUp}
-          className="bg-white rounded-xl shadow-lg py-12 px-10 overflow-hidden"
-          onMouseEnter={() => setIsHovered(true)}
-          onMouseLeave={() => setIsHovered(false)}
-        >
-          <h3 className="text-2xl font-bold text-center text-red-600 mb-12 tracking-wide">
-            {isArabic ? 'شركاؤنا الموثوقون' : 'Our Trusted Partners'}
-          </h3>
-          <motion.div
-            className="flex items-center gap-12 whitespace-nowrap"
-            animate={{ x: isArabic ? animationX + '%' : animationX + '%' }}
-            transition={{
-              duration: 0,
-              ease: 'linear',
-            }}
-            style={{
-              direction: isArabic ? 'rtl' : 'ltr',
-            }}
-          >
-            {[...currentContent.clients, ...currentContent.clients].map(
-              ({ name, logo }, idx) => (
-                <motion.div
-                  key={idx}
-                  className="flex flex-col items-center justify-center cursor-pointer select-none transition-transform duration-300 ease-in-out"
-                  whileHover={{ scale: 1.1 }}
-                >
-                  <div className="text-5xl mb-2">{logo}</div>
-                  <p className="text-xs font-semibold text-gray-900 text-center">
-                    {name}
-                  </p>
-                </motion.div>
-              )
-            )}
-          </motion.div>
-        </motion.div>
-
-        {/* Stats Section with animation */}
+        {/* Stats Section */}
         <motion.div
           ref={refStats}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={fadeUp}
-          className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center mt-24 max-w-5xl mx-auto text-gray-900"
+          className="grid grid-cols-2 md:grid-cols-4 gap-16 text-center mt-28 max-w-4xl mx-auto text-gray-900"
         >
           {stats.map(({ suffix, label }, i) => (
-            <div key={i}>
-              <p className="text-4xl font-extrabold tracking-tight">
-                {counts[i]}{suffix}
+            <div key={i} className="flex flex-col items-center group cursor-pointer relative">
+              <p
+                className="relative flex items-center justify-center
+                           w-20 h-20 rounded-full
+                           bg-gradient-to-r from-blue-400 via-purple-500 to-red-400
+                           text-white font-extrabold text-4xl shadow-md
+                           transition-all duration-500
+                           group-hover:shadow-xl group-hover:scale-110"
+                style={{ willChange: 'transform' }}
+              >
+                <motion.span
+                  animate={{ scale: counts[i] > 0 ? [1, 1.1, 1] : 1 }}
+                  transition={{ delay: 1.6, duration: 0.4 }}
+                  className="flex items-baseline"
+                  style={{ position: 'relative', zIndex: 2 }}
+                >
+                  {counts[i]}
+                  <span className="text-xl font-semibold ml-1 align-super">{suffix}</span>
+                </motion.span>
+
+                <motion.span
+                  className="absolute inset-0 rounded-full"
+                  initial={{ opacity: 0, scale: 1 }}
+                  whileHover={{ opacity: 0.4, scale: 1.2 }}
+                  transition={{ duration: 0.5, repeat: Infinity, repeatType: 'mirror' }}
+                  style={{
+                    background:
+                      'radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%)',
+                    pointerEvents: 'none',
+                    zIndex: 1,
+                  }}
+                />
               </p>
-              <p className="mt-2 font-semibold text-lg">{label}</p>
+              <p className="mt-3 font-semibold text-base text-gray-700 max-w-[140px]">
+                {label}
+              </p>
             </div>
           ))}
         </motion.div>
