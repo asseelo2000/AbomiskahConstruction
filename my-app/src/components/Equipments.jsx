@@ -257,7 +257,10 @@ const Equipments = ({ currentLanguage }) => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center z-50"
-          onClick={() => setSelectedEquipment(null)}
+          onClick={() => {
+            setSelectedEquipment(null);
+            setIsPaused(false);
+          }}
         >
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
@@ -268,7 +271,10 @@ const Equipments = ({ currentLanguage }) => {
             dir={currentLanguage === "ar" ? "rtl" : "ltr"}
           >
             <button
-              onClick={() => setSelectedEquipment(null)}
+              onClick={() => {
+                setSelectedEquipment(null);
+                setIsPaused(false);
+              }}
               className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 text-2xl"
             >
               &times;
