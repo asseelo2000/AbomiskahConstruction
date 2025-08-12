@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 // New imports for Google Maps
 import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+// Import EmailJS
+import emailjs from '@emailjs/browser';
 
 const Contact = ({ currentLanguage }) => {
   const [formData, setFormData] = useState({
@@ -114,19 +116,41 @@ const Contact = ({ currentLanguage }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
 
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        service: '',
-        message: ''
-      });
-    }, 3000);
+    // Map form data to EmailJS params (placeholders in template)
+    const templateParams = {
+      user_name: formData.name,
+      user_email: formData.email,
+      user_phone: formData.phone,
+      user_service: formData.service,
+      user_message: formData.message,
+    };
+
+    // Send email via EmailJS
+    emailjs.send(
+      'service_1uyx2sh', // Replace with your EmailJS Service ID
+      'template_vcwyzpu', // Replace with your EmailJS Template ID
+      templateParams,
+      'p7ObFVli4cIOiARkL' // Replace with your EmailJS User ID (public key)
+    )
+    .then((response) => {
+      console.log('Email sent successfully!', response.status, response.text);
+      setIsSubmitted(true);
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: '',
+          message: ''
+        });
+      }, 3000);
+    })
+    .catch((error) => {
+      console.error('Failed to send email:', error);
+      alert('There was an error sending your message. Please try again later.');
+    });
   };
 
   // Load Google Maps API script
