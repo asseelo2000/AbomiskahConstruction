@@ -280,11 +280,12 @@ const Equipments = ({ currentLanguage }) => {
             {/* PDF Viewer */}
             <div className="mb-8">
               <h3 className="text-2xl font-semibold mb-4">Detailed PDF</h3>
-              <iframe
-                src={`/pdfs/${selectedEquipment.pdf}`}
-                className="w-full h-96 border-2 border-gray-300 rounded-lg"
-                title="Equipment PDF"
-              />
+             <iframe
+  src={`/${selectedEquipment.pdf}`} 
+  className="w-full h-96 border-2 border-gray-300 rounded-lg"
+  title="Equipment PDF"
+/>
+
             </div>
 
             {/* Image Gallery */}
