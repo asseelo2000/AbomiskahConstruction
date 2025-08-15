@@ -128,6 +128,48 @@ const Projects = ({ currentLanguage = 'en' }) => {
             area: '15,000 م²',
             duration: '18 شهر'
           }
+        },
+        {
+          id: 2,
+          title: 'المقر الرئيسي للشركة',
+          category: 'commercial',
+          location: 'المنطقة التجارية',
+          year: '2023',
+          client: 'شركة تقنية',
+          description:
+            'مبنى مكاتب عصري مكون من 15 طابقًا مجهز بأحدث المرافق وأنظمة موفرة للطاقة.',
+          image: '/images/projects/CorporateHeadquarters.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/CorporateHeadquarters.jpg',
+            '/images/projects/CorporateHeadquarters2.jpg'
+          ],
+          stats: {
+            floors: '15 طابق',
+            area: '25,000 م²',
+            duration: '24 شهر'
+          }
+        },
+        {
+          id: 3,
+          title: 'منشأة تصنيع',
+          category: 'industrial',
+          location: 'المنطقة الصناعية',
+          year: '2022',
+          client: 'شركة تصنيع',
+          description:
+            'مصنع إنتاج واسع النطاق مزود بأنظمة أتمتة متقدمة وميزات أمان عالية ومبني حسب المواصفات والمعايير العالمية ',
+          image: '/images/projects/ManufacturingFacility.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/ManufacturingFacility.jpg',
+            '/images/projects/ManufacturingFacility2.jpg'
+          ],
+          stats: {
+            capacity: '50,000 وحدة/شهر',
+            area: '40,000 م²',
+            duration: '30 شهر'
+          }
         }
       ]
     }

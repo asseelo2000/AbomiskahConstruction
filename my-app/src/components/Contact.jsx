@@ -156,14 +156,13 @@ const Contact = ({ currentLanguage }) => {
   // Load Google Maps API script
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: 'AIzaSyCI1s4gfgAJhKJQA19Ff2Uv4NBwsdXBFpQ' // Replace with your actual API key
+    googleMapsApiKey: ''
   });
-  // <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCI1s4gfgAJhKJQA19Ff2Uv4NBwsdXBFpQ&amp;libraries=places&amp;callback=initMap" async="" defer=""></script>
 
   // Define the center coordinates (replace with your actual lat/lng)
   const center = {
-    lat: 40.7128, // Example: New York City latitude
-    lng: -74.0060 // Example: New York City longitude
+    lat: 15.39010993519032,
+    lng: 44.172359094137725
   };
 
   // Map container style (make it responsive)
