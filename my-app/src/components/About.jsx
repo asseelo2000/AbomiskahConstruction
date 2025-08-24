@@ -140,7 +140,7 @@ const About = ({ currentLanguage }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className={`p-8 rounded-xl shadow-xl text-white bg-gradient-to-br ${gradient} transition-transform transform hover:-translate-y-2`}
+                className={`p-8 rounded-xl shadow-xl text-white bg-gradient-to-br ${gradient} transform hover:-translate-y-2`}
               >
                 <div className="flex items-center mb-4">
                   <Icon className="w-8 h-8 text-white mr-3" />
@@ -163,7 +163,7 @@ const About = ({ currentLanguage }) => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="p-6 rounded-xl bg-white shadow-xl text-center transition-transform transform hover:-translate-y-2"
+                className="p-6 rounded-xl bg-white shadow-xl text-center transform hover:-translate-y-2"
               >
                 <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-red-500 rounded-full flex items-center justify-center shadow-lg">
                   <IconComponent className="w-8 h-8 text-white" />

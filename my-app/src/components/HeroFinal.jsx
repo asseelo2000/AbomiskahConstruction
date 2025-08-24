@@ -84,11 +84,16 @@ const HeroFinal = ({ currentLanguage }) => {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-8 py-4 bg-gradient-to-r from-blue-600 to-red-500 text-white rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center">
+              <button 
+               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+               className="px-8 py-4 bg-gradient-to-r from-blue-600 to-red-500 text-white rounded-lg hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 flex items-center justify-center">
                 {currentContent.cta1}
                 <ArrowRight className="ml-2 w-5 h-5" />
               </button>
-              <button className="px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300">
+
+              <button
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-8 py-4 border-2 border-white text-white rounded-lg hover:bg-white hover:text-blue-600 transition-all duration-300">
                 {currentContent.cta2}
               </button>
             </div>
