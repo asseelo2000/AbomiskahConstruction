@@ -50,7 +50,7 @@ const HeroFinal = ({ currentLanguage }) => {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-[-1]"
-        src="/videos/HeroFinalBackgroundVideo.mp4"  // Replace with your actual video file name
+        src="/videos/HeroFinalBackgroundVideo2.mp4"  // Replace with your actual video file name
       ></video>
 
       {/* Overlay for Better Text Readability */}

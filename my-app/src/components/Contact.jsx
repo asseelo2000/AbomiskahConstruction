@@ -245,13 +245,20 @@ const Contact = ({ currentLanguage }) => {
                     {currentContent.form.phone}
                   </label>
                   <input
-                    type="tel"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    placeholder={currentContent.form.phone}
-                    className="w-full px-5 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent transition"
-                  />
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={(e) => {
+                    // Allow only digits
+                    const value = e.target.value.replace(/\D/g, '');
+                    setFormData({ ...formData, phone: value });
+                  }}
+                  inputMode="numeric"          // Mobile keyboard shows numbers
+                  pattern="[0-9]*"             // Prevents non-numeric input on desktop
+                  placeholder={currentContent.form.phone}
+                  className="w-full px-5 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-700 focus:border-transparent transition"
+                  required
+                />
                 </div>
 
                 {/* Service */}
