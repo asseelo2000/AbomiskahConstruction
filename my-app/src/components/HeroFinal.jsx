@@ -50,7 +50,7 @@ const HeroFinal = ({ currentLanguage }) => {
         loop
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-[-1]"
-        src="/videos/HeroFinalBackgroundVideo2.mp4"  // Replace with your actual video file name
+        src="videos/HeroFinalBackgroundVideo2.mp4"  // Replace with your actual video file name
       ></video>
 
       {/* Overlay for Better Text Readability */}
@@ -123,11 +123,20 @@ const HeroFinal = ({ currentLanguage }) => {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100/90 to-red-100/90 animate-pulse backdrop-blur-md"></div>
                 
                 {/* AM Letters */}
-                <div className="absolute inset-0 flex items-center justify-center">
+                {/* <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-8xl font-bold drop-shadow-2xl">
                     <span className="text-blue-600">A</span>
                     <span className="text-blue-600">M</span>
                   </div>
+                </div> */}
+                {/* Logo Image */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src="images/logo/images-removebg-preview.png"
+                    alt="Company Logo"
+                    className="w-72 h-72 object-contain"
+                    style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.08))' }}
+                  />
                 </div>
 
                 {/* Animated Red Lines */}

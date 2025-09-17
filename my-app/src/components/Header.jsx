@@ -47,10 +47,19 @@ const Header = ({ currentLanguage, onLanguageChange }) => {
           {/* Logo */}
           <div className="flex items-center">
             <div className="relative">
-              <div className="text-2xl lg:text-3xl font-bold">
+              {/* <div className="text-2xl lg:text-3xl font-bold">
                 <span className="text-primary">A</span>
                 <span className="text-primary">M</span>
-              </div>
+              </div> */}
+              {/* Logo Image */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src="/logo.png"
+                    alt="Company Logo"
+                    className="w-32 h-32 object-contain"
+                    style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.08))' }}
+                  />
+                </div>
               {/* Red lines around logo */}
               <div className="absolute -top-1 -left-1 w-8 h-8 border-l-2 border-t-2 border-accent"></div>
               <div className="absolute -bottom-1 -right-1 w-8 h-8 border-r-2 border-b-2 border-accent"></div>

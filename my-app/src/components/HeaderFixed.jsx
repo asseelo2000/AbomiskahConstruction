@@ -45,14 +45,19 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <div className="flex items-center">
-            <div className="relative">
-              <div className="text-2xl lg:text-3xl font-bold">
-                <span className="text-blue-600">A</span>
-                <span className="text-blue-600">M</span>
+            <div className="relative w-16 h-16">
+              {/* Logo Image */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <img
+                  src="images/logo/images-removebg-preview.png"
+                  alt="Company Logo"
+                  className="w-20 h-20 object-contain"
+                  style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.08))' }}
+                />
               </div>
               {/* Red lines around logo */}
-              <div className="absolute -top-1 -left-1 w-8 h-8 border-l-2 border-t-2 border-red-500"></div>
-              <div className="absolute -bottom-1 -right-1 w-8 h-8 border-r-2 border-b-2 border-red-500"></div>
+              <div className="absolute -top-0 -left-0 w-8 h-8 border-l-2 border-t-2 border-red-500"></div>
+              <div className="absolute -bottom-0 -right-0 w-8 h-8 border-r-2 border-b-2 border-red-500"></div>
             </div>
             <div className="ml-3 mr-3">
               <div className={`text-lg font-semibold ${isScrolled ? 'text-gray-800' : 'text-white'}`}>Abomiskah</div>
@@ -96,7 +101,7 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2"
+              className="lg:hidden p-2 bg-red-500"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className={`w-6 h-6 ${isScrolled ? 'text-gray-700' : 'text-white'}`} /> : <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-700' : 'text-white'}`} />}
@@ -105,18 +110,18 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
         </div>
 
         {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="lg:hidden">
-            <div className={`px-2 pt-2 pb-3 space-y-1 rounded-lg mt-2 shadow-lg ${
+          {isMenuOpen && (
+           <div className="lg:hidden absolute top-full left-0 right-0 w-full z-40">
+             <div className={`pt-2 pb-3 space-y-1 rounded-lg mt-2 shadow-lg ${
               isScrolled 
                 ? 'bg-white/95 backdrop-blur-md' 
                 : 'bg-black/50 backdrop-blur-md'
-            }`}>
+             }`}>
               {navItems.map((item) => (
                 <button
                   key={item.key}
                   onClick={() => scrollToSection(item.key)}
-                  className={`block w-full text-left px-3 py-2 rounded-md transition-all duration-300 transform hover:scale-105 ${
+                  className={`block w-full text-left px-4 py-2 rounded-md transition-all duration-300 transform hover:scale-105 ${
                     isScrolled
                       ? 'text-gray-700 hover:text-blue-600 hover:bg-gray-50'
                       : 'text-white hover:text-red-400 hover:bg-black/30'

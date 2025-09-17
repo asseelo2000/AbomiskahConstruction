@@ -113,11 +113,20 @@ const Hero = ({ currentLanguage }) => {
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/10 to-accent/10 animate-pulse"></div>
                 
                 {/* AM Letters */}
-                <div className="absolute inset-0 flex items-center justify-center">
+                {/* <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-8xl font-bold">
                     <span className="text-primary">A</span>
                     <span className="text-primary">M</span>
                   </div>
+                </div> */}
+                {/* Logo Image */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src="/logo.png"
+                    alt="Company Logo"
+                    className="w-32 h-32 object-contain"
+                    style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.08))' }}
+                  />
                 </div>
 
                 {/* Animated Red Lines */}
