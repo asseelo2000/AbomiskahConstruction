@@ -1,3 +1,4 @@
+"use client";
 import React from 'react';
 
 import {
@@ -10,6 +11,7 @@ import {
   Phone,
   Twitter,
 } from 'lucide-react';
+import { SparklesCore } from "../ui/sparkles";
 
 const Footer = ({ currentLanguage }) => {
   const content = {
@@ -118,11 +120,24 @@ const Footer = ({ currentLanguage }) => {
 
   return (
     <footer
-      className="bg-gradient-to-b from-gray-900 to-black text-white"
+      className="relative bg-gradient-to-b from-gray-900 to-black text-white overflow-hidden"
       dir={currentLanguage === 'ar' ? 'rtl' : 'ltr'}
     >
+      {/* Sparkles Overlay */}
+      <div className="w-full absolute inset-0 h-full z-0">
+        <SparklesCore
+          id="footer-sparkles"
+          background="transparent"
+          minSize={0.6}
+          maxSize={1.4}
+          particleDensity={100}
+          className="w-full h-full"
+          particleColor="#FFFFFF"
+        />
+      </div>
+
       {/* Main Footer Content */}
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
@@ -224,7 +239,7 @@ const Footer = ({ currentLanguage }) => {
 
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               {currentContent.bottom.copyright}
