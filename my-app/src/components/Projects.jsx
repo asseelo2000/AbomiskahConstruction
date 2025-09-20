@@ -43,7 +43,10 @@ const Projects = ({ currentLanguage = 'en' }) => {
           pdf: 'pdfs/projects/djibouti-equipment.pdf',
           images: [
             '/images/projects/LuxuryResidentialComplex.jpg',
-            '/images/projects/LuxuryResidentialComplex2.jpg'
+            '/images/projects/LuxuryResidentialComplex.jpg',
+            '/images/projects/LuxuryResidentialComplex.jpg',
+            '/images/projects/LuxuryResidentialComplex.jpg',
+            '/images/projects/LuxuryResidentialComplex.jpg'
           ],
           stats: {
             units: '120 Units',
