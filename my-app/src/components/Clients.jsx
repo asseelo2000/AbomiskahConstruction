@@ -178,8 +178,14 @@ const Clients = ({ currentLanguage = "en" }) => {
             style={{ marginRight: gapWidth }}
             title={name}
           >
-            <div className="text-5xl">{logo}</div>
+            <motion.div
+            whileHover={{ scale: 1.2 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="text-5xl"
+          >
+            {logo}
             <p className="text-base font-medium text-gray-900 mt-2">{name}</p>
+          </motion.div>
           </div>
         ))}
       </motion.div>
