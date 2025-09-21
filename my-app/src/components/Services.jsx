@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import React, { useState } from 'react';
 import {
   Building,
   Factory,
@@ -19,6 +20,8 @@ const Button = ({ children, className = '', ...props }) => (
 );
 
 const Services = ({ currentLanguage }) => {
+  const [hovered, setHovered] = useState(null);
+
   const content = {
     en: {
       title: "Our Services",
@@ -135,8 +138,8 @@ const Services = ({ currentLanguage }) => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white">{currentContent.title}</h2>
-          <p className="text-xl text-white/80 mt-2">{currentContent.subtitle}</p>
-          <p className="text-lg text-white/70 mt-4 max-w-3xl mx-auto">
+          <p className="text-xl text-white mt-2">{currentContent.subtitle}</p>
+          <p className="text-lg text-white mt-4 max-w-3xl mx-auto">
             {currentContent.description}
           </p>
         </div>
@@ -151,7 +154,9 @@ const Services = ({ currentLanguage }) => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: false, amount: 0.3 }}
-                className="bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2"
+                onMouseEnter={() => setHovered(index)}
+                onMouseLeave={() => setHovered(null)}
+                className={`bg-white p-6 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 ${hovered !== null && hovered !== index ? 'blur-sm scale-95 opacity-70' : ''}`}
               >
                 <div className="w-14 h-14 bg-gradient-to-br from-blue-600 to-red-500 rounded-xl flex items-center justify-center mb-4">
                   <Icon className="text-white w-7 h-7" />

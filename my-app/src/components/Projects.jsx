@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Calendar, ExternalLink, MapPin, Users } from 'lucide-react';
+import { CardContainer, CardBody, CardItem } from '../ui/3d-card';
 
 // ✅ Local fallback Button component
 const Button = ({ children, className = '', ...props }) => (
@@ -224,46 +225,62 @@ const Projects = ({ currentLanguage = 'en' }) => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.15, ease: 'easeOut' }}
               viewport={{ once: true, amount: 0.3 }}
-              className="rounded-xl shadow-lg bg-white overflow-hidden hover:shadow-xl transform hover:-translate-y-1"
             >
-              <img
-                src={project.image}
-                alt={project.title}
-                className="h-48 w-full object-cover"
-              />
-              <div className="p-6">
-                <div className="flex items-center gap-4 text-sm text-gray-400 mb-2">
-                  <MapPin className="w-4 h-4" />
-                  <span>{project.location}</span>
-                  <Calendar className="w-4 h-4" />
-                  <span>{project.year}</span>
-                </div>
-
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
-                <p className="text-gray-600 mb-4">{project.description}</p>
-
-                <div className="grid grid-cols-2 text-sm text-gray-700 mb-4">
-                  {Object.entries(project.stats).map(([key, val]) => (
-                    <div key={key} className="bg-gray-50 p-2 rounded text-center">
-                      {val}
+              <CardContainer className="inter-var">
+                <CardBody className="bg-white relative group/card border border-black/[0.1] w-full h-auto rounded-xl shadow-lg hover:shadow-xl p-6">
+                  <CardItem translateZ="100" className="w-full">
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="h-48 w-full object-cover rounded-xl group-hover/card:shadow-xl"
+                    />
+                  </CardItem>
+                  <CardItem translateZ="50" className="w-full mt-4">
+                    <div className="flex items-center gap-4 text-sm text-gray-400 mb-2">
+                      <MapPin className="w-4 h-4" />
+                      <span>{project.location}</span>
+                      <Calendar className="w-4 h-4" />
+                      <span>{project.year}</span>
                     </div>
-                  ))}
-                </div>
-
-                <div className="flex items-center gap-2 text-sm text-gray-500 mb-4">
-                  <Users className="w-4 h-4" />
-                  <span>{project.client}</span>
-                </div>
-
-                {/* Open Details Dialog */}
-                <Button
-                  onClick={() => setSelectedProject(project)}
-                  className="w-full border border-blue-500 text-blue-600 hover:bg-blue-600 hover:text-white flex items-center justify-center gap-2"
-                >
-                  {currentContent.viewMore}
-                  <ExternalLink className="w-4 h-4" />
-                </Button>
-              </div>
+                  </CardItem>
+                  <CardItem
+                    translateZ="60"
+                    className="text-xl font-semibold mb-2 text-neutral-600"
+                  >
+                    {project.title}
+                  </CardItem>
+                  <CardItem
+                    translateZ="50"
+                    className="text-gray-600 mb-4 text-sm"
+                  >
+                    {project.description}
+                  </CardItem>
+                  <CardItem translateZ="40" className="w-full mb-4">
+                    <div className="grid grid-cols-2 text-sm text-gray-700">
+                      {Object.entries(project.stats).map(([key, val]) => (
+                        <div key={key} className="bg-gray-50 p-2 rounded text-center">
+                          {val}
+                        </div>
+                      ))}
+                    </div>
+                  </CardItem>
+                  <CardItem translateZ="50" className="w-full mb-4">
+                    <div className="flex items-center gap-2 text-sm text-gray-500">
+                      <Users className="w-4 h-4" />
+                      <span>{project.client}</span>
+                    </div>
+                  </CardItem>
+                  <CardItem translateZ="20" className="w-full">
+                    <Button
+                      onClick={() => setSelectedProject(project)}
+                      className="w-full border border-blue-500 text-blue-600 hover:bg-blue-600 hover:text-white flex items-center justify-center gap-2"
+                    >
+                      {currentContent.viewMore}
+                      <ExternalLink className="w-4 h-4" />
+                    </Button>
+                  </CardItem>
+                </CardBody>
+              </CardContainer>
             </motion.div>
           ))}
         </div>

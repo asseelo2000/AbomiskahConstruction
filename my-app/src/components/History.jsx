@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import {
   Calendar,
@@ -20,6 +20,8 @@ const Button = ({ children, className = '', ...props }) => (
 );
 
 const History = ({ currentLanguage }) => {
+  const [hovered, setHovered] = useState(null);
+
   const content = {
     en: {
       title: "Our History",
@@ -272,12 +274,14 @@ const History = ({ currentLanguage }) => {
             return (
               <motion.div
                 key={index}
-                className="flex-1 flex flex-col items-center relative min-w-0"
+                className={`flex-1 flex flex-col items-center relative min-w-0 transition-all duration-300 ${hovered !== null && hovered !== index ? 'blur-sm scale-95 opacity-70' : ''}`}
                 custom={index}
                 variants={itemVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: false, amount: 0.3 }}
+                onMouseEnter={() => setHovered(index)}
+                onMouseLeave={() => setHovered(null)}
               >
                 {/* Milestone Node */}
                 <div className="w-20 h-20 bg-white rounded-full border-4 border-red-600 shadow-md z-10 transform hover:scale-110 transition-transform duration-300 flex items-center justify-center">

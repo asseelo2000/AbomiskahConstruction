@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { motion } from 'framer-motion';
 import {
   CheckCircle,
@@ -158,18 +157,20 @@ const About = ({ currentLanguage }) => {
             const IconComponent = feature.icon;
             return (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                viewport={{ once: false, amount: 0.3 }}
-                className="p-6 rounded-xl bg-white shadow-xl text-center transform hover:-translate-y-2"
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              viewport={{ once: false, amount: 0.3 }}
+              className="relative p-6 rounded-xl bg-white shadow-xl text-center transform hover:-translate-y-1 transition-all duration-300 overflow-hidden group"
               >
-                <div className="w-16 h-16 mx-auto mb-4 bg-gradient-to-br from-blue-500 to-red-500 rounded-full flex items-center justify-center shadow-lg">
-                  <IconComponent className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">{feature.title}</h3>
-                <p className="text-sm text-gray-600">{feature.description}</p>
+              <div className="absolute w-16 h-16 bg-gradient-to-br from-blue-500 to-red-500 rounded-full top-6 left-1/2 -translate-x-1/2 z-0 scale-100 group-hover:scale-[10] transition-transform duration-300"></div>
+              <div className="relative w-16 h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center shadow-lg  group-hover:bg-gradient-to-br group-hover:from-blue-500 group-hover:to-red-500 transition-all duration-300 z-10">
+                <div className="absolute w-14 h-14 bg-gradient-to-br from-blue-500 to-red-500 rounded-full group-hover:bg-white transition-all duration-300"></div>
+                <IconComponent className="relative w-8 h-8 text-white group-hover:text-white transition-colors duration-300 z-20" />
+              </div>
+              <h3 className="relative text-lg font-bold text-gray-800 mb-2 z-10 group-hover:text-white transition-colors duration-300">{feature.title}</h3>
+              <p className="relative text-sm text-gray-600 z-10 group-hover:text-white transition-colors duration-300">{feature.description}</p>
               </motion.div>
             );
           })}

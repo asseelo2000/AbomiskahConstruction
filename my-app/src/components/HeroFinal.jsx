@@ -43,7 +43,7 @@ const HeroFinal = ({ currentLanguage }) => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
       dir={currentLanguage === 'ar' ? 'rtl' : 'ltr'}
     >
-      {/* Background Video */}
+      {/* Background Video
       <video
         autoPlay
         muted
@@ -51,7 +51,24 @@ const HeroFinal = ({ currentLanguage }) => {
         playsInline
         className="absolute inset-0 w-full h-full object-cover z-[-1]"
         src="videos/HeroFinalBackgroundVideo2.mp4"  // Replace with your actual video file name
-      ></video>
+      ></video> */}
+
+      <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-[-1]"
+        >
+          {/* Modern WebM version (smaller, preferred) */}
+          <source src="videos/hero_background_vid.webm" type="video/webm" />
+
+          {/* Fallback MP4 for Safari / older browsers */}
+          {/* <source src="videos/HeroFinalBackgroundVideo2.mp4" type="video/mp4" /> */}
+
+          {/* Optional: poster image while loading */}
+          Your browser does not support the video tag.
+        </video>
 
       {/* Overlay for Better Text Readability */}
       <div className="absolute inset-0 bg-black opacity-50 z-[-1]"></div>
