@@ -1,5 +1,13 @@
-import React, { useState, useEffect } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import React, {
+  useEffect,
+  useState,
+} from 'react';
+
+import {
+  Globe,
+  Menu,
+  X,
+} from 'lucide-react';
 
 const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -68,7 +76,7 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-8">
+          <nav className="hidden lg:flex items-center gap-x-8 rtl:space-x-reverse">
             {navItems.map((item) => (
               <button
                 key={item.key}

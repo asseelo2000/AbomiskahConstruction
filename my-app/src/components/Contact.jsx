@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import {
   CheckCircle,
   Clock,
@@ -7,10 +8,15 @@ import {
   Phone,
   Send,
 } from 'lucide-react';
-// New imports for Google Maps
-import { GoogleMap, useJsApiLoader, Marker } from '@react-google-maps/api';
+
 // Import EmailJS
 import emailjs from '@emailjs/browser';
+// New imports for Google Maps
+import {
+  GoogleMap,
+  Marker,
+  useJsApiLoader,
+} from '@react-google-maps/api';
 
 const Contact = ({ currentLanguage }) => {
   const [formData, setFormData] = useState({

@@ -1,4 +1,3 @@
-"use client";
 import React from 'react';
 
 import {
@@ -11,7 +10,10 @@ import {
   Phone,
   Twitter,
 } from 'lucide-react';
-import { SparklesCore } from "../ui/sparkles";
+
+import { SparklesCore } from '../ui/sparkles';
+
+"use client";
 
 const Footer = ({ currentLanguage }) => {
   const content = {
@@ -143,11 +145,11 @@ const Footer = ({ currentLanguage }) => {
           <div className="lg:col-span-1">
             {/* Logo */}
             <div className="flex items-center mb-6">
-              <div className="relative mr-3">
-                <div className="text-2xl font-bold">
-                  <span className="text-blue-400">A</span>
-                  <span className="text-blue-400">M</span>
-                </div>
+  <div className={`relative ${currentLanguage === 'ar' ? 'ml-4' : 'mr-4'}`}>
+    <div className="text-2xl font-bold">
+      <span className="text-blue-400">A</span>
+      <span className="text-blue-400">M</span>
+    </div>
                 {/* Red lines around logo */}
                 <div className="absolute -top-1 -left-1 w-6 h-6 border-l-2 border-t-2 border-red-400"></div>
                 <div className="absolute -bottom-1 -right-1 w-6 h-6 border-r-2 border-b-2 border-red-400"></div>
@@ -165,7 +167,7 @@ const Footer = ({ currentLanguage }) => {
             {/* Social Links */}
             <div>
               <h3 className="text-lg font-semibold mb-4">{currentContent.social.title}</h3>
-              <div className="flex space-x-4">
+              <div className="flex gap-x-4">
                 {[
                   { icon: Facebook, href: "#" },
                   { icon: Twitter, href: "#" },
