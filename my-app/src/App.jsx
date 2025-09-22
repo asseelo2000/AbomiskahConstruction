@@ -12,6 +12,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Clients from './components/Clients';
 import Footer from './components/Footer';
+import MasonaryGallery from './components/MasonryGallery';
 
 function App() {
   const [currentLanguage, setCurrentLanguage] = useState('en');
@@ -39,11 +40,9 @@ function App() {
       <Clients currentLanguage={currentLanguage} />
       <Equipments currentLanguage={currentLanguage}/>
       <Projects currentLanguage={currentLanguage} />
+      <MasonaryGallery currentLanguage={currentLanguage} />
       <Contact currentLanguage={currentLanguage} />
       <Footer currentLanguage={currentLanguage} />
-      
-      
-      
     </div>
   );
 }
