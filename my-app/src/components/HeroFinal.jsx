@@ -1,11 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { ArrowRight, Building, Users, Award } from 'lucide-react';
+import { ArrowRight, Building, Users, Award, ChevronsDown } from 'lucide-react';
 
 const HeroFinal = ({ currentLanguage }) => {
   const [isVisible, setIsVisible] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
   const content = {
@@ -190,7 +202,10 @@ const HeroFinal = ({ currentLanguage }) => {
                 <div className="absolute -top-4 -right-4 w-12 h-12 bg-red-100/90 rounded-full flex items-center justify-center animate-bounce drop-shadow-lg" style={{ animationDelay: '0.5s' }}>
                   <Users className="w-6 h-6 text-red-500" />
                 </div>
-                <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-100/90 rounded-full flex items-center justify-center animate-bounce drop-shadow-lg" style={{ animationDelay: '1s' }}>
+                <div
+                  className="absolute bottom-16 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-100/90 rounded-full flex items-center justify-center animate-bounce drop-shadow-lg"
+                  style={{ animationDelay: '2s', animationDuration: '3s' }}
+                >
                   <Award className="w-6 h-6 text-blue-600" />
                 </div>
               </div>
@@ -200,10 +215,14 @@ const HeroFinal = ({ currentLanguage }) => {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-[1]">
-        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
-        </div>
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-[1] flex justify-center">
+        {isMobile ? (
+          <ChevronsDown className="w-8 h-8 text-white drop-shadow-lg animate-pulse" />
+        ) : (
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+          </div>
+        )}
       </div>
     </section>
   );

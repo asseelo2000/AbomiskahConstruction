@@ -109,7 +109,7 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 bg-red-500"
+              className="lg:hidden p-6"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className={`w-6 h-6 ${isScrolled ? 'text-gray-700' : 'text-white'}`} /> : <Menu className={`w-6 h-6 ${isScrolled ? 'text-gray-700' : 'text-white'}`} />}
