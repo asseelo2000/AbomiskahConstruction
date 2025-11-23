@@ -35,11 +35,11 @@ const History = ({ currentLanguage }) => {
           icon: Calendar,
           title: "Founding and Early Innovations",
           description:
-            "Abu Miska Enterprise began supplying the Northern Region of Yemen with Food and Fabric via adventurous travels from Aden and Hodeida to Sadaa, taking up to three weeks using horses and carriages. In 1968, Sheikh Ahmed Abu Miska, the President to this day, employed the first car in Sadaa for service between Aden, Sanaa, and Sadaa.",
+            "Abu Miska Enterprise began supplying the Northern Region of Yemen with Food and Fabric via adventurous travels from Aden and Hodeida to Sadah, taking up to three weeks using horses and carriages. In 1968, Sheikh Ahmed Abu Miska, the President to this day, employed the first car in Sadah for service between Aden, Sanaa, and Sadah.",
           highlights: [
             "Supplies from main ports Aden and Hodeida",
             "Journeys up to three weeks with horses and carriages",
-            "Introduction of the first car in Sadaa for transportation",
+            "Introduction of the first car in Sadah for transportation",
           ],
         },
         {
@@ -47,9 +47,9 @@ const History = ({ currentLanguage }) => {
           icon: Users,
           title: "Expansion of Facilities and Trade",
           description:
-            "Built the first Central Warehouse in Sadaa (1975) and another in Reidah (1976). Expanded business into import of Tobacco and export of Coffee to Saudi Arabia (1975-1978). Took over sole distribution of Hayel Saeed Anam Products for North Yemen and built the first Showroom in Sanaa (1979).",
+            "Built the first Central Warehouse in Sadah (1975) and another in Reidah (1976). Expanded business into import of Tobacco and export of Coffee to Saudi Arabia (1975-1978). Took over sole distribution of Hayel Saeed Anam Products for North Yemen and built the first Showroom in Sanaa (1979).",
           highlights: [
-            "Central Warehouse in Sadaa (1975)",
+            "Central Warehouse in Sadah (1975)",
             "Central Warehouse in Reidah (1976)",
             "Tobacco import and Coffee export to Saudi Arabia (1975-1978)",
             "Sole distribution of Hayel Saeed Anam Products (1979)",
@@ -61,10 +61,10 @@ const History = ({ currentLanguage }) => {
           icon: Award,
           title: "Entry into Construction",
           description:
-            "Founded the Abu Miska Construction Division and received the first contract for the Central School Building in Sadaa (1980). Built Schools and Health Centers all over the North of Yemen (1980-1985).",
+            "Founded the Abu Miska Construction Division and received the first contract for the Central School Building in Sadah (1980). Built Schools and Health Centers all over the North of Yemen (1980-1985).",
           highlights: [
             "Founding of Construction Division (1980)",
-            "First contract: Central School in Sadaa",
+            "First contract: Central School in Sadah",
             "Schools and Health Centers across North Yemen (1980-1985)",
           ],
         },
@@ -73,11 +73,11 @@ const History = ({ currentLanguage }) => {
           icon: Rocket,
           title: "Drilling Division and Major Infrastructure",
           description:
-            "Founded the Abu Miska Drilling Division and purchased the first Drilling Rig operated in Sadaa (1983). Purchased 10 Drilling Rigs and operated on a national level (1983-1990). Awarded Sadaa Dam (1986), completed Sana’a Dam (1988), and started import and distribution of Spare Parts for Machinery, Down hole Equipment, and Drilling Fluids (1989).",
+            "Founded the Abu Miska Drilling Division and purchased the first Drilling Rig operated in Sadah (1983). Purchased 10 Drilling Rigs and operated on a national level (1983-1990). Awarded Sadah Dam (1986), completed Sana’a Dam (1988), and started import and distribution of Spare Parts for Machinery, Down hole Equipment, and Drilling Fluids (1989).",
           highlights: [
             "Drilling Division founded with first rig (1983)",
             "Expansion to 10 rigs and national operations (1983-1990)",
-            "Sadaa Dam awarded (1986)",
+            "Sadah Dam awarded (1986)",
             "Sana’a Dam completed (1988)",
             "Import of spare parts and equipment (1989)",
           ],
@@ -125,11 +125,11 @@ const History = ({ currentLanguage }) => {
           icon: Calendar,
           title: "التأسيس والابتكارات المبكرة",
           description:
-            "بدأت شركة أبو مسكة في توريد الطعام والنسيج إلى المنطقة الشمالية من اليمن عبر رحلات مغامرة من عدن والحديدة إلى سادة، تستغرق حتى ثلاثة أسابيع باستخدام الخيول والعربات. في عام 1968، استخدم الشيخ أحمد أبو مسكة، الرئيس حتى اليوم، السيارة الأولى في سادة للخدمة بين عدن وصنعاء وسادة.",
+            "بدأت شركة أبو مسكة في توريد الطعام والنسيج إلى المنطقة الشمالية من اليمن عبر رحلات مغامرة من عدن والحديدة إلى صعدة، تستغرق حتى ثلاثة أسابيع باستخدام الخيول والعربات. في عام 1968، استخدم الشيخ أحمد أبو مسكة، الرئيس حتى اليوم، السيارة الأولى في صعدة للخدمة بين عدن وصنعاء وصعدة.",
           highlights: [
             "توريدات من الموانئ الرئيسية عدن والحديدة",
             "رحلات تصل إلى ثلاثة أسابيع باستخدام الخيول والعربات",
-            "إدخال السيارة الأولى في سادة للنقل",
+            "إدخال السيارة الأولى في صعدة للنقل",
           ],
         },
         {
@@ -137,12 +137,12 @@ const History = ({ currentLanguage }) => {
           icon: Users,
           title: "توسع المنشآت والتجارة",
           description:
-            "بناء أول مستودع مركزي في سادة (1975) وآخر في ريدة (1976). توسع الأعمال في استيراد التبغ وتصدير القهوة إلى السعودية (1975-1978). تولي التوزيع الحصري لمنتجات هائل سعيد أنم لشمال اليمن وبناء أول صالة عرض في صنعاء (1979).",
+            "بناء أول مستودع مركزي في صعدة (1975) وآخر في ريدة (1976). توسع الأعمال في استيراد التبغ وتصدير القهوة إلى السعودية (1975-1978). تولي التوزيع الحصري لمنتجات هائل سعيد أنعم لشمال اليمن وبناء أول صالة عرض في صنعاء (1979).",
           highlights: [
-            "مستودع مركزي في سادة (1975)",
+            "مستودع مركزي في صعدة (1975)",
             "مستودع مركزي في ريدة (1976)",
             "استيراد التبغ وتصدير القهوة إلى السعودية (1975-1978)",
-            "التوزيع الحصري لمنتجات هائل سعيد أنم (1979)",
+            "التوزيع الحصري لمنتجات هائل سعيد أنعم (1979)",
             "أول صالة عرض في صنعاء (1979)",
           ],
         },
@@ -151,10 +151,10 @@ const History = ({ currentLanguage }) => {
           icon: Award,
           title: "الدخول في مجال البناء",
           description:
-            "تأسيس قسم البناء في أبو مسكة وحصول على أول عقد لبناء المدرسة المركزية في سادة (1980). بناء مدارس ومراكز صحية في جميع أنحاء شمال اليمن (1980-1985).",
+            "تأسيس قسم البناء في أبو مسكة وحصول على أول عقد لبناء المدرسة المركزية في صعدة (1980). بناء مدارس ومراكز صحية في جميع أنحاء شمال اليمن (1980-1985).",
           highlights: [
             "تأسيس قسم البناء (1980)",
-            "أول عقد: المدرسة المركزية في سادة",
+            "أول عقد: المدرسة المركزية في صعدة",
             "مدارس ومراكز صحية عبر شمال اليمن (1980-1985)",
           ],
         },
@@ -163,11 +163,11 @@ const History = ({ currentLanguage }) => {
           icon: Rocket,
           title: "قسم الحفر ومشاريع البنية التحتية الكبرى",
           description:
-            "تأسيس قسم الحفر في أبو مسكة وشراء أول جهاز حفر يعمل في سادة (1983). شراء 10 أجهزة حفر وعمل على المستوى الوطني (1983-1990). منح سد سادة (1986)، إكمال سد صنعاء (1988)، وبدء استيراد وتوزيع قطع غيار الآلات والمعدات السفلية وسوائل الحفر (1989).",
+            "تأسيس قسم الحفر في أبو مسكة وشراء أول جهاز حفر يعمل في صعدة (1983). شراء 10 أجهزة حفر وعمل على المستوى الوطني (1983-1990). منح سد صعدة (1986)، إكمال سد صنعاء (1988)، وبدء استيراد وتوزيع قطع غيار الآلات والمعدات السفلية وسوائل الحفر (1989).",
           highlights: [
             "تأسيس قسم الحفر مع أول جهاز (1983)",
             "توسع إلى 10 أجهزة وعمليات وطنية (1983-1990)",
-            "منح سد سادة (1986)",
+            "منح سد صعدة (1986)",
             "إكمال سد صنعاء (1988)",
             "استيراد قطع الغيار والمعدات (1989)",
           ],

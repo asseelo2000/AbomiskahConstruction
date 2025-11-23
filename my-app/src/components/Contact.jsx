@@ -43,29 +43,27 @@ const Contact = ({ currentLanguage }) => {
         success: "Thank you! We'll get back to you soon."
       },
       services: [
-        "Residential Construction",
-        "Commercial Construction",
-        "Industrial Construction",
-        "Infrastructure Development",
-        "Renovation & Remodeling",
-        "Project Management"
+        "Roads and Bridges",
+        "Construction",
+        "Well Drilling",
+        "Other Projects",
       ],
       info: {
         address: {
           title: "Our Office",
-          details: ["123 Construction Avenue", "Business District", "City, Country 12345"]
+          details: ["Al-Hasbah, in front of the Central Market"]
         },
         phone: {
           title: "Call Us",
-          details: ["+1 (555) 123-4567", "+1 (555) 987-6543"]
+          details: ["711101986", "771105751"]
         },
         email: {
           title: "Email Us",
-          details: ["info@Abomiskah.com", "projects@Abomiskah.com"]
+          details: ["info@Abomiskah.com"]
         },
         hours: {
           title: "Business Hours",
-          details: ["Monday - Friday: 8:00 AM - 6:00 PM", "Saturday: 9:00 AM - 4:00 PM", "Sunday: Closed"]
+          details: ["Saturday - Thursday: 8:00 AM - 6:00 PM",  "Friday: Closed"]
         }
       }
     },
@@ -83,29 +81,27 @@ const Contact = ({ currentLanguage }) => {
         success: "شكراً لك! سنتواصل معك قريباً."
       },
       services: [
-        "البناء السكني",
-        "البناء التجاري",
-        "البناء الصناعي",
-        "تطوير البنية التحتية",
-        "التجديد وإعادة التصميم",
-        "إدارة المشاريع"
+        "الطرق والجسور",
+        "البناء",
+        "حفر الابار",
+        "مشاريع اخرى"
       ],
       info: {
         address: {
           title: "مكتبنا",
-          details: ["123 شارع البناء", "الحي التجاري", "المدينة، البلد 12345"]
+          details: ["الحصبة امام السوق المركزي"]
         },
         phone: {
           title: "اتصل بنا",
-          details: ["+1 (555) 123-4567", "+1 (555) 987-6543"]
+          details: ["711101986", "771105751"]
         },
         email: {
           title: "راسلنا",
-          details: ["info@Abomiskah.com", "projects@Abomiskah.com"]
+          details: ["info@Abomiskah.com"]
         },
         hours: {
           title: "ساعات العمل",
-          details: ["الاثنين - الجمعة: 8:00 ص - 6:00 م", "السبت: 9:00 ص - 4:00 م", "الأحد: مغلق"]
+          details: ["السبت - الخميس: 8:00 ص - 5:00 م", "الجمعة: مغلق"]
         }
       }
     }

@@ -12,13 +12,36 @@ const Clients = ({ currentLanguage = "en" }) => {
       description:
         "We're proud to have worked with some of the most respected companies and organizations in the region.",
       clients: [
-        { name: "Al-Rashid Development", logo: "🏢" },
-        { name: "TechCorp International", logo: "💻" },
-        { name: "Industrial Solutions", logo: "🏭" },
-        { name: "Metro Construction", logo: "🚇" },
-        { name: "Royal Hotels Group", logo: "🏨" },
-        { name: "Smart City Initiative", logo: "🌆" },
-        { name: "Healthcare Partners", logo: "🏥" },
+        // { name: "Al-Rashid Development", logo: "🏢" },
+        // { name: "TechCorp International", logo: "💻" },
+        // { name: "Industrial Solutions", logo: "🏭" },
+        // { name: "Metro Construction", logo: "🚇" },
+        // { name: "Royal Hotels Group", logo: "🏨" },
+        // { name: "Smart City Initiative", logo: "🌆" },
+        // { name: "Healthcare Partners", logo: "🏥" },
+        { name: "Rural Roads Development Program", logo: "/images/clients/ruralRoadsLogo.png" },
+        { name: "Ministry of Public Works and Roads", logo: "/images/clients/MinistryofPublicWorksandRoads.png" },
+        { name: "Civil Aviation and Meteorology Authority", logo: "/images/clients/CivilAviationandMeteorologyAuthority.png"},
+        { name: "General Authority for Roads and Bridges", logo: "/images/clients/GeneralAuthorityforRoadsandBridges.png" },
+        { name: "Ministry of Water and Environment",  logo: "/images/clients/MinistryofWaterandEnvironment.png" },
+        { name: "Local Water and Sanitation Authority - Capital", logo: "/images/clients/LocalWaterandSanitationAuthority.png" },
+        { name: "Local Water and Sanitation Authority - Sana'a", logo: "/images/clients/LocalWaterandSanitationAuthority.png" },
+        { name: "Local Water and Sanitation Authority - Aden", logo: "/images/clients/LocalWaterandSanitationAuthority.png" },
+        { name: "Local Water and Sanitation Authority - Hadramout", logo: "/images/clients/LocalWaterandSanitationAuthority.png" },
+        { name: "Local Water and Sanitation Authority - Lahj", logo: "/images/clients/LocalWaterandSanitationAuthority.png" },
+        { name: "Ministry of Agriculture and Irrigation", logo: "/images/clients/MinistryofAgricultureandIrrigation.png" },
+        { name: "Yemeni Economic Corporation", logo: "/images/clients/YemeniEconomicCorporation.png" },
+        { name: "Ministry of Agriculture, Water and Fisheries (Djibouti)", logo: "/images/clients/MinistryofAgricultureWaterandFisheries.png" },
+        { name: "Urban Planning, Finance and Environment (Djibouti)", logo: "🏢" },
+        { name: "JICA Japan Company (Djibouti)", logo: "/images/clients/JapanInternationalCooperationAgency.png"},
+
+
+        { name: "National Dairy and Food Company (Nadfood)", logo: "/images/clients/Nadfood.png"},
+        { name: "National Trading Company Ltd. (Natco)", logo: "/images/clients/JapanInternationalCooperationAgency.png"},
+        { name: "Yemeni Mills and Silos Company", logo: "/images/clients/YemeniMillsandSilosCompany.png"},
+        { name: "Yemeni Sugar Refining Company", logo: "/images/clients/YemeniSugarRefiningCompany.png"},
+        { name: "Yemeni Ghee and Soap Manufacturing Company", logo: "/images/clients/YemeniGheeandSoapManufacturingCompany.png"},
+        { name: "National Cement Company", logo: "/images/clients/NationalCementCompany.png"},
       ],
     },
     ar: {
@@ -26,14 +49,39 @@ const Clients = ({ currentLanguage = "en" }) => {
       subtitle: "موثوق من قبل المؤسسات الرائدة",
       description:
         "نحن فخورون بالعمل مع بعض أكثر الشركات والمؤسسات احتراماً في المنطقة.",
+      // clients: [
+      //   { name: "تطوير الراشد", logo: "🏢" },
+      //   { name: "تك كورب الدولية", logo: "💻" },
+      //   { name: "الحلول الصناعية", logo: "🏭" },
+      //   { name: "مجموعة الفنادق الملكية", logo: "🏨" },
+      //   { name: "مبادرة المدينة الذكية", logo: "🌆" },
+      //   { name: "شركاء الرعاية الصحية", logo: "🏥" },
+      // ],
       clients: [
-        { name: "تطوير الراشد", logo: "🏢" },
-        { name: "تك كورب الدولية", logo: "💻" },
-        { name: "الحلول الصناعية", logo: "🏭" },
-        { name: "مجموعة الفنادق الملكية", logo: "🏨" },
-        { name: "مبادرة المدينة الذكية", logo: "🌆" },
-        { name: "شركاء الرعاية الصحية", logo: "🏥" },
-      ],
+          { name: "برنامج تنمية الطرق الريفية", logo:"/images/clients/ruralRoadsLogo.png" },
+          { name: "وزارة الاشغال العامة والطرق", logo: "/images/clients/MinistryofPublicWorksandRoads.png" },
+          { name: "الهيئة العامة للطيران المدني والارصاد", logo:"/images/clients/CivilAviationandMeteorologyAuthority.png"},
+          { name: "المؤسسة العامة للطرق والجسور",  logo: "/images/clients/GeneralAuthorityforRoadsandBridges.png"  },
+          { name: "وزارة المياه والبيئة", logo: "/images/clients/MinistryofWaterandEnvironment.png" },
+          { name: "المؤسسة المحلية للمياه والصرف الصحي بامانة العاصمة", logo: "/images/clients/LocalWaterandSanitationAuthority.png" },
+          { name: "المؤسسة المحلية للمياه والصرف الصحي محافظة صنعاء", logo: "/images/clients/LocalWaterandSanitationAuthority.png" },
+          { name: "المؤسسة المحلية للمياه والصرف الصحي محافظة عدن", logo: "/images/clients/LocalWaterandSanitationAuthority.png" },
+          { name: "المؤسسة المحلية للمياه والصرف الصحي محافظة حضرموت", logo: "/images/clients/LocalWaterandSanitationAuthority.png" },
+          { name: "المؤسسة المحلية للمياه والصرف الصحي محافظة لحج", logo: "/images/clients/LocalWaterandSanitationAuthority.png" },
+          { name: "وزارة الزراعة والري",  logo: "/images/clients/MinistryofAgricultureandIrrigation.png" },
+          { name: "المؤسسة الاقتصادية اليمنية",  logo: "/images/clients/YemeniEconomicCorporation.png"  },
+          { name: "وزارة الزراعة والمياة والثروة السمكية والزراعية (جيبوتي)", logo: "/images/clients/MinistryofAgricultureWaterandFisheries.png"  },
+          { name: "التمويل والتخطيط الحضري والبيئة (جيبوتي)", logo: "Globe" },
+          { name: "شركة جايكا اليابانية (جيبوتي)", logo: "/images/clients/JapanInternationalCooperationAgency.png" },
+
+
+          { name: "الشركة الوطنية للالبان والأغذية (نادفوود)", logo: "/images/clients/JapanInternationalCooperationAgency.png" },
+          { name: "الشركة الوطنية للتجارة المحدودة (ناتكو)", logo: "/images/clients/Natco.png" },
+          { name: "الشركة اليمنية للمطاحن والصوامع", logo: "/images/clients/YemeniMillsandSilosCompany.png" },
+          { name: "الشركة اليمنية لتكرير السكر", logo: "/images/clients/YemeniSugarRefiningCompany.png" },
+          { name: "الشركة اليمنية لصناعة السمن والصابون", logo: "/images/clients/YemeniGheeandSoapManufacturingCompany.png" },
+          { name: "الشركة الوطنية للاسمنت", logo: "/images/clients/NationalCementCompany.png" },
+        ],
     },
   };
 
@@ -60,7 +108,7 @@ const Clients = ({ currentLanguage = "en" }) => {
       label: isArabic ? "عميل راضي" : "Happy Clients",
     },
     {
-      number: 15,
+      number: 65,
       suffix: "+",
       label: isArabic ? "سنة خبرة" : "Years Experience",
     },
@@ -155,7 +203,7 @@ const Clients = ({ currentLanguage = "en" }) => {
   return (
     <div
       className="relative overflow-hidden mb-10"
-      style={{ height: "140px", direction: "ltr" }}
+      style={{ height: "220px", direction: "ltr" }}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -179,13 +227,37 @@ const Clients = ({ currentLanguage = "en" }) => {
             title={name}
           >
             <motion.div
+                  whileHover={{ scale: 1.15 }}
+                  transition={{ type: "spring", stiffness: 300 }}
+                  className="flex flex-col items-center justify-center"
+                >
+                  <div className="w-24 h-24 flex items-center justify-center bg-white rounded-lg shadow-md p-4 border border-gray-100">
+                    {logo.startsWith("http") || logo.startsWith("/") ? (
+                      <img 
+                        src={logo} 
+                        alt={name} 
+                        className="max-w-full max-h-full object-contain"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.target.src = "/images/clients/placeholder-logo.png"; // fallback
+                        }}
+                      />
+                    ) : (
+                      <span className="text-4xl">{logo}</span> // fallback to emoji if needed
+                    )}
+                  </div>
+                  <p className="text-xs sm:text-sm font-medium text-gray-700 mt-3 text-center px-2 leading-tight">
+                    {name}
+                  </p>
+                </motion.div>
+            {/* <motion.div
             whileHover={{ scale: 1.2 }}
             transition={{ type: "spring", stiffness: 300 }}
             className="text-5xl"
           >
             {logo}
             <p className="text-base font-medium text-gray-900 mt-2">{name}</p>
-          </motion.div>
+          </motion.div> */}
           </div>
         ))}
       </motion.div>

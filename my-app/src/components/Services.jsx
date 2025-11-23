@@ -2,11 +2,9 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import {
   Building,
-  Factory,
-  Hammer,
-  Home,
-  Shield,
-  Wrench,
+  TrafficConeIcon,
+  ChartNoAxesGantt,
+  Droplet
 } from 'lucide-react';
 
 // Local Button Component
@@ -31,47 +29,75 @@ const Services = ({ currentLanguage }) => {
       cta: "Get Quote",
       services: [
         {
-          icon: Home,
-          title: "Residential Construction",
+          icon: TrafficConeIcon,
+          title: "Roads and Bridges",
           description:
-            "Custom homes, renovations, and residential developments built to the highest standards of quality and comfort.",
-          features: ["Custom Home Design", "Renovations & Extensions", "Interior Finishing", "Landscaping"],
+            "Road excavation, asphalt paving, and bridge construction",
+          features: ["Road excavation", "Construction of surface bridges", "Stone paving for roads"],
         },
         {
           icon: Building,
-          title: "Commercial Construction",
+          title: "Construction",
           description:
-            "Office buildings, retail spaces, and commercial complexes designed for functionality and aesthetic appeal.",
-          features: ["Office Buildings", "Retail Spaces", "Restaurants & Hotels", "Shopping Centers"],
+            "Construction of commercial, residential, and service buildings",
+          features: ["Residential buildings", "Malls and commercial markets", "Warehouses and metal structures", "Industrial centers", "Sports facilities"],
         },
         {
-          icon: Factory,
-          title: "Industrial Construction",
+          icon: Droplet,
+          title: "Well Drilling",
           description:
-            "Warehouses, factories, and industrial facilities built for efficiency, safety, and long-term durability.",
-          features: ["Warehouses", "Manufacturing Plants", "Storage Facilities", "Industrial Complexes"],
+            "Drilling, installing pumps, and testing water flow",
+          features: ["Drilling or deepening", "Widening", "Casing or lining", "Installing pumps and flow testing"],
         },
         {
-          icon: Wrench,
-          title: "Infrastructure Development",
+          icon: ChartNoAxesGantt,
+          title: "Other Projects",
           description:
-            "Roads, bridges, and public infrastructure projects that connect communities and drive economic growth.",
-          features: ["Road Construction", "Bridge Building", "Utilities Installation", "Site Development"],
-        },
-        {
-          icon: Hammer,
-          title: "Renovation & Remodeling",
-          description:
-            "Transform existing spaces with our comprehensive renovation and remodeling services.",
-          features: ["Kitchen Remodeling", "Bathroom Renovation", "Office Upgrades", "Structural Modifications"],
-        },
-        {
-          icon: Shield,
-          title: "Project Management",
-          description:
-            "Complete project oversight from planning to completion, ensuring timely delivery and quality results.",
-          features: ["Project Planning", "Quality Control", "Timeline Management", "Budget Oversight"],
-        },
+            "Additional projects that we are capable of executing",
+          features: ["Construction of dams of all types and sizes", "Building and establishing ports or airports"],
+        }
+        // {
+        //   icon: Home,
+        //   title: "Residential Construction",
+        //   description:
+        //     "Custom homes, renovations, and residential developments built to the highest standards of quality and comfort.",
+        //   features: ["Custom Home Design", "Renovations & Extensions", "Interior Finishing", "Landscaping"],
+        // },
+        // {
+        //   icon: Building,
+        //   title: "Commercial Construction",
+        //   description:
+        //     "Office buildings, retail spaces, and commercial complexes designed for functionality and aesthetic appeal.",
+        //   features: ["Office Buildings", "Retail Spaces", "Restaurants & Hotels", "Shopping Centers"],
+        // },
+        // {
+        //   icon: Factory,
+        //   title: "Industrial Construction",
+        //   description:
+        //     "Warehouses, factories, and industrial facilities built for efficiency, safety, and long-term durability.",
+        //   features: ["Warehouses", "Manufacturing Plants", "Storage Facilities", "Industrial Complexes"],
+        // },
+        // {
+        //   icon: Wrench,
+        //   title: "Infrastructure Development",
+        //   description:
+        //     "Roads, bridges, and public infrastructure projects that connect communities and drive economic growth.",
+        //   features: ["Road Construction", "Bridge Building", "Utilities Installation", "Site Development"],
+        // },
+        // {
+        //   icon: Hammer,
+        //   title: "Renovation & Remodeling",
+        //   description:
+        //     "Transform existing spaces with our comprehensive renovation and remodeling services.",
+        //   features: ["Kitchen Remodeling", "Bathroom Renovation", "Office Upgrades", "Structural Modifications"],
+        // },
+        // {
+        //   icon: Shield,
+        //   title: "Project Management",
+        //   description:
+        //     "Complete project oversight from planning to completion, ensuring timely delivery and quality results.",
+        //   features: ["Project Planning", "Quality Control", "Timeline Management", "Budget Oversight"],
+        // },
       ],
     },
     ar: {
@@ -82,47 +108,75 @@ const Services = ({ currentLanguage }) => {
       cta: "احصل على عرض سعر",
       services: [
         {
-          icon: Home,
-          title: "البناء السكني",
+          icon: TrafficConeIcon,
+          title: "الطرق والجسور",
           description:
-            "منازل مخصصة وتجديدات ومشاريع سكنية مبنية بأعلى معايير الجودة والراحة.",
-          features: ["تصميم المنازل", "التجديدات", "تشطيبات داخلية", "تنسيق الحدائق"],
+            "شق الطرق والسفلتة وبناء الجسور",
+          features: ["الرصف الحجري للطرق ", "تنفيذ الجسور السطحية", "شق الطرق"],
         },
         {
           icon: Building,
-          title: "البناء التجاري",
+          title: "الإنشاءات",
           description:
-            "المباني المكتبية والمساحات التجارية والمجمعات التجارية المصممة للجمال والوظيفة.",
-          features: ["مكاتب", "محلات", "مطاعم وفنادق", "مراكز تسوق"],
+            "انشاء المباني التجارية والسكنية والخدمية",
+          features: ["المنشئات الرياضية" ,"المراكز الصناعية", "الهناجر والإنشاءات المعدنية", "المولات والأسواق التجارية", "المباني السكنية"],
         },
         {
-          icon: Factory,
-          title: "البناء الصناعي",
+          icon: Droplet,
+          title: "حفر الابار",
           description:
-            "مستودعات، مصانع، ومرافق صناعية مبنية بالكفاءة والسلامة.",
-          features: ["مستودعات", "مصانع", "مرافق تخزين", "مجمعات صناعية"],
+            "حفر و وتركيب مضخات وتجربة الضخ",
+          features: ["تركيب المضخات واختبار الضخ", "التغليف او التكييس", "التوسيع", "الحفر او التعميق"],
         },
         {
-          icon: Wrench,
-          title: "تطوير البنية التحتية",
+          icon: ChartNoAxesGantt,
+          title: "مشاريع اخرى",
           description:
-            "طرق وجسور ومشاريع بنية تحتية عامة تربط المجتمعات.",
-          features: ["بناء الطرق", "بناء الجسور", "التركيبات", "تطوير المواقع"],
-        },
-        {
-          icon: Hammer,
-          title: "تجديد وإعادة التصميم",
-          description:
-            "تحويل المساحات الحالية بخدمات التجديد.",
-          features: ["تجديد المطابخ", "تجديد الحمامات", "تحديث المكاتب", "تعديلات هيكلية"],
-        },
-        {
-          icon: Shield,
-          title: "إدارة المشاريع",
-          description:
-            "إشراف كامل من البداية للنهاية مع ضمان الجودة.",
-          features: ["تخطيط المشروع", "مراقبة الجودة", "إدارة الجدول الزمني", "إدارة الميزانية"],
-        },
+            "المشاريع الأخرى التي نستطيع القيام بها",
+          features: ["بناء وتأسيس الموانئ او المطارات", "بناء السدود بكافة أنواعها واحجامها"],
+        }
+        // {
+        //   icon: Home,
+        //   title: "البناء السكني",
+        //   description:
+        //     "منازل مخصصة وتجديدات ومشاريع سكنية مبنية بأعلى معايير الجودة والراحة.",
+        //   features: ["تصميم المنازل", "التجديدات", "تشطيبات داخلية", "تنسيق الحدائق"],
+        // },
+        // {
+        //   icon: Building,
+        //   title: "البناء التجاري",
+        //   description:
+        //     "المباني المكتبية والمساحات التجارية والمجمعات التجارية المصممة للجمال والوظيفة.",
+        //   features: ["مكاتب", "محلات", "مطاعم وفنادق", "مراكز تسوق"],
+        // },
+        // {
+        //   icon: Factory,
+        //   title: "البناء الصناعي",
+        //   description:
+        //     "مستودعات، مصانع، ومرافق صناعية مبنية بالكفاءة والسلامة.",
+        //   features: ["مستودعات", "مصانع", "مرافق تخزين", "مجمعات صناعية"],
+        // },
+        // {
+        //   icon: Wrench,
+        //   title: "تطوير البنية التحتية",
+        //   description:
+        //     "طرق وجسور ومشاريع بنية تحتية عامة تربط المجتمعات.",
+        //   features: ["بناء الطرق", "بناء الجسور", "التركيبات", "تطوير المواقع"],
+        // },
+        // {
+        //   icon: Hammer,
+        //   title: "تجديد وإعادة التصميم",
+        //   description:
+        //     "تحويل المساحات الحالية بخدمات التجديد.",
+        //   features: ["تجديد المطابخ", "تجديد الحمامات", "تحديث المكاتب", "تعديلات هيكلية"],
+        // },
+        // {
+        //   icon: Shield,
+        //   title: "إدارة المشاريع",
+        //   description:
+        //     "إشراف كامل من البداية للنهاية مع ضمان الجودة.",
+        //   features: ["تخطيط المشروع", "مراقبة الجودة", "إدارة الجدول الزمني", "إدارة الميزانية"],
+        // },
       ],
     },
   };
@@ -144,7 +198,7 @@ const Services = ({ currentLanguage }) => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
           {currentContent.services.map((service, index) => {
             const Icon = service.icon;
             return (

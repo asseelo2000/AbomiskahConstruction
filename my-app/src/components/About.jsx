@@ -11,22 +11,22 @@ const About = ({ currentLanguage }) => {
   const content = {
     en: {
       title: "About Abomiskah",
-      subtitle: "Building Excellence Since 2008",
+      subtitle: "Pioneering Excellence Since 1960",
       description:
-        "Abomiskah Construction Company has been at the forefront of the construction industry for over 15 years. We specialize in delivering high-quality residential, commercial, and industrial projects that stand the test of time.",
+        "Abomiskah Construction Company has been pioneering excellence since 1960 under the leadership of Chairman Ahmad Moawad Abomiska and General Manager Hisham Ahmed Abomiska. With over 15 years at the forefront of the modern construction industry, the company specializes in delivering high-quality residential, commercial, and industrial projects that stand the test of time.",
       mission: {
         title: "Our Mission",
         // text: "To deliver exceptional construction solutions that exceed client expectations while maintaining the highest standards of quality, safety, and sustainability.",
-        text: "Through our valued human capital, we will make a difference — in the local and regional markets, and eventually on a global scale.",
+        text: "Through our human capabilities, which we take great pride in, we will make a difference in the local and regional markets, reaching all the way to the global stage.",
       },
       vision: {
         title: "Our Vision",
         // text: "To be the leading construction company in the region, recognized for innovation, reliability, and commitment to building a better future.",
-        text: "To lead in providing high-quality contracting services at the lowest cost, achieving excellence across all areas of service offered to our valued clients — to become a leading regional institution in our field, reaching global standards, and striving to be one of the most advanced, prominent, and high-performing pillars in the contracting sector and other services we provide.",
+        text: "Leading in providing high-quality services at the lowest cost and achieving outstanding accomplishments in all fields and services offered to our valued clients. We strive to become a leading regional institution in our field, reaching the global level, and to be one of the most advanced pillars—distinguished in status and performance—in the contracting sector and the other services we provide.",
       },
       values: {
         title: "Our Values",
-        text: "Driven by values that go beyond the factors of our success — serving as our source of guidance and inspiration — we carry out our work based on the following core values:",
+        text: "Our values are not only the foundation of our success but also the source of our guidance and inspiration. We carry out our work based on the following core values:",
         items: [
           // "Quality craftsmanship in every project",
           // "Commitment to safety and sustainability",
@@ -63,9 +63,9 @@ const About = ({ currentLanguage }) => {
         },
         {
           icon: Heart,
-          title: "Client Satisfaction",
+          title: "Performance Monitoring",
           description:
-            "Dedicated to exceeding client expectations and building lasting relationships.",
+            "Performance monitoring is a key pillar of the company's success, ensuring precise follow-up of execution stages and evaluating team performance to guarantee quality, timely delivery, and reliable results that meet client expectations.",
         },
       ],
       strategy: {
@@ -75,22 +75,22 @@ const About = ({ currentLanguage }) => {
     },
     ar: {
       title: "عن أبو مسكة",
-      subtitle: "نبني التميز منذ 2008",
+      subtitle: "نبني التميز منذ 1960",
       description:
-        "شركة أبو مسكة للمقاولات في المقدمة في صناعة البناء لأكثر من 15 عامًا. نحن متخصصون في تقديم مشاريع سكنية وتجارية وصناعية عالية الجودة تصمد أمام اختبار الزمن.",
+        "شركة أبومسكة للمقاولات رائدة في مجال التميز منذ عام 1960 تحت قيادة رئيس مجلس الإدارة أحمد معوض أبومسكة والمدير العام هشام أحمد أبومسكة. وعلى مدى أكثر من 15 عامًا في طليعة قطاع البناء الحديث، تتخصص الشركة في تنفيذ مشاريع سكنية وتجارية وصناعية عالية الجودة تُصمَّم لتصمد عبر الزمن.",
       mission: {
         title: "مهمتنا",
         // text: "تقديم حلول إنشائية استثنائية تتجاوز توقعات العملاء مع الحفاظ على أعلى معايير الجودة والسلامة والاستدامة.",
-        text: "من خلال ثروتنا البشرية التي نعتز بها سوف نشيد الفارق سواء في السوق المحلية أو الإقليمية وصولا للعالمية",
+        text: "من خلال قدرتنا البشرية التي نعتز بها سوف نشيد الفارق سواء في السوق المحلية او الإقليمية وصولا الى العالمية",
       },
       vision: {
         title: "رؤيتنا",
         // text: "أن نكون شركة البناء الرائدة في المنطقة، معترف بها للابتكار والموثوقية والالتزام ببناء مستقبل أفضل.",
-        text: "الريادة في توفير خدمات مقاولات عالية الجودة وبأقل تكلفة وتحقيق أفضل انجازات في جميع مجالاتنا المقدمة لعملائنا الكرام وأن تكون مؤسسة اقليمية رائدة في مجال خدماتنا وصولا الى العالمية والسعي لأن تكون أحد الركائز المتقدمة والأرفغ مكانا والأفضل أداء في قطاع المقاولات والخدمات الأخرى التي نقدمها",
+        text: "الريادة في توفير خدمات عالية الجودة وباقل تكلفة وتحقيق افضل الإنجازات في جميع المجالات والخدمات المقدمة لعملائنا الكرام وان نكون مؤسسة إقليمية رائدة في مجال خدماتنا وصولا الى العالمية والسعي الى ان نكون احد الركائز المتقدمة والارقى مكانة والأفضل أداء في قطاع المقاولات والخدمات الأخرى التي نقدمها",
       },
       values: {
         title: "قيمنا",
-        text: "مدفوعون بقيم تتجاوز عوامل نجاحنا — حيث تشكل مصدر إلهامنا وتوجيهنا — ونقوم بعملنا بناءً على القيم الأساسية التالية:",
+        text: "قيمنا لا تقتصر على عوامل نجاحنا بل انها هي مصدر توجيهنا والهامنا فإننا نقوم بأعمالنا على قيمنا التالية:",
         items: [
           // "الحرفية عالية الجودة في كل مشروع",
           // "الالتزام بالسلامة والاستدامة",
@@ -122,8 +122,8 @@ const About = ({ currentLanguage }) => {
         },
         {
           icon: Heart,
-          title: "رضا العملاء",
-          description: "مكرسون لتجاوز توقعات العملاء وبناء علاقات دائمة.",
+          title: "مراقبة الأداء",
+          description: "تمثل مراقبة الأداء إحدى ركائز نجاح الشركة من خلال متابعة دقيقة لمراحل التنفيذ وقياس أداء الفرق لضمان الجودة والالتزام بالوقت وتقديم نتائج موثوقة تلبي تطلعات العملاء.",
         },
       ],
       strategy: {

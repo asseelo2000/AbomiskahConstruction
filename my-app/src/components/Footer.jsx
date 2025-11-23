@@ -21,7 +21,7 @@ const Footer = ({ currentLanguage }) => {
       company: {
         name: "Abomiskah",
         tagline: "Construction Company",
-        description: "Building excellence since 2008. We deliver high-quality construction solutions that stand the test of time."
+        description: "Pioneering Excellence Since 1960. We deliver high-quality construction solutions that stand the test of time."
       },
       quickLinks: {
         title: "Quick Links",
@@ -37,25 +37,23 @@ const Footer = ({ currentLanguage }) => {
       services: {
         title: "Our Services",
         items: [
-          "Residential Construction",
-          "Commercial Construction",
-          "Industrial Construction",
-          "Infrastructure Development",
-          "Renovation & Remodeling",
-          "Project Management"
+          "Roads and Bridges",
+          "Construction",
+          "Well Drilling",
+          "Other Projects",
         ]
       },
       contact: {
         title: "Contact Info",
-        address: "123 Construction Avenue, Business District",
-        phone: "+1 (555) 123-4567",
+        address: "Al-Hasbah, in front of the Central Market",
+        phone: "711101986 - 771105751",
         email: "info@Abomiskah.com"
       },
       social: {
         title: "Follow Us"
       },
       bottom: {
-        copyright: "© 2024 Abomiskah Construction Company. All rights reserved.",
+        copyright: "© 2025 Abomiskah Construction Company. All rights reserved.",
         privacy: "Privacy Policy",
         terms: "Terms of Service"
       },
@@ -65,7 +63,7 @@ const Footer = ({ currentLanguage }) => {
       company: {
         name: "أبو مسكة",
         tagline: "شركة المقاولات",
-        description: "نبني التميز منذ 2008. نقدم حلول إنشائية عالية الجودة تصمد أمام اختبار الزمن."
+        description: "نبني التميز منذ 1960. نقدم حلول إنشائية عالية الجودة تصمد أمام اختبار الزمن."
       },
       quickLinks: {
         title: "روابط سريعة",
@@ -81,18 +79,16 @@ const Footer = ({ currentLanguage }) => {
       services: {
         title: "خدماتنا",
         items: [
-          "البناء السكني",
-          "البناء التجاري",
-          "البناء الصناعي",
-          "تطوير البنية التحتية",
-          "التجديد وإعادة التصميم",
-          "إدارة المشاريع"
+          "الطرق والجسور",
+          "الإنشاءات",
+          "حفر الابار",
+          "مشاريع اخرى",
         ]
       },
       contact: {
         title: "معلومات الاتصال",
-        address: "123 شارع البناء، الحي التجاري",
-        phone: "+1 (555) 123-4567",
+        address: "الحصبة امام السوق المركزي",
+        phone: "711101986 -	771105751",
         email: "info@Abomiskah.com"
       },
       social: {
