@@ -222,11 +222,17 @@ const History = ({ currentLanguage }) => {
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 50 },
+    hidden: { opacity: 0, y: 40 },
     visible: (index) => ({
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6, delay: index * 0.2 },
+      transition: {
+        type: '',
+        stiffness: 120,
+        damping: 20,
+        mass: 0.8,
+        delay: index * 0.1,
+      },
     }),
   };
 
@@ -286,7 +292,7 @@ const History = ({ currentLanguage }) => {
             viewport={{ once: false, amount: 0.2 }}
           />
 
-          <div className="flex flex-col gap-10 max-h-[75vh] overflow-y-auto snap-y snap-mandatory pr-4 -mr-4 lg:-mr-0 lg:max-h-none lg:overflow-visible lg:snap-none lg:flex-row lg:gap-4">
+          <div className="flex flex-col gap-10 lg:flex-row lg:gap-4">
             {currentContent.milestones.map((milestone, index) => {
               const Icon = milestone.icon;
               return (
@@ -300,10 +306,12 @@ const History = ({ currentLanguage }) => {
                   viewport={{ once: false, amount: 0.3 }}
                   onMouseEnter={() => setHovered(index)}
                   onMouseLeave={() => setHovered(null)}
+                  whileHover={{ y: -4 }}
+                  transition={{ layout: { duration: 0.4, ease: 'easeOut' } }}
                 >
                   {/* Milestone Node */}
                   <div
-                    className={`absolute ${mobileDotPositionClass} top-2 lg:static w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full border-4 border-red-600 shadow-md z-10 transform hover:scale-110 transition-transform duration-300 flex items-center justify-center`}
+                    className={`absolute ${mobileDotPositionClass} top-2 lg:static w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full border-4 border-red-600 shadow-md z-10 transform lg:hover:scale-110 transition-transform duration-300 flex items-center justify-center will-change-transform`}
                   >
                     <div className="flex flex-col items-center leading-tight">
                       <Icon className="text-blue-600 w-6 h-6 mb-0.5" />
@@ -312,7 +320,7 @@ const History = ({ currentLanguage }) => {
                   </div>
 
                   {/* Card */}
-                  <div className="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 w-full lg:mt-12">
+                  <div className="bg-white p-4 rounded-xl shadow-lg lg:hover:shadow-2xl transform lg:hover:-translate-y-2 transition-all duration-300 w-full lg:mt-12 will-change-transform">
                     <h3 className="text-lg font-semibold mb-2 text-center lg:text-center">{milestone.title}</h3>
                     <p className="text-gray-600 mb-4 text-sm">{milestone.description}</p>
                     <ul className="text-xs text-gray-500 space-y-1">
