@@ -25,9 +25,9 @@ const Projects = ({ currentLanguage = 'en' }) => {
         'Explore our portfolio of successful projects spanning residential, commercial, and industrial sectors.',
       filters: [
         { key: 'all', label: 'All Projects' },
-        { key: 'residential', label: 'Residential' },
-        { key: 'commercial', label: 'Commercial' },
-        { key: 'industrial', label: 'Industrial' }
+        { key: 'residential', label: 'Service Buildings' },
+        { key: 'commercial', label: 'Well Drilling' },
+        { key: 'industrial', label: 'Road Excavation' }
       ],
       viewMore: 'View Project Details',
       projects: [
@@ -106,9 +106,9 @@ const Projects = ({ currentLanguage = 'en' }) => {
         'استكشف محفظة مشاريعنا الناجحة التي تمتد عبر القطاعات السكنية والتجارية والصناعية.',
       filters: [
         { key: 'all', label: 'جميع المشاريع' },
-        { key: 'residential', label: 'سكني' },
-        { key: 'commercial', label: 'تجاري' },
-        { key: 'industrial', label: 'صناعي' }
+        { key: 'residential', label: 'المباني الخدمية' },
+        { key: 'commercial', label: 'حفر الابار' },
+        { key: 'industrial', label: 'شق الطرق' }
       ],
       viewMore: 'عرض تفاصيل المشروع',
       projects: [

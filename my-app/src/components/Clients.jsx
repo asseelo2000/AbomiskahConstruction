@@ -75,7 +75,7 @@ const Clients = ({ currentLanguage = "en" }) => {
           { name: "شركة جايكا اليابانية (جيبوتي)", logo: "/images/clients/JapanInternationalCooperationAgency.png" },
 
 
-          { name: "الشركة الوطنية للالبان والأغذية (نادفوود)", logo: "/images/clients/JapanInternationalCooperationAgency.png" },
+          { name: "الشركة الوطنية للالبان والأغذية (نادفوود)", logo: "/images/clients/Nadfood.png" },
           { name: "الشركة الوطنية للتجارة المحدودة (ناتكو)", logo: "/images/clients/Natco.png" },
           { name: "الشركة اليمنية للمطاحن والصوامع", logo: "/images/clients/YemeniMillsandSilosCompany.png" },
           { name: "الشركة اليمنية لتكرير السكر", logo: "/images/clients/YemeniSugarRefiningCompany.png" },

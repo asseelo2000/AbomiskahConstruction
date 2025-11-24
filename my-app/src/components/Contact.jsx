@@ -59,7 +59,7 @@ const Contact = ({ currentLanguage }) => {
         },
         email: {
           title: "Email Us",
-          details: ["info@Abomiskah.com"]
+          details: ["Haabomiska@abomiska.com"]
         },
         hours: {
           title: "Business Hours",
@@ -97,7 +97,7 @@ const Contact = ({ currentLanguage }) => {
         },
         email: {
           title: "راسلنا",
-          details: ["info@Abomiskah.com"]
+          details: ["Haabomiska@abomiska.com"]
         },
         hours: {
           title: "ساعات العمل",
@@ -355,16 +355,16 @@ const Contact = ({ currentLanguage }) => {
             ))}
           </div>
         </div>
-
+        
+        
         {/* Google Map Integration (replaces placeholder) */}
-        <div className="mt-16">
+        {/* <div className="mt-16">
           {isLoaded ? (
             <GoogleMap
               mapContainerStyle={mapContainerStyle}
               center={center}
-              zoom={15} // Adjust zoom level as needed (higher = more zoomed in)
+              zoom={15}
             >
-              {/* Marker for the exact address */}
               <Marker position={center} />
             </GoogleMap>
           ) : (
@@ -377,7 +377,7 @@ const Contact = ({ currentLanguage }) => {
               </div>
             </div>
           )}
-        </div>
+        </div> */}
       </div>
     </section>
   );
