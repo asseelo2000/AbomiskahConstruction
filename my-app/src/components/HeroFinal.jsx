@@ -29,7 +29,7 @@ const HeroFinal = ({ currentLanguage }) => {
       cta2: "Get Quote",
       stats: [
         { number: "500+", label: "Projects Completed" },
-        { number: "65+", label: "Years Experience" },
+        { number: "15+", label: "Years Experience" },
         { number: "100+", label: "Happy Clients" }
       ]
     },
@@ -41,7 +41,7 @@ const HeroFinal = ({ currentLanguage }) => {
       cta2: "احصل على عرض سعر",
       stats: [
         { number: "500+", label: "مشروع مكتمل" },
-        { number: "65+", label: "سنة خبرة" },
+        { number: "15+", label: "سنة خبرة" },
         { number: "100+", label: "عميل راضي" }
       ]
     }
@@ -203,7 +203,7 @@ const HeroFinal = ({ currentLanguage }) => {
                   <Users className="w-6 h-6 text-red-500" />
                 </div>
                 <div
-                  className="absolute bottom-16 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-100/90 rounded-full flex items-center justify-center animate-bounce drop-shadow-lg"
+                  className="absolute bottom-10 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-100/90 rounded-full flex items-center justify-center animate-bounce drop-shadow-lg"
                   style={{ animationDelay: '2s', animationDuration: '3s' }}
                 >
                   <Award className="w-6 h-6 text-blue-600" />

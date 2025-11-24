@@ -206,10 +206,19 @@ const History = ({ currentLanguage }) => {
   };
 
   const currentContent = content[currentLanguage];
+  const isRTL = currentLanguage === 'ar';
+  const mobileOffsetClass = isRTL ? 'pr-16' : 'pl-16';
+  const mobileDotPositionClass = isRTL ? 'right-0' : 'left-0';
+  const mobileLinePositionClass = isRTL ? 'right-8' : 'left-8';
 
   const timelineVariants = {
     hidden: { width: 0 },
     visible: { width: '100%', transition: { duration: 1.5, ease: 'easeInOut' } },
+  };
+
+  const verticalTimelineVariants = {
+    hidden: { height: 0 },
+    visible: { height: '100%', transition: { duration: 1.2, ease: 'easeInOut' } },
   };
 
   const itemVariants = {
@@ -258,55 +267,67 @@ const History = ({ currentLanguage }) => {
           </motion.p>
         </div>
 
-        <div className="relative flex flex-row gap-4 pb-8">
+        <div className="relative pb-8">
           {/* Horizontal Timeline Line */}
           <motion.div
-            className="absolute top-8 left-0 h-1 bg-gradient-to-r from-blue-600 to-red-600"
-            style={{ width: '100%' }}
+            className="hidden lg:block absolute top-8 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-red-600"
             variants={timelineVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: false, amount: 0.1 }}
           />
 
-          {currentContent.milestones.map((milestone, index) => {
-            const Icon = milestone.icon;
-            return (
-              <motion.div
-                key={index}
-                className={`flex-1 flex flex-col items-center relative min-w-0 transition-all duration-300 ${hovered !== null && hovered !== index ? 'blur-sm scale-95 opacity-70' : ''}`}
-                custom={index}
-                variants={itemVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: false, amount: 0.3 }}
-                onMouseEnter={() => setHovered(index)}
-                onMouseLeave={() => setHovered(null)}
-              >
-                {/* Milestone Node */}
-                <div className="w-20 h-20 bg-white rounded-full border-4 border-red-600 shadow-md z-10 transform hover:scale-110 transition-transform duration-300 flex items-center justify-center">
-                  <div className="flex flex-col items-center leading-tight">
-                    <Icon className="text-blue-600 w-6 h-6 mb-0.5" />
-                    <span className="text-[10px] font-bold text-gray-800">{milestone.year}</span>
-                  </div>
-                </div>
+          {/* Vertical Timeline Line for Mobile */}
+          <motion.div
+            className={`lg:hidden absolute ${mobileLinePositionClass} top-0 bottom-0 w-1 bg-gradient-to-b from-blue-600 to-red-600`}
+            variants={verticalTimelineVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.2 }}
+          />
 
-                {/* Card */}
-                <div className="mt-12 bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 w-full">
-                  <h3 className="text-lg font-semibold mb-2 text-center">{milestone.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm">{milestone.description}</p>
-                  <ul className="text-xs text-gray-500 space-y-1">
-                    {milestone.highlights.map((highlight, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span>
-                        {highlight}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
-            );
-          })}
+          <div className="flex flex-col gap-10 max-h-[75vh] overflow-y-auto snap-y snap-mandatory pr-4 -mr-4 lg:-mr-0 lg:max-h-none lg:overflow-visible lg:snap-none lg:flex-row lg:gap-4">
+            {currentContent.milestones.map((milestone, index) => {
+              const Icon = milestone.icon;
+              return (
+                <motion.div
+                  key={index}
+                  className={`relative ${mobileOffsetClass} lg:pl-0 lg:pr-0 snap-center lg:snap-none flex flex-col items-start lg:items-center gap-6 lg:gap-0 w-full lg:flex-1 min-w-0 transition-all duration-300 ${hovered !== null && hovered !== index ? 'blur-sm scale-95 opacity-70' : ''}`}
+                  custom={index}
+                  variants={itemVariants}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.3 }}
+                  onMouseEnter={() => setHovered(index)}
+                  onMouseLeave={() => setHovered(null)}
+                >
+                  {/* Milestone Node */}
+                  <div
+                    className={`absolute ${mobileDotPositionClass} top-2 lg:static w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-full border-4 border-red-600 shadow-md z-10 transform hover:scale-110 transition-transform duration-300 flex items-center justify-center`}
+                  >
+                    <div className="flex flex-col items-center leading-tight">
+                      <Icon className="text-blue-600 w-6 h-6 mb-0.5" />
+                      <span className="text-[10px] font-bold text-gray-800">{milestone.year}</span>
+                    </div>
+                  </div>
+
+                  {/* Card */}
+                  <div className="bg-white p-4 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 w-full lg:mt-12">
+                    <h3 className="text-lg font-semibold mb-2 text-center lg:text-center">{milestone.title}</h3>
+                    <p className="text-gray-600 mb-4 text-sm">{milestone.description}</p>
+                    <ul className="text-xs text-gray-500 space-y-1">
+                      {milestone.highlights.map((highlight, i) => (
+                        <li key={i} className="flex items-start gap-2">
+                          <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-1.5 flex-shrink-0"></span>
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
 
         <div className="text-center mt-16">
