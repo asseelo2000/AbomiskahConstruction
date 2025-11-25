@@ -42,6 +42,7 @@ const Clients = ({ currentLanguage = "en" }) => {
         { name: "Yemeni Sugar Refining Company", logo: "/images/clients/YemeniSugarRefiningCompany.png"},
         { name: "Yemeni Ghee and Soap Manufacturing Company", logo: "/images/clients/YemeniGheeandSoapManufacturingCompany.png"},
         { name: "National Cement Company", logo: "/images/clients/NationalCementCompany.png"},
+        { name: "Arwa Company for Mineral Water Industry", logo: "/images/clients/ArwaWaterCompany.png"},
       ],
     },
     ar: {
@@ -81,6 +82,7 @@ const Clients = ({ currentLanguage = "en" }) => {
           { name: "الشركة اليمنية لتكرير السكر", logo: "/images/clients/YemeniSugarRefiningCompany.png" },
           { name: "الشركة اليمنية لصناعة السمن والصابون", logo: "/images/clients/YemeniGheeandSoapManufacturingCompany.png" },
           { name: "الشركة الوطنية للاسمنت", logo: "/images/clients/NationalCementCompany.png" },
+          { name: "شركه اروى للصناعه المياه المعدنية", logo: "/images/clients/ArwaWaterCompany.png" },
         ],
     },
   };

@@ -89,7 +89,7 @@ const Contact = ({ currentLanguage }) => {
       info: {
         address: {
           title: "مكتبنا",
-          details: ["الحصبة امام السوق المركزي"]
+          details: ["صنعاء الحصبة – خلف وزارة التجارة والصناعة "]
         },
         phone: {
           title: "اتصل بنا",
@@ -130,7 +130,7 @@ const Contact = ({ currentLanguage }) => {
 
     // Send email via EmailJS
     emailjs.send(
-      // 'service_1uyx2sh', // Replace with your EmailJS Service ID
+      // '', // Replace with your EmailJS Service ID
       'service_brmd2aq',
       'template_uoacd3g', // Replace with your EmailJS Template ID
       templateParams,
