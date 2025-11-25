@@ -2,9 +2,11 @@ import { motion } from 'framer-motion';
 import React, { useState } from 'react';
 import {
   Building,
+  HardHat,
   TrafficConeIcon,
-  ChartNoAxesGantt,
-  Droplet
+  Sun,
+  Droplet,
+  Recycle
 } from 'lucide-react';
 
 // Local Button Component
@@ -36,7 +38,7 @@ const Services = ({ currentLanguage }) => {
           features: ["Road excavation", "Construction of surface bridges", "Stone paving for roads"],
         },
         {
-          icon: Building,
+          icon: HardHat,
           title: "Construction",
           description:
             "Construction of commercial, residential, and service buildings",
@@ -49,27 +51,37 @@ const Services = ({ currentLanguage }) => {
             "Drilling, installing pumps, and testing water flow",
           features: ["Drilling or deepening", "Widening", "Casing or lining", "Installing pumps and flow testing"],
         },
+       {
+          icon: Building,
+          title: "Infrastructure Projects",
+          description: "Implementation of strategic projects that serve the community and the economy",
+          features: [
+            "Universities and schools",
+            "Hospitals",
+            "Airports"
+          ],
+        },
         {
-          icon: ChartNoAxesGantt,
-          title: "Other Projects",
-          description:
-            "Additional projects that we are capable of executing",
-          features: ["Construction of dams of all types and sizes", "Building and establishing ports or airports"],
+          icon: Recycle,
+          title: "Sustainable Development Projects",
+          description: "Various projects supporting long-term development",
+          features: [
+            "Major sports facilities",
+            "Establishment of seaports",
+            "Construction of dams of all types and sizes"
+          ],
+        },  
+        {
+          icon: Sun,
+          title: "Solar and Clean Energy",
+          description: "Design and implementation of renewable energy projects to meet the needs of communities and large-scale projects",
+          features: [
+            "Integrated solutions to reduce emissions and achieve sustainability",
+            "Clean energy projects (wind, biomass)",
+            "Photovoltaic energy systems for buildings and residential complexes",
+            "Solar power plants"
+          ],
         }
-        // {
-        //   icon: Home,
-        //   title: "Residential Construction",
-        //   description:
-        //     "Custom homes, renovations, and residential developments built to the highest standards of quality and comfort.",
-        //   features: ["Custom Home Design", "Renovations & Extensions", "Interior Finishing", "Landscaping"],
-        // },
-        // {
-        //   icon: Building,
-        //   title: "Commercial Construction",
-        //   description:
-        //     "Office buildings, retail spaces, and commercial complexes designed for functionality and aesthetic appeal.",
-        //   features: ["Office Buildings", "Retail Spaces", "Restaurants & Hotels", "Shopping Centers"],
-        // },
         // {
         //   icon: Factory,
         //   title: "Industrial Construction",
@@ -115,7 +127,7 @@ const Services = ({ currentLanguage }) => {
           features: ["الرصف الحجري للطرق ", "تنفيذ الجسور السطحية", "شق الطرق"],
         },
         {
-          icon: Building,
+          icon: HardHat,
           title: "الإنشاءات",
           description:
             "انشاء المباني التجارية والسكنية والخدمية",
@@ -129,26 +141,26 @@ const Services = ({ currentLanguage }) => {
           features: ["تركيب المضخات واختبار الضخ", "التغليف او التكييس", "التوسيع", "الحفر او التعميق"],
         },
         {
-          icon: ChartNoAxesGantt,
-          title: "مشاريع اخرى",
+          icon: Building,
+          title: "مشاريع البنى التحتية",
           description:
             "تنفيذ المشاريع الاستراتيجية التي تخدم المجتمع والاقتصاد",
           features: ["الجامعات والمدارس", "المستشفيات", "المطارات"],
-        }
-        // {
-        //   icon: Home,
-        //   title: "البناء السكني",
-        //   description:
-        //     "منازل مخصصة وتجديدات ومشاريع سكنية مبنية بأعلى معايير الجودة والراحة.",
-        //   features: ["تصميم المنازل", "التجديدات", "تشطيبات داخلية", "تنسيق الحدائق"],
-        // },
-        // {
-        //   icon: Building,
-        //   title: "البناء التجاري",
-        //   description:
-        //     "المباني المكتبية والمساحات التجارية والمجمعات التجارية المصممة للجمال والوظيفة.",
-        //   features: ["مكاتب", "محلات", "مطاعم وفنادق", "مراكز تسوق"],
-        // },
+        },
+        {
+          icon: Recycle,
+          title: "المشاريع التنموية المستدامة",
+          description:
+            "مشاريع متنوعة تدعم التنمية طويلة الأمد",
+          features: ["المنشآت الرياضية الكبرى", "تأسيس الموانئ البحرية", "بناء السدود بكافة أنواعها وأحجامها"],
+        },
+        {
+          icon: Sun,
+          title: "الطاقة الشمسية والطاقة النظيفة",
+          description:
+            "تصميم وتنفيذ مشاريع الطاقة المتجددة لتلبية احتياجات المجتمعات والمشاريع الكبرى",
+          features: ["حلول متكاملة لتقليل الانبعاثات وتحقيق الاستدامة", "مشاريع الطاقة النظيفة (الرياح، الكتلة الحيوية)", "أنظمة الطاقة الكهروضوئية للمباني والمجمعات السكنية", "محطات الطاقة الشمسية"],
+        },
         // {
         //   icon: Factory,
         //   title: "البناء الصناعي",
