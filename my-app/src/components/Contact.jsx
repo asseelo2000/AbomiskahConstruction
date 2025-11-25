@@ -12,7 +12,11 @@ import {
 // Import EmailJS
 import emailjs from '@emailjs/browser';
 // New imports for Google Maps
-import { useJsApiLoader } from '@react-google-maps/api';
+import {
+  GoogleMap,
+  Marker,
+  useJsApiLoader,
+} from '@react-google-maps/api';
 
 const Contact = ({ currentLanguage }) => {
   const [formData, setFormData] = useState({
@@ -126,10 +130,11 @@ const Contact = ({ currentLanguage }) => {
 
     // Send email via EmailJS
     emailjs.send(
-      'service_1uyx2sh', // Replace with your EmailJS Service ID
-      'template_vcwyzpu', // Replace with your EmailJS Template ID
+      // 'service_1uyx2sh', // Replace with your EmailJS Service ID
+      'service_brmd2aq',
+      'template_uoacd3g', // Replace with your EmailJS Template ID
       templateParams,
-      'p7ObFVli4cIOiARkL' // Replace with your EmailJS User ID (public key)
+      'RbgIYG2zSieCQVjK2' // Replace with your EmailJS User ID (public key)
     )
     .then((response) => {
       console.log('Email sent successfully!', response.status, response.text);
@@ -337,7 +342,7 @@ const Contact = ({ currentLanguage }) => {
                 className="bg-white p-6 rounded-2xl shadow-lg shadow-blue-200/40 hover:shadow-red-300/50 transition-shadow duration-300 Abomiskah-hover-lift"
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-700 to-red-600 rounded-lg flex items-center justify-center m-4 transition-transform duration-300 hover:scale-110">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-700 to-red-600 rounded-lg flex items-center justify-center mr-4 transition-transform duration-300 hover:scale-110">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">{title}</h3>
