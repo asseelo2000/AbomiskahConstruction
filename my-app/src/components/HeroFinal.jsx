@@ -147,7 +147,7 @@ const HeroFinal = ({ currentLanguage }) => {
             {/* Large Logo Representation */}
             <div className="relative w-full max-w-md mx-auto">
               {/* Main Logo Circle */}
-              <div className="relative w-80 h-80 mx-auto">
+              <div className="relative mx-auto w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80">
                 {/* Background Circle */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue-100/90 to-red-100/90 animate-pulse backdrop-blur-md"></div>
                 
@@ -163,7 +163,7 @@ const HeroFinal = ({ currentLanguage }) => {
                   <img
                     src="images/logo/images-removebg-preview.png"
                     alt="Company Logo"
-                    className="w-72 h-72 object-contain"
+                    className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 object-contain"
                     style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.08))' }}
                   />
                 </div>
@@ -171,42 +171,42 @@ const HeroFinal = ({ currentLanguage }) => {
                 {/* Animated Red Lines */}
                 <div className="absolute inset-0">
                   {/* Top-left lines */}
-                  <div className="absolute top-8 left-8 w-16 h-16">
+                  <div className="absolute top-4 left-4 w-12 h-12 sm:top-8 sm:left-8 sm:w-16 sm:h-16">
                     <div className="absolute top-0 left-0 w-full h-1 bg-red-400 animate-pulse"></div>
                     <div className="absolute top-0 left-0 w-1 h-full bg-red-400 animate-pulse"></div>
                   </div>
                   
                   {/* Top-right lines */}
-                  <div className="absolute top-8 right-8 w-16 h-16">
+                  <div className="absolute top-4 right-4 w-12 h-12 sm:top-8 sm:right-8 sm:w-16 sm:h-16">
                     <div className="absolute top-0 right-0 w-full h-1 bg-red-400 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                     <div className="absolute top-0 right-0 w-1 h-full bg-red-400 animate-pulse" style={{ animationDelay: '0.5s' }}></div>
                   </div>
                   
                   {/* Bottom-left lines */}
-                  <div className="absolute bottom-8 left-8 w-16 h-16">
+                  <div className="absolute bottom-4 left-4 w-12 h-12 sm:bottom-8 sm:left-8 sm:w-16 sm:h-16">
                     <div className="absolute bottom-0 left-0 w-full h-1 bg-red-400 animate-pulse" style={{ animationDelay: '1s' }}></div>
                     <div className="absolute bottom-0 left-0 w-1 h-full bg-red-400 animate-pulse" style={{ animationDelay: '1s' }}></div>
                   </div>
                   
                   {/* Bottom-right lines */}
-                  <div className="absolute bottom-8 right-8 w-16 h-16">
+                  <div className="absolute bottom-4 right-4 w-12 h-12 sm:bottom-8 sm:right-8 sm:w-16 sm:h-16">
                     <div className="absolute bottom-0 right-0 w-full h-1 bg-red-400 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
                     <div className="absolute bottom-0 right-0 w-1 h-full bg-red-400 animate-pulse" style={{ animationDelay: '1.5s' }}></div>
                   </div>
                 </div>
 
                 {/* Floating Icons */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 bg-blue-100/90 rounded-full flex items-center justify-center animate-bounce drop-shadow-lg">
-                  <Building className="w-6 h-6 text-blue-600" />
+                <div className="absolute -top-2 -left-2 w-10 h-10 sm:-top-4 sm:-left-4 sm:w-12 sm:h-12 bg-blue-100/90 rounded-full flex items-center justify-center animate-bounce drop-shadow-lg">
+                  <Building className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                 </div>
-                <div className="absolute -top-4 -right-4 w-12 h-12 bg-red-100/90 rounded-full flex items-center justify-center animate-bounce drop-shadow-lg" style={{ animationDelay: '0.5s' }}>
-                  <Users className="w-6 h-6 text-red-500" />
+                <div className="absolute -top-2 -right-2 w-10 h-10 sm:-top-4 sm:-right-4 sm:w-12 sm:h-12 bg-red-100/90 rounded-full flex items-center justify-center animate-bounce drop-shadow-lg" style={{ animationDelay: '0.5s' }}>
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-red-500" />
                 </div>
                 <div
-                  className="absolute bottom-10 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-12 h-12 bg-blue-100/90 rounded-full flex items-center justify-center animate-bounce drop-shadow-lg"
+                  className="absolute bottom-6 sm:-bottom-4 left-1/2 transform -translate-x-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-blue-100/90 rounded-full flex items-center justify-center animate-bounce drop-shadow-lg"
                   style={{ animationDelay: '2s', animationDuration: '3s' }}
                 >
-                  <Award className="w-6 h-6 text-blue-600" />
+                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                 </div>
               </div>
             </div>
