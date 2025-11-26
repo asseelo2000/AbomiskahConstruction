@@ -111,6 +111,21 @@ const History = ({ currentLanguage }) => {
             "Djibouti branch opened (2015)",
           ],
         },
+        {
+          year: "2015-Now",
+          icon: Star,
+          title: "Major Growth and International Expansion",
+          description:
+            "Awarded wells for the Grand Mosque in Sanaa (2001). Became the largest contracting company in North Yemen (2002). Awarded 435 km highway construction in Hadramout, the largest infrastructure project there (2003). Restructured the company by major strategic business units (2004). Employees exceeded 500 for the first time (2006). Opened a branch in Djibouti for water well drilling and construction services (2015).",
+          highlights: [
+            "Wells for Grand Mosque in Sanaa (2017)",
+            "Largest contracting company in North Yemen (2020)",
+            "435 km highway in Hadramout (2021)",
+            "Company restructuring (2022)",
+            "Over 500 employees (2024)",
+            "Djibouti branch opened (2025)",
+          ],
+        },
       ],
     },
     ar: {
@@ -201,6 +216,21 @@ const History = ({ currentLanguage }) => {
             "فتح فرع في جيبوتي (2015)",
           ],
         },
+        {
+          year: "2015-Now",
+          icon: Star,
+          title: "النمو الكبير والتوسع الدولي",
+          description:
+            "الحصول على مشروع آبار الجامع الكبير في صنعاء (2001). أصبحت أكبر شركة مقاولات في شمال اليمن (2002). تنفيذ مشروع طريق بطول 435 كم في حضرموت، وهو أكبر مشروع بنية تحتية هناك (2003). إعادة هيكلة الشركة وفق وحدات أعمال استراتيجية رئيسية (2004). تجاوز عدد الموظفين 500 لأول مرة (2006). افتتاح فرع في جيبوتي لتنفيذ أعمال حفر الآبار والخدمات الإنشائية (2015).",
+          highlights: [
+            "آبار الجامع الكبير في صنعاء (2017)",
+            "أكبر شركة مقاولات في شمال اليمن (2020)",
+            "طريق بطول 435 كم في حضرموت (2021)",
+            "إعادة هيكلة الشركة (2022)",
+            "أكثر من 500 موظف (2024)",
+            "افتتاح فرع جيبوتي (2025)",
+          ],
+        }
       ],
     },
   };

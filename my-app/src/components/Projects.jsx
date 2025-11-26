@@ -22,10 +22,10 @@ const Projects = ({ currentLanguage = 'en' }) => {
       title: 'Our Projects',
       subtitle: 'Building Excellence Across Diverse Sectors',
       description:
-        'Explore our portfolio of successful projects spanning residential, commercial, and industrial sectors.',
+        'Explore our portfolio of successful projects spanning service_buildings, commercial, and industrial sectors.',
       filters: [
         { key: 'all', label: 'All Projects' },
-        { key: 'residential', label: 'Service Buildings' },
+        { key: 'service_buildings', label: 'Service Buildings' },
         { key: 'commercial', label: 'Well Drilling' },
         { key: 'industrial', label: 'Road Excavation' }
       ],
@@ -34,7 +34,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
         {
           id: 1,
           title: 'Luxury Residential Complex',
-          category: 'residential',
+          category: 'service_buildings',
           location: 'Downtown District',
           year: '2023',
           client: 'Private Developer',
@@ -106,7 +106,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
         'استكشف محفظة مشاريعنا الناجحة التي تمتد عبر القطاعات السكنية والتجارية والصناعية.',
       filters: [
         { key: 'all', label: 'جميع المشاريع' },
-        { key: 'residential', label: 'المباني الخدمية' },
+        { key: 'service_buildings', label: 'المباني الخدمية' },
         { key: 'commercial', label: 'حفر الابار' },
         { key: 'industrial', label: 'شق الطرق' }
       ],
@@ -115,7 +115,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
         {
           id: 1,
           title: 'مجمع سكني فاخر',
-          category: 'residential',
+          category: 'service_buildings',
           location: 'منطقة وسط المدينة',
           year: '2023',
           client: 'مطور خاص',
