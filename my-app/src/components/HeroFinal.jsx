@@ -161,7 +161,7 @@ const HeroFinal = ({ currentLanguage }) => {
                 {/* Logo Image */}
                 <div className="absolute inset-0 flex items-center justify-center">
                   <img
-                    src="images/logo/images-removebg-preview.png"
+                    src="images/logo/AbomiskaLogo.png"
                     alt="Company Logo"
                     className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 object-contain"
                     style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.08))' }}

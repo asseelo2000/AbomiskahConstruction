@@ -57,7 +57,7 @@ const HeaderFixed = ({ currentLanguage, onLanguageChange }) => {
               {/* Logo Image */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <img
-                  src="images/logo/images-removebg-preview.png"
+                  src="images/logo/AbomiskaLogo.png"
                   alt="Company Logo"
                   className="w-20 h-20 object-contain"
                   style={{ filter: 'drop-shadow(0 2px 8px rgba(0,0,0,0.08))' }}

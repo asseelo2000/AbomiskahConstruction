@@ -145,14 +145,15 @@ const Footer = ({ currentLanguage }) => {
           <div className="lg:col-span-1">
             {/* Logo */}
             <div className="flex items-center mb-6">
-  <div className={`relative ${currentLanguage === 'ar' ? 'ml-4' : 'mr-4'}`}>
-    <div className="text-2xl font-bold">
-      <span className="text-blue-400">A</span>
-      <span className="text-blue-400">M</span>
-    </div>
+              <div className={`relative ${currentLanguage === 'ar' ? 'ml-4' : 'mr-4'}`}>
+                <img
+                  src="images/logo/AbomiskaLogo.png"
+                  alt={`${currentContent.company.name} logo`}
+                  className="w-12 h-12 object-contain rounded"
+                />
                 {/* Red lines around logo */}
-                <div className="absolute -top-1 -left-1 w-6 h-6 border-l-2 border-t-2 border-red-400"></div>
-                <div className="absolute -bottom-1 -right-1 w-6 h-6 border-r-2 border-b-2 border-red-400"></div>
+                <div className="absolute -top-1 -left-1 w-6 h-6 border-l-2 border-t-2 border-red-400 pointer-events-none"></div>
+                <div className="absolute -bottom-1 -right-1 w-6 h-6 border-r-2 border-b-2 border-red-400 pointer-events-none"></div>
               </div>
               <div>
                 <div className="text-lg font-semibold">{currentContent.company.name}</div>
@@ -259,9 +260,7 @@ const Footer = ({ currentLanguage }) => {
               <button
                 type="button"
                 onClick={scrollToTop}
-                className={`inline-flex items-center px-3 py-1.5 border border-gray-600 rounded text-gray-300 hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 ${
-                  currentLanguage === 'ar' ? 'space-x-reverse' : ''
-                }`}
+                className={`inline-flex items-center px-3 py-1.5 border border-gray-600 rounded text-gray-300 hover:bg-primary hover:border-primary hover:text-white transition-all duration-300 ${currentLanguage === 'ar' ? 'space-x-reverse' : ''}`}
               >
                 <ArrowUp className={`w-4 h-4 mr-2 ${currentLanguage === 'ar' ? 'ml-2 mr-0' : ''}`} />
                 {currentContent.backToTop}
