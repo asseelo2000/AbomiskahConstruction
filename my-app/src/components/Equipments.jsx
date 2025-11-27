@@ -20,11 +20,11 @@ const Equipments = ({ currentLanguage }) => {
       subtitle: "Comprehensive Equipment Overview",
       cta: "Get Quote",
       equipments: [
-        { icon: Shield,  title: "Equipment Capabilities", description: "Overview of our equipment capabilities and features.", pdf: "pdfs/equipments/capabilities.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
-        { icon: Factory, title: "Machinery Park",          description: "Our extensive machinery park for various operations.",  pdf: "pdfs/equipments/Template.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
-        { icon: Wrench,  title: "List of Equipment Owned", description: "Detailed list of all equipment owned by the company.",  pdf: "pdfs/equipments/Template.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
-        { icon: Hammer,  title: "List of Drilling Equipment", description: "Specialized drilling equipment in our inventory.",   pdf: "pdfs/equipments/Template.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
-        { icon: Globe,   title: "Equipment in the Republic of Djibouti owned by Abu Miska", description: "Equipment assets in Djibouti.", pdf: "pdfs/equipments/Template.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
+        { icon: Shield,  title: "Equipment Capabilities", description: "Overview of our equipment capabilities and features.", pdf: "pdfs/equipments/capability.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
+        { icon: Factory, title: "Machinery Park",          description: "Our extensive machinery park for various operations.",  pdf: "pdfs/equipments/EquipmentandMachinaryPark.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
+        { icon: Wrench,  title: "List of Equipment Owned", description: "Detailed list of all equipment owned by the company.",  pdf: "pdfs/equipments/LISTOFCONSTRUCTIONEQUIPMENT1.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
+        { icon: Hammer,  title: "List of Drilling Equipment", description: "Specialized drilling equipment in our inventory.",   pdf: "pdfs/equipments/ListofDrillingEquiment.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
+        { icon: Globe,   title: "Equipment in the Republic of Djibouti owned by Abu Miska", description: "Equipment assets in Djibouti.", pdf: "pdfs/equipments/listofequipment_D.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
       ],
     },
     ar: {
@@ -32,11 +32,11 @@ const Equipments = ({ currentLanguage }) => {
       subtitle: "نظرة عامة شاملة على المعدات",
       cta: "الحصول على عرض أسعار",
       equipments: [
-        { icon: Shield,  title: "قدرات المعدات",             description: "نظرة عامة على قدرات معداتنا وميزاتها.",          pdf: "pdfs/equipments/capabilities.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
-        { icon: Factory, title: "حديقة الآلات",               description: "حديقة الآلات الواسعة لدينا لعمليات متنوعة.",       pdf: "pdfs/equipments/Template.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
-        { icon: Wrench,  title: "قائمة المعدات المملوكة",     description: "قائمة مفصلة بجميع المعدات المملوكة للشركة.",     pdf: "pdfs/equipments/Template.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
-        { icon: Hammer,  title: "قائمة معدات الحفر",          description: "معدات الحفر المتخصصة في مخزوننا.",               pdf: "pdfs/equipments/Template.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
-        { icon: Globe,   title: "المعدات في جمهورية جيبوتي المملوكة لأبو مسكة", description: "أصول المعدات في جيبوتي.", pdf: "pdfs/equipments/Template.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
+        { icon: Shield,  title: "قدرات المعدات",             description: "نظرة عامة على قدرات معداتنا وميزاتها.",          pdf: "pdfs/equipments/capability.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
+        { icon: Factory, title: "حديقة الآلات",               description: "حديقة الآلات الواسعة لدينا لعمليات متنوعة.",       pdf: "pdfs/equipments/EquipmentandMachinaryPark.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
+        { icon: Wrench,  title: "قائمة المعدات المملوكة",     description: "قائمة مفصلة بجميع المعدات المملوكة للشركة.",     pdf: "pdfs/equipments/LISTOFCONSTRUCTIONEQUIPMENT1.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
+        { icon: Hammer,  title: "قائمة معدات الحفر",          description: "معدات الحفر المتخصصة في مخزوننا.",               pdf: "pdfs/equipments/ListofDrillingEquiment.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
+        { icon: Globe,   title: "المعدات في جمهورية جيبوتي المملوكة لأبو مسكة", description: "أصول المعدات في جيبوتي.", pdf: "pdfs/equipments/listofequipment_D.pdf", images: ["/images/projects/LuxuryResidentialComplex.jpg"], features: [] },
       ],
     },
   };
