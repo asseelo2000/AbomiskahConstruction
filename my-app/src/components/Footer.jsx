@@ -40,7 +40,9 @@ const Footer = ({ currentLanguage }) => {
           "Roads and Bridges",
           "Construction",
           "Well Drilling",
-          "Other Projects",
+          "Infrastructure Projects",
+          "Sustainable Development Projects",
+          "Solar and Clean Energy",
         ]
       },
       contact: {
@@ -82,7 +84,9 @@ const Footer = ({ currentLanguage }) => {
           "الطرق والجسور",
           "الإنشاءات",
           "حفر الابار",
-          "مشاريع اخرى",
+          "مشاريع البنى التحتية",
+          "المشاريع التنموية المستدامة",
+          "الطاقة الشمسية والطاقة النظيفة",
         ]
       },
       contact: {
