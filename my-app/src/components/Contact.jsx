@@ -342,7 +342,7 @@ const Contact = ({ currentLanguage }) => {
                 className="bg-white p-6 rounded-2xl shadow-lg shadow-blue-200/40 hover:shadow-red-300/50 transition-shadow duration-300 Abomiskah-hover-lift"
               >
                 <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-700 to-red-600 rounded-lg flex items-center justify-center mr-4 transition-transform duration-300 hover:scale-110">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-700 to-red-600 rounded-lg flex items-center justify-center m-4 transition-transform duration-300 hover:scale-110">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-900">{title}</h3>
