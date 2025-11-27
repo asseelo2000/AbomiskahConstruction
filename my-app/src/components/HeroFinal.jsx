@@ -29,7 +29,7 @@ const HeroFinal = ({ currentLanguage }) => {
       cta2: "Get Quote",
       stats: [
         { number: "500+", label: "Projects Completed" },
-        { number: "15+", label: "Years Experience" },
+        { number: "65+", label: "Years Experience" },
         { number: "100+", label: "Happy Clients" }
       ]
     },
@@ -41,7 +41,7 @@ const HeroFinal = ({ currentLanguage }) => {
       cta2: "احصل على عرض سعر",
       stats: [
         { number: "500+", label: "مشروع مكتمل" },
-        { number: "15+", label: "سنة خبرة" },
+        { number: "65+", label: "سنة خبرة" },
         { number: "100+", label: "عميل راضي" }
       ]
     }
