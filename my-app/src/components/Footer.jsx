@@ -49,7 +49,7 @@ const Footer = ({ currentLanguage }) => {
         title: "Contact Info",
         address: "Al-Hasbah, in front of the Central Market",
         phone: "711101986 - 771105751",
-        email: "Haabomiska@abomiska.com"
+        email: "Haabomiska@abomiska.com  Hisham@abomiskah.org"
       },
       social: {
         title: "Follow Us"
@@ -93,7 +93,7 @@ const Footer = ({ currentLanguage }) => {
         title: "معلومات الاتصال",
         address: "الحصبة امام السوق المركزي",
         phone: "711101986 -	771105751",
-        email: "info@Abomiskah.com"
+        email: "Haabomiska@abomiska.com  Hisham@abomiskah.org"
       },
       social: {
         title: "تابعنا"
@@ -223,15 +223,15 @@ const Footer = ({ currentLanguage }) => {
             <h3 className="text-lg font-semibold mb-6">{currentContent.contact.title}</h3>
             <div className="space-y-4">
               <div className="flex items-start">
-                <MapPin className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                <MapPin className="w-5 h-5 text-primary m-3 mt-1 flex-shrink-0" />
                 <p className="text-gray-300 text-sm">{currentContent.contact.address}</p>
               </div>
               <div className="flex items-center">
-                <Phone className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                <Phone className="w-5 h-5 text-primary m-3 flex-shrink-0" />
                 <p className="text-gray-300 text-sm">{currentContent.contact.phone}</p>
               </div>
               <div className="flex items-center">
-                <Mail className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                <Mail className="w-5 h-5 text-primary m-3 flex-shrink-0" />
                 <p className="text-gray-300 text-sm">{currentContent.contact.email}</p>
               </div>
             </div>

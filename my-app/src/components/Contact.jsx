@@ -59,7 +59,7 @@ const Contact = ({ currentLanguage }) => {
         },
         email: {
           title: "Email Us",
-          details: ["Haabomiska@abomiska.com"]
+          details: ["Haabomiska@abomiska.com", "Hisham@abomiska.org"]
         },
         hours: {
           title: "Business Hours",
@@ -97,7 +97,7 @@ const Contact = ({ currentLanguage }) => {
         },
         email: {
           title: "راسلنا",
-          details: ["Haabomiska@abomiska.com"]
+          details: ["Hisham@abomiska.org", "Haabomiska@abomiska.com"]
         },
         hours: {
           title: "ساعات العمل",
@@ -157,22 +157,22 @@ const Contact = ({ currentLanguage }) => {
   };
 
   // Load Google Maps API script
-  const { isLoaded } = useJsApiLoader({
-    id: 'google-map-script',
-    googleMapsApiKey: ''
-  });
+  // const { isLoaded } = useJsApiLoader({
+  //   id: 'google-map-script',
+  //   googleMapsApiKey: ''
+  // });
 
   // Define the center coordinates (replace with your actual lat/lng)
-  const center = {
-    lat: 15.39010993519032,
-    lng: 44.172359094137725
-  };
+  // const center = {
+  //   lat: 15.39010993519032,
+  //   lng: 44.172359094137725
+  // };
 
   // Map container style (make it responsive)
-  const mapContainerStyle = {
-    width: '100%',
-    height: '400px' // Adjust height as needed
-  };
+  // const mapContainerStyle = {
+  //   width: '100%',
+  //   height: '400px' // Adjust height as needed
+  // };
 
   return (
     <section
@@ -307,7 +307,7 @@ const Contact = ({ currentLanguage }) => {
                   }`}
                 >
                   {currentContent.form.submit}
-                  <Send className={`w-5 h-5 ${currentLanguage === 'ar' ? 'mr-2' : 'ml-2'}`} />
+                  <Send className={`w-5 h-5 ${currentLanguage === 'ar' ? 'm-2' : 'ml-2'}`} />
                 </button>
               </form>
             )}
@@ -345,11 +345,11 @@ const Contact = ({ currentLanguage }) => {
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-700 to-red-600 rounded-lg flex items-center justify-center m-4 transition-transform duration-300 hover:scale-110">
                     <Icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900">{title}</h3>
+                  <h3 className="text-xl font-bold text-gray-90">{title}</h3>
                 </div>
                 <div className="space-y-1">
                   {details.map((detail, i) => (
-                    <p key={i} className="text-gray-600">{detail}</p>
+                    <p key={i} className="text-gray-600 m-4">{detail}</p>
                   ))}
                 </div>
               </div>
