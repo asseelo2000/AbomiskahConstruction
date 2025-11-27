@@ -49,7 +49,7 @@ const Footer = ({ currentLanguage }) => {
         title: "Contact Info",
         address: "Al-Hasbah, in front of the Central Market",
         phone: "711101986 - 771105751",
-        email: "info@Abomiskah.com"
+        email: "Haabomiska@abomiska.com"
       },
       social: {
         title: "Follow Us"
