@@ -26,8 +26,8 @@ const Projects = ({ currentLanguage = 'en' }) => {
       filters: [
         { key: 'all', label: 'All Projects' },
         { key: 'service_buildings', label: 'Service Buildings' },
-        { key: 'commercial', label: 'Well Drilling' },
-        { key: 'industrial', label: 'Road Excavation' }
+        { key: 'well_drilling', label: 'Well Drilling' },
+        { key: 'road_excavation', label: 'Road Excavation' }
       ],
       viewMore: 'View Project Details',
       projects: [
@@ -58,7 +58,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
         {
           id: 2,
           title: 'Corporate Headquarters',
-          category: 'commercial',
+          category: 'well_drilling',
           location: 'Business District',
           year: '2023',
           client: 'Tech Corporation',
@@ -79,7 +79,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
         {
           id: 3,
           title: 'Manufacturing Facility',
-          category: 'industrial',
+          category: 'road_excavation',
           location: 'Industrial Zone',
           year: '2022',
           client: 'Manufacturing Corp',
@@ -107,8 +107,8 @@ const Projects = ({ currentLanguage = 'en' }) => {
       filters: [
         { key: 'all', label: 'جميع المشاريع' },
         { key: 'service_buildings', label: 'المباني الخدمية' },
-        { key: 'commercial', label: 'حفر الابار' },
-        { key: 'industrial', label: 'شق الطرق' }
+        { key: 'well_drilling', label: 'حفر الابار' },
+        { key: 'road_excavation', label: 'شق الطرق' }
       ],
       viewMore: 'عرض تفاصيل المشروع',
       projects: [
@@ -136,7 +136,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
         {
           id: 2,
           title: 'المقر الرئيسي للشركة',
-          category: 'commercial',
+          category: 'well_drilling',
           location: 'المنطقة التجارية',
           year: '2023',
           client: 'شركة تقنية',
@@ -157,7 +157,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
         {
           id: 3,
           title: 'منشأة تصنيع',
-          category: 'industrial',
+          category: 'road_excavation',
           location: 'المنطقة الصناعية',
           year: '2022',
           client: 'شركة تصنيع',
