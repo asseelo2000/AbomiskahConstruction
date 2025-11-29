@@ -58,7 +58,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
         {
           id: 2,
           title: 'Corporate Headquarters',
-          category: 'well_drilling',
+          category: 'service_buildings',
           location: 'Business District',
           year: '2023',
           client: 'Tech Corporation',
@@ -78,6 +78,116 @@ const Projects = ({ currentLanguage = 'en' }) => {
         },
         {
           id: 3,
+          title: 'Manufacturing Facility',
+          category: 'service_buildings',
+          location: 'Industrial Zone',
+          year: '2022',
+          client: 'Manufacturing Corp',
+          description:
+            'Large-scale manufacturing plant with advanced automation systems and safety features.',
+          image: '/images/projects/ManufacturingFacility.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/ManufacturingFacility.jpg',
+            '/images/projects/ManufacturingFacility2.jpg'
+          ],
+          stats: {
+            capacity: '50,000 Units/Month',
+            area: '40,000 m²',
+            duration: '30 Months'
+          }
+        },
+        {
+          id: 4,
+          title: 'Luxury Residential Complex',
+          category: 'service_buildings',
+          location: 'Downtown District',
+          year: '2023',
+          client: 'Private Developer',
+          description:
+            'A premium residential development featuring 120 luxury apartments with modern amenities and sustainable design.',
+          image: '/images/projects/LuxuryResidentialComplex.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/LuxuryResidentialComplex.jpg',
+            '/images/projects/LuxuryResidentialComplex.jpg',
+            '/images/projects/LuxuryResidentialComplex.jpg',
+            '/images/projects/LuxuryResidentialComplex.jpg',
+            '/images/projects/LuxuryResidentialComplex.jpg'
+          ],
+          stats: {
+            units: '120 Units',
+            area: '15,000 m²',
+            duration: '18 Months'
+          }
+        },
+        {
+          id: 5,
+          title: 'Corporate Headquarters',
+          category: 'well_drilling',
+          location: 'Business District',
+          year: '2023',
+          client: 'Tech Corporation',
+          description:
+            'Modern 15-story office building with state-of-the-art facilities and energy-efficient systems.',
+          image: '/images/projects/CorporateHeadquarters.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/CorporateHeadquarters.jpg',
+            '/images/projects/CorporateHeadquarters2.jpg'
+          ],
+          stats: {
+            floors: '15 Floors',
+            area: '25,000 m²',
+            duration: '24 Months'
+          }
+        },
+        {
+          id: 6,
+          title: 'Manufacturing Facility',
+          category: 'well_drilling',
+          location: 'Industrial Zone',
+          year: '2022',
+          client: 'Manufacturing Corp',
+          description:
+            'Large-scale manufacturing plant with advanced automation systems and safety features.',
+          image: '/images/projects/ManufacturingFacility.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/ManufacturingFacility.jpg',
+            '/images/projects/ManufacturingFacility2.jpg'
+          ],
+          stats: {
+            capacity: '50,000 Units/Month',
+            area: '40,000 m²',
+            duration: '30 Months'
+          }
+        },
+        ,
+        {
+          id: 7,
+          title: 'Manufacturing Facility',
+          category: 'road_excavation',
+          location: 'Industrial Zone',
+          year: '2022',
+          client: 'Manufacturing Corp',
+          description:
+            'Large-scale manufacturing plant with advanced automation systems and safety features.',
+          image: '/images/projects/ManufacturingFacility.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/ManufacturingFacility.jpg',
+            '/images/projects/ManufacturingFacility2.jpg'
+          ],
+          stats: {
+            capacity: '50,000 Units/Month',
+            area: '40,000 m²',
+            duration: '30 Months'
+          }
+        },
+        ,
+        {
+          id: 8,
           title: 'Manufacturing Facility',
           category: 'road_excavation',
           location: 'Industrial Zone',
@@ -136,7 +246,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
         {
           id: 2,
           title: 'المقر الرئيسي للشركة',
-          category: 'well_drilling',
+          category: 'service_buildings',
           location: 'المنطقة التجارية',
           year: '2023',
           client: 'شركة تقنية',
@@ -157,7 +267,7 @@ const Projects = ({ currentLanguage = 'en' }) => {
         {
           id: 3,
           title: 'منشأة تصنيع',
-          category: 'road_excavation',
+          category: 'service_buildings',
           location: 'المنطقة الصناعية',
           year: '2022',
           client: 'شركة تصنيع',
@@ -173,6 +283,111 @@ const Projects = ({ currentLanguage = 'en' }) => {
             capacity: '50,000 وحدة/شهر',
             area: '40,000 م²',
             duration: '30 شهر'
+          }
+        },
+        {
+          id: 4,
+          title: 'مجمع سكني فاخر',
+          category: 'service_buildings',
+          location: 'منطقة وسط المدينة',
+          year: '2023',
+          client: 'مطور خاص',
+          description:
+            'مشروع سكني متميز يضم 120 شقة فاخرة مع وسائل الراحة الحديثة والتصميم المستدام.',
+          image: '/images/projects/LuxuryResidentialComplex.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/LuxuryResidentialComplex.jpg',
+            '/images/projects/LuxuryResidentialComplex2.jpg'
+          ],
+          stats: {
+            units: '120 وحدة',
+            area: '15,000 م²',
+            duration: '18 شهر'
+          }
+        },
+        {
+          id: 5,
+          title: 'المقر الرئيسي للشركة',
+          category: 'well_drilling',
+          location: 'المنطقة التجارية',
+          year: '2023',
+          client: 'شركة تقنية',
+          description:
+            'مبنى مكاتب عصري مكون من 15 طابقًا مجهز بأحدث المرافق وأنظمة موفرة للطاقة.',
+          image: '/images/projects/CorporateHeadquarters.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/CorporateHeadquarters.jpg',
+            '/images/projects/CorporateHeadquarters2.jpg'
+          ],
+          stats: {
+            floors: '15 طابق',
+            area: '25,000 م²',
+            duration: '24 شهر'
+          }
+        },
+        {
+          id: 6,
+          title: 'منشأة تصنيع',
+          category: 'well_drilling',
+          location: 'المنطقة الصناعية',
+          year: '2022',
+          client: 'شركة تصنيع',
+          description:
+            'مصنع إنتاج واسع النطاق مزود بأنظمة أتمتة متقدمة وميزات أمان عالية ومبني حسب المواصفات والمعايير العالمية ',
+          image: '/images/projects/ManufacturingFacility.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/ManufacturingFacility.jpg',
+            '/images/projects/ManufacturingFacility2.jpg'
+          ],
+          stats: {
+            capacity: '50,000 وحدة/شهر',
+            area: '40,000 م²',
+            duration: '30 شهر'
+          }
+        },
+        {
+          id: 7,
+          title: 'مجمع سكني فاخر',
+          category: 'road_excavation',
+          location: 'منطقة وسط المدينة',
+          year: '2023',
+          client: 'مطور خاص',
+          description:
+            'مشروع سكني متميز يضم 120 شقة فاخرة مع وسائل الراحة الحديثة والتصميم المستدام.',
+          image: '/images/projects/LuxuryResidentialComplex.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/LuxuryResidentialComplex.jpg',
+            '/images/projects/LuxuryResidentialComplex2.jpg'
+          ],
+          stats: {
+            units: '120 وحدة',
+            area: '15,000 م²',
+            duration: '18 شهر'
+          }
+        },
+        {
+          id: 8,
+          title: 'المقر الرئيسي للشركة',
+          category: 'road_excavation',
+          location: 'المنطقة التجارية',
+          year: '2023',
+          client: 'شركة تقنية',
+          description:
+            'مبنى مكاتب عصري مكون من 15 طابقًا مجهز بأحدث المرافق وأنظمة موفرة للطاقة.',
+          image: '/images/projects/CorporateHeadquarters.jpg',
+          pdf: 'pdfs/projects/djibouti-equipment.pdf',
+          images: [
+            '/images/projects/CorporateHeadquarters.jpg',
+            '/images/projects/CorporateHeadquarters2.jpg'
+          ],
+          stats: {
+            floors: '15 طابق',
+            area: '25,000 م²',
+            duration: '24 شهر'
           }
         }
       ]
